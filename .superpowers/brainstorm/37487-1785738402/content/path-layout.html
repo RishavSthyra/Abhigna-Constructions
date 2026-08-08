@@ -1,0 +1,53 @@
+<h2>Architectural Scroll Path</h2>
+<p class="subtitle">Mocking the overlay only. The existing landing page layout stays intact.</p>
+
+<div class="section">
+  <div class="mockup">
+    <div class="mockup-header">Path begins after Hero + Marquee</div>
+    <div class="mockup-body" style="padding: 24px; background: #fbf7f1;">
+      <div style="position: relative; min-height: 980px; border: 1px solid rgba(20,17,15,0.12); border-radius: 28px; overflow: hidden; background:
+        linear-gradient(180deg, rgba(20,17,15,0.02), rgba(20,17,15,0.00));">
+        <div style="position:absolute; inset:0; pointer-events:none;">
+          <svg viewBox="0 0 900 980" width="100%" height="100%" style="display:block;">
+            <path d="M 710 90 C 660 135, 610 172, 566 194 C 504 226, 382 252, 242 304"
+              fill="none" stroke="#111" stroke-width="2" stroke-linecap="round"
+              stroke-dasharray="1 10" opacity="0.95"/>
+            <path d="M 188 414 C 270 452, 358 490, 450 526 C 560 570, 642 610, 706 682"
+              fill="none" stroke="#111" stroke-width="2" stroke-linecap="round"
+              stroke-dasharray="1 10" opacity="0.95"/>
+            <path d="M 706 760 C 642 804, 566 846, 476 884 C 392 918, 304 934, 196 946"
+              fill="none" stroke="#111" stroke-width="2" stroke-linecap="round"
+              stroke-dasharray="1 10" opacity="0.95"/>
+            <circle cx="706" cy="682" r="7" fill="rgba(17,17,17,0.08)" />
+          </svg>
+        </div>
+
+        <div style="position:absolute; left:64px; top:66px; width:560px; height:180px; border-radius:24px; background:white; box-shadow:0 16px 40px rgba(20,17,15,0.07); display:flex; align-items:center; justify-content:center; color:#6b6660;">
+          Experience Excellence
+        </div>
+
+        <div style="position:absolute; right:72px; top:314px; width:520px; height:222px; border-radius:24px; background:white; box-shadow:0 16px 40px rgba(20,17,15,0.07); display:flex; align-items:center; justify-content:center; color:#6b6660;">
+          Curved Gallery
+        </div>
+
+        <div style="position:absolute; left:64px; top:610px; width:548px; height:176px; border-radius:24px; background:white; box-shadow:0 16px 40px rgba(20,17,15,0.07); display:flex; align-items:center; justify-content:center; color:#6b6660;">
+          Featured Projects
+        </div>
+
+        <div style="position:absolute; right:72px; top:812px; width:512px; height:118px; border-radius:24px; background:white; box-shadow:0 16px 40px rgba(20,17,15,0.07); display:flex; align-items:center; justify-content:center; color:#6b6660;">
+          Stats / Services
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="options">
+  <div class="option" data-choice="recommended" onclick="toggleSelect(this)">
+    <div class="letter">A</div>
+    <div class="content">
+      <h3>Dedicated overlay lane</h3>
+      <p>Keep content layout untouched and let the path travel through a measured gutter that alternates side-to-side.</p>
+    </div>
+  </div>
+</div>
