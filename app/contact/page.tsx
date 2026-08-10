@@ -16,7 +16,7 @@ export default function ContactPage() {
           eyebrow="— Contact Us"
           headline="Tell us about your project."
           paragraph="Send us a few lines about the site, the brief, and the timeline you have in mind. We'll come back to you within one working day."
-          imageSrc="https://images.unsplash.com/photo-1497366216548-37526070297c?w=2000&q=80"
+          imageSrc="https://cdn.sthyra.com/MISTY_WOODS_IMAGES/WhatsApp%20Image%202026-08-10%20at%2012.22.50%20PM%20(1).jpg"
           imageAlt="Architectural office interior with drafting tables"
         />
         <ContactForm />

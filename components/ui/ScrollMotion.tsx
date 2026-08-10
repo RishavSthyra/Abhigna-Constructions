@@ -117,10 +117,8 @@ export default function ScrollMotion() {
         }
         const wrap = document.createElement("span");
         wrap.className = "inline-block overflow-hidden align-baseline";
-        wrap.style.paddingTop = "0.12em";
-        wrap.style.paddingBottom = "0.12em";
-        wrap.style.marginTop = "-0.12em";
-        wrap.style.marginBottom = "-0.12em";
+        wrap.style.paddingTop = "0.08em";
+        wrap.style.paddingBottom = "0.18em";
         const inner = document.createElement("span");
         inner.className = "inline-block will-change-transform";
         inner.setAttribute("data-split-word", "");

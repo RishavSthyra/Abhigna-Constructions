@@ -15,8 +15,9 @@ export default function AboutPage() {
         <SecondaryHero
           eyebrow="— About Us"
           headline="Building communities with purpose."
+          headlineLines={["Building communities", "with purpose."]}
           paragraph="Established in 2007, Abhigna Constructions is one of Bangalore's leading real estate developers, creating residential projects that combine engineering, financial, and design strength with a community-first vision."
-          imageSrc="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=2000&q=80"
+          imageSrc="https://cdn.sthyra.com/AADHYA%20SERENE/images/HighresScreenshot00034.png"
           imageAlt="Modern architectural facade with strong horizontals"
         />
         <AboutStory />

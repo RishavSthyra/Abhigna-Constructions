@@ -83,7 +83,7 @@ export default function ContactForm() {
           data-split-text
           className="font-display text-[clamp(2.4rem,5.5vw,4.5rem)] font-light italic leading-[1.05] tracking-tight text-zinc-900"
         >
-          Leave A Comments.
+          Leave A Comment.
         </h2>
       </div>
 
@@ -193,7 +193,7 @@ export default function ContactForm() {
 
             <div className="mt-10 flex items-center gap-5 text-zinc-500">
               <a
-                href="#"
+                href="https://www.facebook.com/profile.php?id=61591677686242"
                 aria-label="Facebook"
                 className="transition hover:text-zinc-900"
               >
@@ -207,14 +207,7 @@ export default function ContactForm() {
                 <FiInstagram size={16} strokeWidth={1.6} />
               </a>
               <a
-                href="#"
-                aria-label="Twitter"
-                className="transition hover:text-zinc-900"
-              >
-                <FiTwitter size={16} strokeWidth={1.6} />
-              </a>
-              <a
-                href="#"
+                href="https://in.linkedin.com/company/abhigna-constructions-official"
                 aria-label="LinkedIn"
                 className="transition hover:text-zinc-900"
               >

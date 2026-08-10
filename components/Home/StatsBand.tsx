@@ -12,19 +12,21 @@ const STATS: Stat[] = [
   {
     value: 145,
     suffix: "+",
-    label: "Projects Delivered",
+    label: "Homes Delivered",
   },
   {
-    value: 21,
+    value: 20,
     label: "Years of Practice",
   },
   {
-    value: 36,
-    label: "Design Honors",
+    value: 200,
+    suffix : "+",
+    label: "Satisfied Customers",
   },
   {
-    value: 14,
-    label: "Countries Served",
+    value: 4,
+    suffix : "/5",
+    label: "Rating on Google",
   },
 ];
 

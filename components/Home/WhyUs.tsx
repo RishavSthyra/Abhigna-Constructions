@@ -93,7 +93,7 @@ const SERVICES: Service[] = [
   {
     label: "Hand Picked Locations",
     body: "Carefully selected locations chosen for their connectivity, surroundings, potential, and lasting value — sites that reward residents and hold their worth over decades.",
-    src: "https://cdn.sthyra.com/AADHYA%20SERENE/images/amenities-first-frames/Basketball%20-%20First%20Frame.avif",
+    src: "https://cdn.sthyra.com/MISTY_WOODS_IMAGES/WhatsApp%20Image%202026-08-10%20at%2012.22.33%20PM.jpeg",
     layout: ["empty", "image", "text"],
     rowHeight: "min-h-[480px]",
   },

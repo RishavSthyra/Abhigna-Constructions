@@ -6,6 +6,53 @@ import { gsap } from "gsap";
 import { ensureGsapPlugins } from "@/components/Nav/gsap/easings";
 import { FiArrowUpRight } from "react-icons/fi";
 
+type DisplayHeadingProps = {
+  as?: "h2" | "h3";
+  compactLines: string[];
+  wideLines?: [string, string];
+  className: string;
+};
+
+function DisplayHeading({
+  as: Tag = "h2",
+  compactLines,
+  wideLines,
+  className,
+}: DisplayHeadingProps) {
+  const renderLines = (lines: string[]) =>
+    lines.map((line, lineIndex) => (
+      <span
+        key={`${line}-${lineIndex}`}
+        className="block whitespace-nowrap last:-mt-[0.08em]"
+      >
+        {line.split(" ").map((word, wordIndex, words) => (
+          <span
+            key={`${word}-${lineIndex}-${wordIndex}`}
+            className="inline-block overflow-hidden align-baseline"
+            style={{
+              paddingTop: "0.08em",
+              paddingRight: wordIndex < words.length - 1 ? "0.14em" : "0",
+              paddingBottom: "0.16em",
+            }}
+          >
+            <span className="inline-block will-change-transform">{word}</span>
+          </span>
+        ))}
+      </span>
+    ));
+
+  return (
+    <Tag className={className}>
+      <span className={wideLines ? "block lg:hidden" : "block"}>
+        {renderLines(compactLines)}
+      </span>
+      {wideLines ? (
+        <span className="hidden lg:block">{renderLines(wideLines)}</span>
+      ) : null}
+    </Tag>
+  );
+}
+
 /**
  * AboutStory — magazine body for the /about route.
  *
@@ -174,12 +221,18 @@ export default function AboutStory() {
 
         {/* Full-width headline row — no col-span clamp so the italic
             display font can flow freely. */}
-        <h2
-          data-split-text
-          className="font-display text-[clamp(2.2rem,5.4vw,5rem)] font-light italic leading-[1.04] tracking-tight text-zinc-900"
-        >
-          Built in Bangalore. Designed for better community living.
-        </h2>
+        <DisplayHeading
+          compactLines={[
+            "Built in Bangalore.",
+            "Designed for better",
+            "community living.",
+          ]}
+          wideLines={[
+            "Built in Bangalore. Designed",
+            "for better community living.",
+          ]}
+          className="max-w-[26ch] font-display text-[clamp(1rem,4.2vw,4rem)] font-light italic leading-[0.9] tracking-[-0.035em] text-zinc-900"
+        />
 
         {/* Body copy — full-width flowing columns */}
         <div className="mt-14 grid grid-cols-1 gap-x-12 gap-y-8 md:grid-cols-12 md:gap-y-0">
@@ -271,7 +324,7 @@ export default function AboutStory() {
                 className="absolute inset-0"
               >
                 <Image
-                  src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=1600&q=80"
+                  src="https://cdn.sthyra.com/MISTY_WOODS_IMAGES/WhatsApp%20Image%202026-08-10%20at%2012.23.09%20PM.jpeg"
                   alt="Studio review at a drawing table"
                   fill
                   sizes="(max-width: 768px) 100vw, 50vw"
@@ -281,7 +334,7 @@ export default function AboutStory() {
             </div>
           </div>
 
-          <div className="md:col-span-5 md:col-start-8 md:flex md:flex-col md:justify-center">
+          <div className="md:col-span-6 md:col-start-7 md:flex md:flex-col md:justify-center">
             <p
               data-reveal
               className="mb-5 inline-flex items-center gap-3 text-[11px] uppercase tracking-[0.32em] text-zinc-500"
@@ -289,12 +342,19 @@ export default function AboutStory() {
               <span aria-hidden className="block h-px w-10 bg-zinc-400" />
               How we work
             </p>
-            <h3
-              data-split-text
-              className="font-display text-3xl font-light italic leading-[1.1] tracking-tight text-zinc-900 md:text-[2.6rem]"
-            >
-              Engineering, financial, and design strength in one team.
-            </h3>
+            <DisplayHeading
+              as="h3"
+              compactLines={[
+                "Engineering, financial,",
+                "and design strength",
+                "in one team.",
+              ]}
+              wideLines={[
+                "Engineering, financial, and",
+                "design strength in one team.",
+              ]}
+              className="max-w-[26ch] font-display text-[clamp(0.98rem,3.3vw,3rem)] font-light italic leading-[0.9] tracking-[-0.03em] text-zinc-900"
+            />
             <p
               data-reveal
               className="mt-6 text-[15px] leading-[1.7] text-zinc-700 md:text-base"
@@ -319,7 +379,7 @@ export default function AboutStory() {
       {/* ╔══ 5. WHAT GUIDES US ══════════════════════════════════════════╗ */}
       <div className="mx-auto max-w-[1400px] px-6 py-28 md:px-12 md:py-36 lg:px-16">
         <div className="grid grid-cols-1 gap-x-12 gap-y-12 md:grid-cols-12 md:gap-y-0">
-          <div className="md:col-span-4">
+          <div className="md:col-span-5">
             <p
               data-reveal
               className="mb-5 inline-flex items-center gap-3 text-[11px] uppercase tracking-[0.32em] text-zinc-500"
@@ -327,14 +387,21 @@ export default function AboutStory() {
               <span aria-hidden className="block h-px w-10 bg-zinc-400" />
               Boundaries
             </p>
-            <h3
-              data-split-text
-              className="font-display text-3xl font-light italic leading-[1.08] tracking-tight text-zinc-900 md:text-[2.4rem]"
-            >
-              Quality of life is the standard we build toward.
-            </h3>
+            <DisplayHeading
+              as="h3"
+              compactLines={[
+                "Quality of life is",
+                "the standard we",
+                "build toward.",
+              ]}
+              wideLines={[
+                "Quality of life is the",
+                "standard we build toward.",
+              ]}
+              className="max-w-[24ch] font-display text-[clamp(1rem,3.1vw,2.8rem)] font-light italic leading-[0.9] tracking-[-0.03em] text-zinc-900"
+            />
           </div>
-          <ul ref={boundariesListRef} className="md:col-span-7 md:col-start-6">
+          <ul ref={boundariesListRef} className="md:col-span-6 md:col-start-7">
             {[
               "Homes should feel like part of a larger, well-connected community.",
               "Sustainable planning should support long-term success for residents.",
@@ -501,7 +568,7 @@ function LayerIntroImage() {
       >
         <div data-parallax="0.10" className="absolute inset-0">
           <Image
-            src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=2000&q=80"
+            src="https://cdn.sthyra.com/MISTY_WOODS_IMAGES/upscaled%20image%20(1).jpg"
             alt="Abhigna site at first light"
             fill
             sizes="100vw"
