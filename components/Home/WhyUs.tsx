@@ -58,7 +58,7 @@ const SERVICES: Service[] = [
   {
     label: "Modern Architecture",
     body: "Contemporary architecture shaped by functionality, proportion, context, and timeless design principles — working sensitively with each site's character and the lives that will inhabit it.",
-    src: "https://cdn.sthyra.com/AADHYA%20SERENE/images/image2.avif",
+    src: "https://cdn.sthyra.com/MISTY_WOODS_IMAGES/WhatsApp%20Image%202026-08-10%20at%2012.22.49%20PM.jpeg",
     layout: ["empty", "text", "image"],
     rowHeight: "min-h-[480px]",
   },

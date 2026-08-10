@@ -48,7 +48,7 @@ const GALLERY_IMAGES: readonly GalleryImage[] = [
   },
   {
     id: 5,
-    src: "https://cdn.sthyra.com/AADHYA%20SERENE/images/INterior%20(2).png",
+    src: "https://cdn.sthyra.com/MISTY_WOODS_IMAGES/WhatsApp%20Image%202026-08-10%20at%2012.23.03%20PM%20(1).jpeg",
     alt: "Refined luxury living space with neutral finishes",
   },
   {
@@ -58,7 +58,7 @@ const GALLERY_IMAGES: readonly GalleryImage[] = [
   },
   {
     id: 7,
-    src: "https://cdn.sthyra.com/AADHYA%20SERENE/images/images.jpeg",
+    src: "https://cdn.sthyra.com/MISTY_WOODS_IMAGES/WhatsApp%20Image%202026-08-10%20at%2012.22.58%20PM.jpeg",
     alt: "Premium residential interior with natural materials",
   },
   {
@@ -68,7 +68,7 @@ const GALLERY_IMAGES: readonly GalleryImage[] = [
   },
   {
     id: 9,
-    src: "https://cdn.sthyra.com/AADHYA%20SERENE/images/central-park-big1.png",
+    src: "https://cdn.sthyra.com/MISTY_WOODS_IMAGES/WhatsApp%20Image%202026-08-10%20at%2012.23.03%20PM.jpeg",
     alt: "Luxury home with clean modern architecture",
   },
   {
@@ -83,7 +83,7 @@ const GALLERY_IMAGES: readonly GalleryImage[] = [
   },
   {
     id: 12,
-    src: "https://cdn.sthyra.com/AADHYA%20SERENE/images/badminton.avif",
+    src: "https://cdn.sthyra.com/MISTY_WOODS_IMAGES/WhatsApp%20Image%202026-08-10%20at%2012.23.12%20PM.jpeg",
     alt: "Contemporary dining room with natural light",
   },
   {

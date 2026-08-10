@@ -56,17 +56,6 @@ const smoothstep = (value: number): number => {
   return clamped * clamped * (3 - 2 * clamped);
 };
 
-const getTrackProgress = (
-  track: PencilTrack,
-  scrollY: number,
-): number =>
-  clamp(
-    (scrollY - track.scrollStart) /
-      Math.max(track.scrollEnd - track.scrollStart, 1),
-    0,
-    1,
-  );
-
 const getActiveDrawing = (
   tracks: PencilTrack[],
 ): ActiveDrawing | null => {
