@@ -1,0 +1,21 @@
+.group {
+  display: inline;
+}
+
+.mask {
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: top;
+  white-space: nowrap;
+}
+
+.word {
+  display: inline-block;
+  will-change: transform, opacity;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .word {
+    will-change: auto;
+  }
+}

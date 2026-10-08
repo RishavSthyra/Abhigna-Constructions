@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, type FormEvent } from "react";
+import Link from "next/link";
 import {
   FiArrowRight,
   FiChevronDown,
@@ -124,14 +125,14 @@ export default function Footer() {
               <h2
                 className="
                   font-display
-                  text-[42px]
+                  text-[36px]
                   font-normal
                   leading-[0.96]
                   tracking-[-0.035em]
                   text-[#171715]
-                  sm:text-[48px]
-                  md:text-[44px]
-                  lg:text-[52px]
+                  sm:text-[42px]
+                  md:text-[40px]
+                  lg:text-[46px]
                 "
               >
                 Let&rsquo;s build
@@ -289,8 +290,8 @@ export default function Footer() {
             "
           >
             <div className="w-full">
-              <a
-                href="#hero"
+              <Link
+                href="/#hero"
                 aria-label="Go to the top of the page"
                 className="inline-flex flex-col items-start"
               >
@@ -299,7 +300,7 @@ export default function Footer() {
                   alt="Abhigna Constructions"
                   className="block h-auto w-[96px] object-contain sm:w-[112px]"
                 />
-              </a>
+              </Link>
 
               <div className="mt-6 h-px w-full bg-[#d1cdc4]" />
 

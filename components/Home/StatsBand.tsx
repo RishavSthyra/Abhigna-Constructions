@@ -1,36 +1,41 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 type Stat = {
   value: number;
   suffix?: string;
   label: string;
+  compactMillion?: boolean;
 };
 
 const STATS: Stat[] = [
   {
-    value: 145,
+    value: 35,
     suffix: "+",
-    label: "Homes Delivered",
+    label: "Years of engineered homes",
   },
   {
-    value: 20,
-    label: "Years of Practice",
+    value: 1_000_000,
+    suffix: "+",
+    label: "sq delivered",
+    compactMillion: true,
   },
   {
     value: 200,
-    suffix : "+",
-    label: "Satisfied Customers",
+    suffix: "+",
+    label: "Families who call Abhigna Constructions home",
   },
   {
-    value: 4,
-    suffix : "/5",
-    label: "Rating on Google",
+    value: 100,
+    suffix: "%",
+    label: "Vastu-compliant plans",
   },
 ];
 
-const COUNTER_DURATION = 1500;
+const COUNTER_DURATION = 1.5;
 
 export default function StatsBand() {
   const sectionRef = useRef<HTMLElement | null>(null);
@@ -41,26 +46,20 @@ export default function StatsBand() {
 
     if (!section) return;
 
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setShouldAnimate(true);
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      const frame = requestAnimationFrame(() => setShouldAnimate(true));
+      return () => cancelAnimationFrame(frame);
+    }
 
-          // Counter runs only once.
-          observer.disconnect();
-        }
-      },
-      {
-        // Animation begins only when a good portion
-        // of the section is inside the viewport.
-        threshold: 0.4,
-        rootMargin: "0px 0px -8% 0px",
-      },
-    );
+    gsap.registerPlugin(ScrollTrigger);
+    const trigger = ScrollTrigger.create({
+      trigger: section,
+      start: "top 82%",
+      once: true,
+      onEnter: () => setShouldAnimate(true),
+    });
 
-    observer.observe(section);
-
-    return () => observer.disconnect();
+    return () => trigger.kill();
   }, []);
 
   return (
@@ -80,12 +79,12 @@ export default function StatsBand() {
         data-scroll-path-content="true"
         className="
           relative z-20 mx-auto grid
-          min-h-[138px]
+          min-h-[176px]
           w-full max-w-[1440px]
           grid-cols-2
           px-5
           sm:px-8
-          md:grid-cols-4
+          lg:grid-cols-4
           md:px-10
           lg:px-14
         "
@@ -124,70 +123,42 @@ function StatItem({
     ).matches;
 
     if (prefersReducedMotion) {
-      // Skip the animation entirely; the final value is the rendered state.
-      return;
+      const frame = requestAnimationFrame(() => setDisplayValue(stat.value));
+      return () => cancelAnimationFrame(frame);
     }
 
-    let animationFrame = 0;
-    let startTime: number | null = null;
+    const counter = { value: 0 };
+    const tween = gsap.to(counter, {
+      value: stat.value,
+      duration: COUNTER_DURATION,
+      delay: index * 0.12,
+      ease: "power2.out",
+      onUpdate: () => setDisplayValue(Math.round(counter.value)),
+      onComplete: () => setDisplayValue(stat.value),
+    });
 
-    const animateCounter = (timestamp: number) => {
-      if (startTime === null) {
-        startTime = timestamp;
-      }
+    return () => tween.kill();
+  }, [shouldAnimate, stat.value, index]);
 
-      const elapsed = timestamp - startTime;
-      const progress = Math.min(
-        elapsed / COUNTER_DURATION,
-        1,
-      );
-
-      // Smooth cubic ease-out.
-      const easedProgress =
-        1 - Math.pow(1 - progress, 3);
-
-      setDisplayValue(
-        Math.round(stat.value * easedProgress),
-      );
-
-      if (progress < 1) {
-        animationFrame =
-          requestAnimationFrame(animateCounter);
-      }
-    };
-
-    animationFrame =
-      requestAnimationFrame(animateCounter);
-
-    return () => {
-      cancelAnimationFrame(animationFrame);
-    };
-  }, [shouldAnimate, stat.value]);
-
-  // When reduced motion is preferred, show the final value immediately
-  // without driving it through the animation hook.
-  const renderedValue =
-    typeof window !== "undefined" &&
-    window.matchMedia &&
-    window.matchMedia("(prefers-reduced-motion: reduce)")
-      .matches
-      ? stat.value
-      : displayValue;
+  const renderedValue = stat.compactMillion
+    ? displayValue >= stat.value
+      ? "1M"
+      : `${Math.floor(displayValue / 1_000)}K`
+    : displayValue;
 
   return (
     <div
       className={[
         `
-          relative flex min-h-[118px]
+          relative flex min-h-[158px]
           items-center justify-center
-          py-7
-          md:min-h-[138px]
-          md:py-6
+          py-8
+          md:min-h-[176px]
         `,
 
         // Mobile horizontal separation.
         index < 2
-          ? "border-b border-[#d5d0c7] md:border-b-0"
+          ? "border-b border-[#d5d0c7] lg:border-b-0"
           : "",
       ].join(" ")}
     >
@@ -204,23 +175,24 @@ function StatItem({
       {/* Statistic content */}
       <div
         className="
-          shrink-0 px-4 text-center
-          sm:px-5
-          lg:px-7
+          grid min-w-0 grid-rows-[64px_52px]
+          px-2 text-center
+          sm:px-4
+          lg:px-5
         "
       >
         <p
           className="
+            flex items-center justify-center
             font-display
-            text-[42px]
             font-normal
-            leading-[0.9]
+            leading-none
             tracking-[-0.035em]
             text-[#181817]
             tabular-nums
-            sm:text-[48px]
-            md:text-[52px]
-            lg:text-[56px]
+            whitespace-nowrap
+            text-[38px] sm:text-[43px]
+            md:text-[47px] lg:text-[50px]
           "
         >
           {renderedValue}
@@ -233,15 +205,13 @@ function StatItem({
 
         <p
           className="
-            mt-3 whitespace-nowrap
-            text-[7px]
+            mx-auto mt-2 max-w-[30ch]
+            text-[9px]
             font-medium
             uppercase
-            leading-none
-            tracking-[0.27em]
+            leading-[1.35]
+            tracking-[0.18em]
             text-[#4f4c47]
-            sm:text-[8px]
-            md:mt-4
           "
         >
           {stat.label}

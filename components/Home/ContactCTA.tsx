@@ -27,7 +27,7 @@ export default function ContactCTA() {
           <p className="text-xs uppercase tracking-[0.3em] text-white/60">
             Schedule a viewing
           </p>
-          <h2 className="mt-4 max-w-2xl font-display text-5xl font-medium leading-[1.05] tracking-tight md:text-7xl">
+          <h2 className="mt-4 max-w-2xl font-display text-4xl font-medium leading-[1.1] tracking-tight md:text-6xl">
             Let&apos;s find the
             <br />
             home you deserve.

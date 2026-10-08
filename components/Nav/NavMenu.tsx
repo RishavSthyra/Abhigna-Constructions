@@ -21,6 +21,7 @@ export type NavMenuProps = {
 const NAV_ROWS = [
   { label: "Home", href: "/" },
   { label: "Apartments", href: "/#listings" },
+  { label: "Our Services", href: "/services" },
   { label: "Gallery", href: "/gallery" },
   { label: "About Us", href: "/about" },
   { label: "Contact", href: "/contact" },

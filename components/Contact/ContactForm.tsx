@@ -81,7 +81,7 @@ export default function ContactForm() {
         </p>
         <h2
           data-split-text
-          className="font-display text-[clamp(2.4rem,5.5vw,4.5rem)] font-light italic leading-[1.05] tracking-tight text-zinc-900"
+          className="font-display text-[clamp(2.1rem,4.8vw,4rem)] font-light italic leading-[1.05] tracking-tight text-zinc-900"
         >
           Leave A Comment.
         </h2>

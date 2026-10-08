@@ -180,7 +180,7 @@ export default function SecondaryHero({
 
           <h1
             ref={headlineRef}
-            className="max-w-[14ch] font-display text-[clamp(1.85rem,8vw,6.6rem)] font-light italic leading-[0.9] tracking-[-0.03em] text-white sm:max-w-[15ch] sm:leading-[0.92] lg:max-w-[16ch]"
+            className="max-w-[14ch] font-display text-[clamp(1.7rem,6.6vw,5.5rem)] font-light italic leading-[0.9] tracking-[-0.03em] text-white sm:max-w-[15ch] sm:leading-[0.92] lg:max-w-[16ch]"
           >
             {lines.map((lineWords, lineIndex) => (
               <span

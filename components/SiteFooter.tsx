@@ -7,7 +7,7 @@ import { FiInstagram } from "react-icons/fi";
  */
 const FOOTER_NAV = [
   { label: "Projects", href: "/#listings" },
-  { label: "Services", href: "/about" },
+  { label: "Services", href: "/services" },
   { label: "About Us", href: "/about" },
   { label: "Contact", href: "mailto:sales@abhignaconstructions.com" },
 ];

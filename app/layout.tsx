@@ -1,30 +1,20 @@
 import type { Metadata } from "next";
-import { Inter, Quicksand, JetBrains_Mono } from "next/font/google";
+import { Inter, Roboto_Serif, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import Footer from "@/components/Home/Footer";
 
-/**
- * Awwwards-style typographic stack.
- *
- *   - Quicksand       — clean geometric sans for oversized editorial
- *                       menus and display headlines. Rounded terminals
- *                       give it a contemporary, friendly feel without
- *                       the cold precision of a typical grotesk.
- *   - Inter           — clean sans for body, navigation, UI.
- *   - JetBrains Mono  — mono for index labels, sub-eyebrows,
- *                       metadata strips.
- */
+/** Inter for body copy, Roboto Serif for display headings, JetBrains Mono for labels. */
 const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin"],
   display: "swap",
 });
 
-const quicksand = Quicksand({
-  variable: "--font-quicksand",
+const robotoSerif = Roboto_Serif({
+  variable: "--font-roboto-serif",
   subsets: ["latin"],
   display: "swap",
-  weight: ["300", "400", "500", "600", "700"],
+  style: ["normal", "italic"],
 });
 
 const jetbrains = JetBrains_Mono({
@@ -47,7 +37,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${inter.variable} ${quicksand.variable} ${jetbrains.variable} h-full antialiased`}
+      className={`${inter.variable} ${robotoSerif.variable} ${jetbrains.variable} h-full antialiased`}
     >
       <body className="min-h-full bg-brand-bg text-brand-ink">
         {children}

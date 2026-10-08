@@ -150,7 +150,7 @@ export default function NavMenuItem({
           className="
             relative inline-block font-display uppercase leading-[0.95]
             tracking-[0.02em] font-[400]
-            text-[clamp(36px,5vw,68px)]
+            text-[clamp(31px,4.3vw,60px)]
           "
           aria-label={label}
         >

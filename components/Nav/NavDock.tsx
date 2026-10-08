@@ -1,7 +1,7 @@
 "use client";
 
 import { type RefObject, useEffect, useRef } from "react";
-import { gsap } from "gsap";
+import Link from "next/link";
 import NavMenuHamburger from "./NavMenuHamburger";
 import { ensureGsapPlugins } from "./gsap/easings";
 import { bindScrollDock } from "./gsap/scrollDock";
@@ -15,8 +15,7 @@ export type NavDockProps = {
 /**
  * Top-bar navigation.
  *
- *   - Logo on the FAR LEFT — the full Abhigna wordmark image, large
- *     (no chip / no crop container).
+ *   - Logo on the FAR LEFT, without a background or container.
  *   - Hamburger on the FAR RIGHT — round glass control.
  *   - Single row, vertically centered via items-center.
  *
@@ -31,7 +30,6 @@ export default function NavDock({
   triggerRef,
 }: NavDockProps) {
   const barRef = useRef<HTMLDivElement | null>(null);
-  const logoRef = useRef<HTMLAnchorElement | null>(null);
 
   useEffect(() => {
     if (!barRef.current) return;
@@ -44,20 +42,6 @@ export default function NavDock({
     });
   }, []);
 
-  // Quiet idle-breath on the logo so the bar never feels dead at rest.
-  useEffect(() => {
-    if (!logoRef.current) return;
-    const breath = gsap.timeline({ repeat: -1, yoyo: true });
-    breath.to(logoRef.current, {
-      scale: 1.02,
-      duration: 4.2,
-      ease: "sine.inOut",
-    });
-    return () => {
-      breath.kill();
-    };
-  }, []);
-
   return (
     <div
       className="
@@ -66,16 +50,11 @@ export default function NavDock({
         px-5 py-3 sm:px-8 sm:py-4 md:px-10 md:py-4
       "
     >
-      {/* FAR LEFT — small monochrome wordmark. Sized to feel like a
-          real masthead mark, not a billboard. */}
-      <a
-        ref={logoRef}
-        href="#hero"
+      {/* Transparent wordmark with no backing or visual effect. */}
+      <Link
+        href="/#hero"
         aria-label="Abhigna Constructions — back to top"
-        className="
-          pointer-events-auto inline-flex items-center
-          will-change-transform
-        "
+        className="pointer-events-auto inline-flex items-center"
         onClick={(event) => {
           if (open) {
             event.preventDefault();
@@ -97,7 +76,7 @@ export default function NavDock({
             transition: "filter 0.4s ease",
           }}
         />
-      </a>
+      </Link>
 
       {/* FAR RIGHT — hamburger (single control, vertically centered) */}
       <div

@@ -122,7 +122,7 @@ export default function WhyUs() {
               </p>
               <h2
                 data-split-text
-                className="font-display text-5xl font-medium leading-[1.04] tracking-tight text-zinc-900 md:text-6xl lg:text-7xl"
+                className="font-display text-4xl font-medium leading-[1.1] tracking-tight text-zinc-900 md:text-5xl lg:text-6xl"
               >
                 Crafted with care. Designed to last.
               </h2>
@@ -234,7 +234,7 @@ function ServiceRow({ service }: { service: Service }) {
           textBorders(pos)
         }
       >
-        <h3 className="font-display text-2xl font-light italic text-zinc-900 md:text-3xl">
+        <h3 className="font-display text-xl font-light italic text-zinc-900 md:text-2xl">
           {service.label}
         </h3>
         <p className="max-w-[42ch] text-sm leading-relaxed text-zinc-600 md:text-[15px]">

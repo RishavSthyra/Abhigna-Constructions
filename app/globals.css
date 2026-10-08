@@ -2,7 +2,7 @@
 
 @theme {
   --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
-  --font-display: var(--font-quicksand), "Quicksand", ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-roboto-serif), Georgia, serif;
   --font-mono: var(--font-jetbrains), "JetBrains Mono", ui-monospace, monospace;
   --color-brand-bg: #fbf7f1;
   --color-brand-ink: #14110f;
@@ -32,12 +32,6 @@ body {
   [data-cursor] {
     cursor: none;
   }
-}
-
-/* When the nav is open, the Cursor component flips its border + loupe
-   colors to white via the [data-nav-open] attribute selector. */
-html[data-nav-open] body {
-  /* Allow the cursor to invert cleanly when over the dark menu */
 }
 
 /* Smooth scroll */

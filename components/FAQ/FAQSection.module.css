@@ -1,0 +1,229 @@
+.section {
+  background: #f7f7f5;
+  color: #171918;
+  padding: clamp(40px, 4vw, 64px) clamp(20px, 4vw, 64px) clamp(80px, 7vw, 112px);
+}
+
+.fullPage {
+  min-height: 100vh;
+  padding-top: clamp(150px, 15vw, 220px);
+}
+
+.inner {
+  width: min(100%, 1420px);
+  margin: 0 auto;
+}
+
+.header {
+  max-width: 900px;
+  margin: 0 auto clamp(48px, 5vw, 78px);
+  text-align: center;
+}
+
+.eyebrow {
+  margin-bottom: 20px;
+  color: #686e6b;
+  font-family: var(--font-inter), sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+}
+
+.title {
+  font-family: var(--font-roboto-serif), sans-serif;
+  font-size: clamp(42px, 4.3vw, 64px);
+  font-weight: 500;
+  line-height: 1.04;
+  letter-spacing: -0.025em;
+  text-wrap: balance;
+}
+
+.intro {
+  max-width: 48ch;
+  margin: 25px auto 0;
+  color: #5b625d;
+  font-family: var(--font-inter), sans-serif;
+  font-size: clamp(15px, 1.2vw, 18px);
+  line-height: 1.65;
+}
+
+.list {
+  display: grid;
+  width: min(100%, 900px);
+  gap: 12px;
+  margin: 0 auto;
+}
+
+.item {
+  overflow: hidden;
+  border: 1px solid #e4e5e1;
+  border-radius: 24px;
+  background: #eceeeb;
+  transition: background-color 0.35s ease, border-color 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+.itemOpen {
+  border-color: #e2e5e0;
+  background: #fff;
+  box-shadow: 0 18px 50px rgb(26 31 27 / 4%);
+}
+
+.questionHeading {
+  margin: 0;
+}
+
+.question {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+  padding: 20px 24px 20px 30px;
+  text-align: left;
+}
+
+.question:focus-visible {
+  outline: 2px solid #48594e;
+  outline-offset: -4px;
+}
+
+.questionText {
+  font-family: var(--font-roboto-serif), sans-serif;
+  font-size: clamp(17px, 1.45vw, 21px);
+  font-weight: 600;
+  line-height: 1.3;
+  letter-spacing: -0.025em;
+}
+
+.toggle {
+  display: grid;
+  width: 44px;
+  height: 44px;
+  flex: 0 0 44px;
+  place-items: center;
+  border: 1px solid #e1e4df;
+  border-radius: 50%;
+  background: #fff;
+  font-size: 20px;
+  transition: transform 0.35s ease, background-color 0.35s ease;
+}
+
+.question:hover .toggle {
+  transform: rotate(90deg);
+  background: #f7f8f5;
+}
+
+.answerOuter {
+  display: grid;
+  grid-template-rows: 0fr;
+  opacity: 0;
+  transition: grid-template-rows 0.42s cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 0.3s ease;
+}
+
+.itemOpen .answerOuter {
+  grid-template-rows: 1fr;
+  opacity: 1;
+}
+
+.answerClip {
+  min-height: 0;
+  overflow: hidden;
+}
+
+.answer {
+  max-width: 75ch;
+  margin: 0;
+  padding: 0 92px 30px 30px;
+  color: #59615b;
+  font-family: var(--font-inter), sans-serif;
+  font-size: clamp(14px, 1.05vw, 16px);
+  line-height: 1.7;
+}
+
+.moreWrap {
+  margin-top: 44px;
+  text-align: center;
+}
+
+.moreLink {
+  display: inline-flex;
+  min-height: 54px;
+  align-items: center;
+  justify-content: center;
+  gap: 26px;
+  border-radius: 999px;
+  background: #171918;
+  color: #fff;
+  font-family: var(--font-inter), sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  padding: 15px 25px;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.moreLink:hover {
+  transform: translateY(-3px);
+  background: #37453d;
+}
+
+.moreLink:focus-visible {
+  outline: 2px solid #48594e;
+  outline-offset: 4px;
+}
+
+.moreLink svg {
+  width: 17px;
+  height: 17px;
+}
+
+@media (max-width: 640px) {
+  .section {
+    padding: 56px 16px 80px;
+  }
+
+  .fullPage {
+    padding-top: 138px;
+  }
+
+  .title {
+    font-size: clamp(36px, 8vw, 48px);
+  }
+
+  .item {
+    border-radius: 20px;
+  }
+
+  .question {
+    gap: 15px;
+    padding: 15px 16px 15px 20px;
+  }
+
+  .toggle {
+    width: 40px;
+    height: 40px;
+    flex-basis: 40px;
+  }
+
+  .answer {
+    padding: 0 24px 23px 20px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .item,
+  .toggle,
+  .answerOuter,
+  .moreLink {
+    transition: none;
+  }
+}

@@ -1,11 +1,12 @@
 import Landing_Hero from "@/components/Home/Landing_Hero";
 import Nav from "@/components/Nav";
-import ExperienceExcellence from "@/components/Home/ExperienceExcellence";
+import AboutIntro from "@/components/Home/AboutIntro";
 import CurvedGallery from "@/components/Home/CurvedGallery";
 import DreamHomeListings from "@/components/Home/DreamHomeListings";
 import StatsBand from "@/components/Home/StatsBand";
-import WhyUs from "@/components/Home/WhyUs";
-import ArchitecturalScrollPath from "@/components/Home/ArchitecturalScrollPath";
+import ServicesGrid from "@/components/Services/ServicesGrid";
+import SustainabilityFeature from "@/components/Home/SustainabilityFeature";
+import FAQSection from "@/components/FAQ/FAQSection";
 import Cursor from "@/components/ui/Cursor";
 import ScrollMotion from "@/components/ui/ScrollMotion";
 
@@ -21,11 +22,13 @@ export default function Home() {
       >
         <Landing_Hero />
         {/* <ArchitecturalScrollPath mainId="hero" /> */}
-        <ExperienceExcellence />
+        <AboutIntro />
         <CurvedGallery />
         <DreamHomeListings />
         <StatsBand />
-        <WhyUs />
+        <ServicesGrid headingLevel="h2" />
+        <SustainabilityFeature />
+        <FAQSection />
       </main>
     </>
   );
