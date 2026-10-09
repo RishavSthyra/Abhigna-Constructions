@@ -54,7 +54,7 @@ export default function ContactCTA() {
             />
             <button
               type="submit"
-              className="inline-flex items-center justify-center gap-2 rounded-full bg-white px-6 py-3.5 text-xs font-medium uppercase tracking-wider text-zinc-900 transition hover:bg-white/90"
+              className="site-cta site-cta--light"
             >
               {submitted ? "Thank you!" : "Get Started"}
               <FiArrowRight size={14} />

@@ -101,7 +101,7 @@ export default function SustainabilityFeature({
           <Link
             data-sustainability-reveal
             href={standalone ? "/#sustainability" : "/sustainability"}
-            className={styles.link}
+            className={`site-cta site-cta--light ${styles.link}`}
           >
             {standalone ? "Back to home" : "Explore sustainability"}
             <FiArrowUpRight aria-hidden="true" />

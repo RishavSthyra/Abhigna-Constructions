@@ -21,7 +21,8 @@ export type NavMenuProps = {
 const NAV_ROWS = [
   { label: "Home", href: "/" },
   { label: "Apartments", href: "/#listings" },
-  { label: "Our Services", href: "/services" },
+  { label: "Why Choose Us", href: "/why-choose-us" },
+  { label: "Sustainability", href: "/sustainability" },
   { label: "Gallery", href: "/gallery" },
   { label: "About Us", href: "/about" },
   { label: "Contact", href: "/contact" },
@@ -360,17 +361,17 @@ export default function NavMenu({ open, onClose }: NavMenuProps) {
       {/* Content stack */}
       <div
         className="
-          relative z-10 flex h-full w-full flex-col
-          px-5 pt-20 pb-32
+          relative z-10 flex h-full w-full flex-col overflow-x-hidden overflow-y-auto overscroll-contain
+          px-5 pt-20 pb-8
           sm:px-8 sm:pt-24
-          md:px-10 md:pt-24 md:pb-24
+          md:px-10 md:pt-24
           lg:px-14
         "
       >
-        <div className="mx-auto grid h-full w-full max-w-[1400px] grid-cols-1 md:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] gap-8 md:gap-10">
+        <div className="mx-auto grid w-full max-w-[1400px] flex-1 grid-cols-1 gap-8 md:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] md:gap-10">
           {/* Menu items — left column */}
           <nav className="relative flex flex-col justify-center md:pt-2">
-            <ul className="flex flex-col gap-1 md:gap-2">
+            <ul className="flex flex-col gap-0.5 md:gap-1">
               {NAV_ROWS.map((row) => (
                 <li key={row.label}>
                   <NavMenuItem
@@ -411,11 +412,11 @@ export default function NavMenu({ open, onClose }: NavMenuProps) {
         </div>
 
         {/* Bottom dock — small circular logo mark (left) + meta strip (right) */}
-        <div className="mx-auto mt-6 flex w-full max-w-[1400px] items-end justify-between gap-4">
+        <div className="mx-auto mt-4 flex w-full max-w-[1400px] items-end justify-between gap-4">
           <div
             ref={dockMarkRef}
             className="
-              inline-flex h-10 w-10 items-center justify-center
+              hidden h-10 w-10 items-center justify-center sm:inline-flex
               rounded-full border border-[#e5e7eb]/35 bg-transparent
               font-display text-[14px] font-[600] text-[#e5e7eb]/85
             "
@@ -428,22 +429,22 @@ export default function NavMenu({ open, onClose }: NavMenuProps) {
           <div
             ref={metaRef}
             className="
-              flex flex-1 flex-col gap-3 border-t border-[#e5e7eb]/10 pt-5
-              text-[#e5e7eb]/55 sm:flex-row sm:items-center sm:justify-end
-              sm:gap-8
+              flex min-w-0 flex-1 flex-col gap-3 border-t border-[#e5e7eb]/10 pt-5
+              text-[#e5e7eb]/55 lg:flex-row lg:items-center lg:justify-end
+              lg:gap-8
             "
             style={{ opacity: 0 }}
           >
-            <span className="inline-flex items-center gap-2 font-mono text-[10px] uppercase tracking-[0.28em]">
-              <FiMapPin className="h-3.5 w-3.5 stroke-[1.5]" aria-hidden />
+            <span className="inline-flex min-w-0 items-center gap-2 break-words font-mono text-[9px] uppercase tracking-[0.1em] sm:text-[10px] sm:tracking-[0.28em]">
+              <FiMapPin className="h-3.5 w-3.5 shrink-0 stroke-[1.5]" aria-hidden />
               HSR Layout, Sector 4 · BLR
             </span>
-            <span className="inline-flex items-center gap-2 font-mono text-[10px] uppercase tracking-[0.28em]">
-              <FiPhone className="h-3.5 w-3.5 stroke-[1.5]" aria-hidden />
+            <span className="inline-flex min-w-0 items-center gap-2 break-words font-mono text-[9px] uppercase tracking-[0.1em] sm:text-[10px] sm:tracking-[0.28em]">
+              <FiPhone className="h-3.5 w-3.5 shrink-0 stroke-[1.5]" aria-hidden />
               +91 96637 63333
             </span>
-            <span className="inline-flex items-center gap-2 font-mono text-[10px] uppercase tracking-[0.28em]">
-              <FiMail className="h-3.5 w-3.5 stroke-[1.5]" aria-hidden />
+            <span className="inline-flex min-w-0 items-center gap-2 break-words font-mono text-[9px] uppercase tracking-[0.1em] sm:text-[10px] sm:tracking-[0.28em]">
+              <FiMail className="h-3.5 w-3.5 shrink-0 stroke-[1.5]" aria-hidden />
               sales@abhignaconstructions.com
             </span>
           </div>

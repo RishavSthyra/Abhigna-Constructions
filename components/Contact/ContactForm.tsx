@@ -2,12 +2,12 @@
 
 import { useState } from "react";
 import {
+  FiArrowRight,
   FiMail,
   FiPhone,
   FiMapPin,
   FiFacebook,
   FiInstagram,
-  FiTwitter,
   FiLinkedin,
 } from "react-icons/fi";
 
@@ -124,7 +124,7 @@ export default function ContactForm() {
             <button
               type="submit"
               disabled={status !== "idle"}
-              className="mt-10 inline-flex items-center justify-center bg-zinc-900 px-8 py-4 text-[11px] font-medium uppercase tracking-[0.28em] text-white transition hover:bg-zinc-800 disabled:cursor-not-allowed disabled:opacity-60"
+              className="site-cta site-cta--dark mt-10"
             >
               {status === "idle"
                 ? "Post Comments"
@@ -133,6 +133,7 @@ export default function ContactForm() {
                   : status === "sent"
                     ? "Thanks — we'll reply shortly"
                     : "Try again"}
+              <FiArrowRight aria-hidden="true" />
             </button>
             <p
               aria-live="polite"

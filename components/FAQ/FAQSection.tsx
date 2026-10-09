@@ -136,7 +136,7 @@ export default function FAQSection({ fullPage = false }: FAQSectionProps) {
 
         {!fullPage && (
           <div className={styles.moreWrap}>
-            <Link className={styles.moreLink} href="/faqs">
+            <Link className="site-cta site-cta--dark" href="/faqs">
               Explore all FAQs
               <FiArrowUpRight aria-hidden="true" />
             </Link>

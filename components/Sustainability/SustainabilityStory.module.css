@@ -128,26 +128,7 @@
 }
 
 .textLink {
-  display: inline-flex;
-  align-items: center;
-  gap: 50px;
-  border-bottom: 1px solid currentColor;
   margin-top: 35px;
-  padding-bottom: 11px;
-  color: inherit;
-  font-size: 12px;
-  font-weight: 600;
-  text-decoration: none;
-  transition: gap 0.3s ease;
-}
-
-.textLink:hover {
-  gap: 62px;
-}
-
-.textLink svg {
-  width: 19px;
-  height: 19px;
 }
 
 .introStats {

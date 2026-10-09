@@ -2,7 +2,11 @@
   background: #f7f7f5;
   color: #171918;
   font-family: var(--font-inter), sans-serif;
-  padding: clamp(96px, 11vw, 170px) clamp(20px, 4vw, 64px) clamp(36px, 3vw, 56px);
+  padding: var(--home-section-gap) clamp(20px, 4vw, 64px);
+}
+
+.standalone {
+  padding-top: clamp(120px, 11vw, 170px);
 }
 
 .inner {
@@ -140,7 +144,11 @@
 
 @media (max-width: 640px) {
   .section {
-    padding: 112px 16px 44px;
+    padding: var(--home-section-gap) 16px;
+  }
+
+  .standalone {
+    padding-top: 112px;
   }
 
   .title {

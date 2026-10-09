@@ -93,12 +93,12 @@ export default function ServicesGrid({ headingLevel = "h1" }: ServicesGridProps)
     <section
       ref={sectionRef}
       id="services"
-      className={styles.section}
+      className={`${styles.section} ${headingLevel === "h1" ? styles.standalone : ""}`}
       aria-labelledby="services-title"
     >
       <div className={styles.inner}>
         <div className={styles.intro}>
-          <p data-services-intro className={styles.eyebrow}>Our Services</p>
+          <p data-services-intro className={styles.eyebrow}>Why Choose Us</p>
           <Heading data-services-intro id="services-title" className={styles.title}>
             <span>Why Families Choose</span>{" "}
             <span>Abhigna Constructions</span>

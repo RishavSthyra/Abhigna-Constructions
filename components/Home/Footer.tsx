@@ -221,27 +221,7 @@ export default function Footer() {
                 type="submit"
                 disabled={status === "sending"}
                 data-cursor="image"
-                className="
-                  mt-5 inline-flex
-                  min-h-[48px] min-w-[185px]
-                  items-center justify-between gap-8
-                  bg-black
-                  px-6
-                  text-[9px]
-                  font-semibold
-                  uppercase
-                  tracking-[0.22em]
-                  text-white
-                  transition-colors
-                  duration-300
-                  hover:bg-[#292929]
-                  disabled:cursor-not-allowed
-                  disabled:opacity-60
-                  focus-visible:outline
-                  focus-visible:outline-2
-                  focus-visible:outline-offset-2
-                  focus-visible:outline-black
-                "
+                className="site-cta site-cta--dark mt-5"
               >
                 <span>
                   {status === "sent"

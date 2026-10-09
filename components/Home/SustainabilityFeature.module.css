@@ -1,6 +1,6 @@
 .section {
   background: #f7f7f5;
-  padding: clamp(16px, 2.2vw, 32px) clamp(16px, 2.2vw, 32px) 0;
+  padding: 0 clamp(16px, 2.2vw, 32px);
 }
 
 .standalone {
@@ -80,43 +80,12 @@
 }
 
 .link {
-  display: inline-flex;
-  min-height: 54px;
-  align-items: center;
-  justify-content: center;
-  gap: 18px;
-  border-radius: 999px;
   margin-top: clamp(30px, 3.5vw, 48px);
-  padding: 15px 24px;
-  background: #fff;
-  color: #171918;
-  font-family: var(--font-inter), sans-serif;
-  font-size: 12px;
-  font-weight: 500;
-  letter-spacing: 0.08em;
-  text-decoration: none;
-  white-space: nowrap;
-  transition: transform 0.3s ease, background-color 0.3s ease;
-}
-
-.link:hover {
-  transform: translateY(-3px);
-  background: #e9eee9;
-}
-
-.link:focus-visible {
-  outline: 2px solid #fff;
-  outline-offset: 4px;
-}
-
-.link svg {
-  width: 17px;
-  height: 17px;
 }
 
 @media (max-width: 640px) {
   .section {
-    padding: 16px 16px 0;
+    padding: 0 16px;
   }
 
   .standalone {
@@ -159,13 +128,5 @@
 
   .link {
     margin-top: 30px;
-    padding-inline: 20px;
-    font-size: 11px;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .link {
-    transition: none;
   }
 }

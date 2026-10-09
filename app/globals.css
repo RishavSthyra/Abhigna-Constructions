@@ -14,6 +14,72 @@
 :root {
   --font-roboto-serif: var(--font-display-sans);
   --font-display-serif: var(--font-display-sans);
+  --home-section-gap: clamp(64px, 6vw, 96px);
+}
+
+.site-cta {
+  display: inline-flex;
+  min-height: 54px;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  padding: 14px 24px;
+  font-family: var(--font-inter), sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 1.25;
+  letter-spacing: 0.14em;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+}
+
+.site-cta svg {
+  width: 17px;
+  height: 17px;
+  flex: none;
+  stroke-width: 1.6;
+}
+
+.site-cta:hover:not(:disabled) {
+  transform: translateY(-3px);
+}
+
+.site-cta:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 4px;
+}
+
+.site-cta:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.site-cta--dark {
+  background: #171918;
+  color: #fff;
+}
+
+.site-cta--dark:hover:not(:disabled) {
+  background: #37453d;
+}
+
+.site-cta--light {
+  background: #fff;
+  color: #171918;
+}
+
+.site-cta--light:hover:not(:disabled) {
+  background: #e9eee9;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .site-cta {
+    transition: none;
+  }
 }
 
 html,

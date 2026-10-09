@@ -55,7 +55,7 @@ export default function AboutIntro() {
       data-scroll-path-section-id="about-intro"
       data-scroll-path-index="0"
       aria-labelledby="about-intro-heading"
-      className="relative h-[300svh] bg-brand-bg motion-reduce:h-auto"
+      className="relative h-[240svh] bg-brand-bg motion-reduce:h-auto"
     >
       <div
         data-scroll-path-content="true"
@@ -86,12 +86,10 @@ export default function AboutIntro() {
 
         <Link
           href="/about"
-          className="group mt-10 inline-flex items-center gap-3 text-[13px] font-medium uppercase tracking-[0.24em] text-brand-ink transition-colors hover:text-brand-muted focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand-ink md:mt-14"
+          className="site-cta site-cta--dark mt-10 md:mt-14"
         >
-          <span className="border-b border-brand-accent/70 pb-1 transition-colors group-hover:border-brand-muted">
-            More about us
-          </span>
-          <FiArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" aria-hidden="true" />
+          More about us
+          <FiArrowUpRight aria-hidden="true" />
         </Link>
       </div>
     </section>

@@ -329,7 +329,7 @@ export default function CurvedGallery() {
       data-scroll-path-section-id="gallery"
       data-scroll-path-index="1"
       aria-label="Infinite cylindrical property gallery"
-      className="relative flex min-h-[clamp(35rem,78vw,58rem)] w-full items-center overflow-hidden bg-brand-bg"
+      className="relative flex min-h-[max(35rem,100svh)] w-full items-center overflow-hidden bg-brand-bg"
     >
       <div
         ref={stageRef}

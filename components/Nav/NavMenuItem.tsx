@@ -134,7 +134,7 @@ export default function NavMenuItem({
       <div
         className="
           group relative flex items-center justify-between gap-4
-          py-4 md:py-5
+          py-2 md:py-2.5
         "
         onMouseEnter={() => setHovered(true)}
         onMouseLeave={() => setHovered(false)}
@@ -150,7 +150,7 @@ export default function NavMenuItem({
           className="
             relative inline-block font-display uppercase leading-[0.95]
             tracking-[0.02em] font-[400]
-            text-[clamp(31px,4.3vw,60px)]
+            text-[clamp(28px,6vw,40px)] md:text-[clamp(34px,5.8vh,58px)]
           "
           aria-label={label}
         >
@@ -215,14 +215,14 @@ export default function NavMenuItem({
             className="
               inline-flex items-center gap-2 rounded-full
               border border-[#e5e7eb]/20 bg-transparent
-              px-3 py-1 font-mono text-[10px] uppercase tracking-[0.28em]
+              px-2 py-1 font-mono text-[10px] uppercase tracking-[0.28em] sm:px-3
               text-[#e5e7eb]/65 transition-colors duration-300
               hover:border-[#e5e7eb]/55 hover:text-[#e5e7eb]
             "
             aria-expanded={submenuOpen}
             aria-label={`${label} project list`}
           >
-            <span>Projects</span>
+            <span className="hidden sm:inline">Projects</span>
             <span
               ref={caretRef}
               aria-hidden
