@@ -100,7 +100,8 @@ export default function ServicesGrid({ headingLevel = "h1" }: ServicesGridProps)
         <div className={styles.intro}>
           <p data-services-intro className={styles.eyebrow}>Our Services</p>
           <Heading data-services-intro id="services-title" className={styles.title}>
-            Why Families Choose Abhigna Constructions
+            <span>Why Families Choose</span>{" "}
+            <span>Abhigna Constructions</span>
           </Heading>
         </div>
 
