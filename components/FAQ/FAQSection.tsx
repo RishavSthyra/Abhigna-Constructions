@@ -80,7 +80,7 @@ export default function FAQSection({ fullPage = false }: FAQSectionProps) {
     >
       <div className={styles.inner}>
         <header className={styles.header}>
-          <p className={styles.eyebrow}>— Good to know</p>
+          <p className={styles.eyebrow}>Good to know</p>
           <Heading id={`${id}-heading`} className={styles.title}>
             Frequently Asked Questions
           </Heading>

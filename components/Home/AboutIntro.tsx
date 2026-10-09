@@ -6,9 +6,9 @@ import { FiArrowUpRight } from "react-icons/fi";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-const INTRO = "Abhigna Constructions is an engineering-led developer.";
-const REST = "Each project reflects meticulous planning, Vastu-aligned design and a standard of excellence that has delivered close to a million square feet of homes. These are homes built for the generations that follow.";
-const REST_WORDS = REST.split(" ");
+const COPY =
+  "Abhigna Constructions is an engineering-led developer. Each project reflects meticulous planning, Vastu-aligned design and a standard of excellence that has delivered close to a million square feet of homes. These are homes built for the generations that follow.";
+const WORDS = COPY.split(" ");
 
 export default function AboutIntro() {
   const sectionRef = useRef<HTMLElement | null>(null);
@@ -26,16 +26,17 @@ export default function AboutIntro() {
       return;
     }
 
+    // Pin-length scrub: the full sticky travel maps to the word fill,
+    // so scrolling down AND scrolling up complete the animation gradually.
     const animation = gsap.to(words, {
-      color: "#14110f",
+      color: "#1c1815",
       ease: "none",
-      duration: 0.3,
-      stagger: 0.09,
+      stagger: 1,
       scrollTrigger: {
         trigger: section,
         start: "top top",
         end: "bottom bottom",
-        scrub: 0.3,
+        scrub: 1,
         invalidateOnRefresh: true,
       },
     });
@@ -54,43 +55,43 @@ export default function AboutIntro() {
       data-scroll-path-section-id="about-intro"
       data-scroll-path-index="0"
       aria-labelledby="about-intro-heading"
-      className="relative h-[195svh] bg-brand-bg motion-reduce:h-auto"
+      className="relative h-[300svh] bg-brand-bg motion-reduce:h-auto"
     >
       <div
         data-scroll-path-content="true"
         className="sticky top-0 z-20 mx-auto flex h-svh max-w-6xl flex-col items-center justify-center px-6 py-10 text-center sm:px-8 motion-reduce:relative motion-reduce:h-auto motion-reduce:py-24"
       >
         <p
-          className="mb-6 flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.22em] text-brand-muted md:mb-8"
+          className="mb-8 text-[11px] font-medium uppercase tracking-[0.32em] text-brand-muted md:mb-10"
         >
-          <span className="h-1.5 w-1.5 rounded-full bg-brand-accent" aria-hidden="true" />
           About us
         </p>
 
         <h2
           id="about-intro-heading"
-          className="max-w-[1080px] font-display text-[clamp(1.65rem,2.8vw,2.6rem)] font-medium leading-[1.22] tracking-[-0.04em]"
+          className="max-w-[1080px] font-display text-[clamp(1.65rem,2.8vw,2.6rem)] font-light leading-[1.22] tracking-[-0.04em] text-balance"
         >
-          <span className="text-brand-ink">{INTRO}</span>{" "}
-          {REST_WORDS.map((word, index) => (
+          {WORDS.map((word, index) => (
             <Fragment key={`${word}-${index}`}>
               <span
                 ref={(element) => { wordRefs.current[index] = element; }}
-                className="text-[#a19c95]"
+                className="text-[#c9c3b9]"
               >
                 {word}
               </span>
-              {index < REST_WORDS.length - 1 ? " " : null}
+              {index < WORDS.length - 1 ? " " : null}
             </Fragment>
           ))}
         </h2>
 
         <Link
           href="/about"
-          className="mt-8 inline-flex items-center gap-3 rounded-full bg-brand-ink px-6 py-3.5 text-sm font-medium text-white transition-colors hover:bg-zinc-700 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand-ink md:mt-12"
+          className="group mt-10 inline-flex items-center gap-3 text-[13px] font-medium uppercase tracking-[0.24em] text-brand-ink transition-colors hover:text-brand-muted focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand-ink md:mt-14"
         >
-          More about us
-          <FiArrowUpRight className="h-4 w-4" aria-hidden="true" />
+          <span className="border-b border-brand-accent/70 pb-1 transition-colors group-hover:border-brand-muted">
+            More about us
+          </span>
+          <FiArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" aria-hidden="true" />
         </Link>
       </div>
     </section>

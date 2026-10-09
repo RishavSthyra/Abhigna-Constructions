@@ -48,7 +48,7 @@ export default function Navbar() {
               />
             </svg>
           </span>
-          <span className="font-display text-lg font-semibold tracking-tight">
+          <span className="font-display text-lg font-medium tracking-tight">
             Abhigna
           </span>
         </a>

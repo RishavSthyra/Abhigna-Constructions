@@ -27,7 +27,7 @@
   max-width: 19ch;
   font-family: var(--font-roboto-serif), sans-serif;
   font-size: clamp(42px, 4.3vw, 64px);
-  font-weight: 500;
+  font-weight: 400;
   line-height: 1.04;
   letter-spacing: -0.025em;
 }
@@ -90,7 +90,7 @@
   max-width: 18ch;
   font-family: var(--font-roboto-serif), Georgia, serif;
   font-size: clamp(25px, 2.7vw, 43px);
-  font-weight: 500;
+  font-weight: 400;
   line-height: 1.04;
   letter-spacing: -0.05em;
 }

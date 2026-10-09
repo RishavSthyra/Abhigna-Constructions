@@ -1,20 +1,21 @@
 import type { Metadata } from "next";
-import { Inter, Roboto_Serif, JetBrains_Mono } from "next/font/google";
+import { Inter, Outfit, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import Footer from "@/components/Home/Footer";
 
-/** Inter for body copy, Roboto Serif for display headings, JetBrains Mono for labels. */
+/** Inter for body copy, Outfit for display headings, JetBrains Mono for labels. */
 const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin"],
   display: "swap",
 });
 
-const robotoSerif = Roboto_Serif({
-  variable: "--font-roboto-serif",
+/** Outfit — geometric sans display face; clean at light weights, premium feel. */
+const displaySans = Outfit({
+  variable: "--font-display-sans",
   subsets: ["latin"],
   display: "swap",
-  style: ["normal", "italic"],
+  weight: ["200", "300", "400", "500"],
 });
 
 const jetbrains = JetBrains_Mono({
@@ -37,7 +38,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${inter.variable} ${robotoSerif.variable} ${jetbrains.variable} h-full antialiased`}
+      className={`${inter.variable} ${displaySans.variable} ${jetbrains.variable} h-full antialiased`}
     >
       <body className="min-h-full bg-brand-bg text-brand-ink">
         {children}

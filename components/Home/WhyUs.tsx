@@ -118,11 +118,11 @@ export default function WhyUs() {
           <div className="grid grid-cols-1 gap-10 md:grid-cols-12 md:items-end">
             <div data-reveal className="md:col-span-7">
               <p className="mb-5 text-xs uppercase tracking-[0.3em] text-zinc-500">
-                — Our Services
+                Why Choose Us
               </p>
               <h2
                 data-split-text
-                className="font-display text-4xl font-medium leading-[1.1] tracking-tight text-zinc-900 md:text-5xl lg:text-6xl"
+                className="font-display text-4xl font-light leading-[1.1] tracking-tight text-zinc-900 md:text-5xl lg:text-6xl"
               >
                 Crafted with care. Designed to last.
               </h2>

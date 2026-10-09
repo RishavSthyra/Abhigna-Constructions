@@ -178,11 +178,11 @@ export default function DreamHomeListings() {
           <div className="grid grid-cols-1 gap-10 md:grid-cols-12 md:items-end">
             <div data-reveal className="md:col-span-7">
               <p className="mb-5 text-xs uppercase tracking-[0.3em] text-zinc-500">
-                — Our Collection
+                Our Collection
               </p>
               <h2
                 data-split-text
-                className="font-display text-4xl font-medium leading-[1.1] tracking-tight text-zinc-900 md:text-5xl lg:text-6xl"
+                className="font-display text-4xl font-light leading-[1.1] tracking-tight text-zinc-900 md:text-5xl lg:text-6xl"
               >
                 Featured Projects.
               </h2>
@@ -195,7 +195,7 @@ export default function DreamHomeListings() {
                 Explore every home and community in our featured collection.
               </p>
               <p className="mt-6 inline-flex items-center gap-3 font-mono text-[10px] uppercase tracking-[0.32em] text-zinc-500">
-                <span className="font-semibold text-zinc-900">
+                <span className="font-medium text-zinc-900">
                   {projectTotalPadded}
                 </span>
                 <span

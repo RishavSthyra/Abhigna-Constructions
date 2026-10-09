@@ -2,13 +2,18 @@
 
 @theme {
   --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
-  --font-display: var(--font-roboto-serif), Georgia, serif;
+  --font-display: var(--font-display-sans), "Outfit", ui-sans-serif, system-ui, sans-serif;
   --font-mono: var(--font-jetbrains), "JetBrains Mono", ui-monospace, monospace;
   --color-brand-bg: #fbf7f1;
   --color-brand-ink: #14110f;
   --color-brand-muted: #6b6660;
   --color-brand-line: #e7e1d8;
   --color-brand-accent: #c9a875;
+}
+
+:root {
+  --font-roboto-serif: var(--font-display-sans);
+  --font-display-serif: var(--font-display-sans);
 }
 
 html,

@@ -27,7 +27,7 @@ export default function ContactCTA() {
           <p className="text-xs uppercase tracking-[0.3em] text-white/60">
             Schedule a viewing
           </p>
-          <h2 className="mt-4 max-w-2xl font-display text-4xl font-medium leading-[1.1] tracking-tight md:text-6xl">
+          <h2 className="mt-4 max-w-2xl font-display text-4xl font-light leading-[1.1] tracking-tight md:text-6xl">
             Let&apos;s find the
             <br />
             home you deserve.
@@ -54,7 +54,7 @@ export default function ContactCTA() {
             />
             <button
               type="submit"
-              className="inline-flex items-center justify-center gap-2 rounded-full bg-white px-6 py-3.5 text-xs font-semibold uppercase tracking-wider text-zinc-900 transition hover:bg-white/90"
+              className="inline-flex items-center justify-center gap-2 rounded-full bg-white px-6 py-3.5 text-xs font-medium uppercase tracking-wider text-zinc-900 transition hover:bg-white/90"
             >
               {submitted ? "Thank you!" : "Get Started"}
               <FiArrowRight size={14} />

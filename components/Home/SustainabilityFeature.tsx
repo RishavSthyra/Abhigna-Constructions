@@ -85,7 +85,7 @@ export default function SustainabilityFeature({
 
         <div className={styles.content}>
           <p data-sustainability-reveal className={styles.eyebrow}>
-            — Sustainability
+            Sustainability
           </p>
           <Heading
             data-sustainability-reveal
