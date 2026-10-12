@@ -47,10 +47,10 @@ export default function Landing_Hero() {
         const compact = Boolean(context.conditions?.compact);
         const reduced = Boolean(context.conditions?.reduced);
         const finalTitle = {
-          top: compact ? "82%" : "83%",
+          top: compact ? "85%" : "84%",
           left: "50%",
           gap: compact ? 0 : 16,
-          scale: compact ? 1 : 1.3,
+          scale: compact ? 1 : 1.4,
         };
 
         if (reduced) {
@@ -60,25 +60,25 @@ export default function Landing_Hero() {
           return;
         }
 
-        const entrance = gsap.timeline({ delay: 0.5 });
+        const entrance = gsap.timeline({ delay: 0.45 });
         entrance
           .to(media, {
             width: "100%",
             height: "100%",
             borderRadius: 0,
-            duration: 2.6,
-            ease: "power2.inOut",
+            duration: 2.3,
+            ease: "power3.inOut",
           }, 0)
           .to(title, {
             ...finalTitle,
-            duration: 2.3,
-            ease: "power2.inOut",
+            duration: 2.1,
+            ease: "power3.inOut",
           }, 0.3)
           .to(mask, {
             opacity: 1,
-            duration: 1.2,
+            duration: 1.05,
             ease: "power2.out",
-          }, 1.4);
+          }, 1.35);
 
         return () => entrance.kill();
       },
@@ -93,8 +93,7 @@ export default function Landing_Hero() {
   }, []);
 
   return (
-    <section className={styles.hero} aria-label="Abhigna Misty Woods">
-      <div ref={stageRef} className={styles.stage}>
+    <section ref={stageRef} className={styles.hero} aria-label="Abhigna Misty Woods">
         <div ref={mediaRef} className={styles.mediaFrame}>
           <div ref={imageRef} className={styles.still}>
             <Image
@@ -126,7 +125,6 @@ export default function Landing_Hero() {
           <span>Abhigna</span>
           <span>Constructions</span>
         </h1>
-      </div>
     </section>
   );
 }
