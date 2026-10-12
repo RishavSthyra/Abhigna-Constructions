@@ -46,39 +46,11 @@ const PROJECTS: Project[] = [
   },
 ];
 
-/**
- * Featured Projects — horizontal scroll-pinned showcase.
- *
- * Layout:
- *   ┌──────────────────────────────────────────────────────────┐
- *   │  Section header (pinned, fades in once)                  │
- *   │  — Our Collection                                         │
- *   │  Featured Projects                                        │
- *   │  counter hairline: 06 ━━━━━━━━━━ 06                      │
- *   │                                                          │
- *   │  ┌────────┐  ┌────────┐  ┌────────┐  ┌────────┐          │
- *   │  │ Card 1 │  │ Card 2 │  │ Card 3 │  │ Card 4 │ ← slides │
- *   │  │  BG    │  │  BG    │  │  BG    │  │  BG    │   left   │
- *   │  │  image │  │  image │  │  image │  │  image │          │
- *   │  │        │  │        │  │        │  │        │          │
- *   │  │ name   │  │ name   │  │ name   │  │ name   │          │
- *   │  │ loc    │  │ loc    │  │ loc    │  │ loc    │          │
- *   │  └────────┘  └────────┘  └────────┘  └────────┘          │
- *   │  ...2 more cards in the same horizontal track           │
- *   └──────────────────────────────────────────────────────────┘
- *
- * - Section pins to the top of the viewport when it enters.
- * - Cards translate horizontally as the user scrolls (scrub).
- * - When the last card reaches the right edge, the pin releases and
- *   normal vertical scroll resumes for StatsBand / WhyUs.
- * - Cards are landscape (≈80vw × 56vh) so they read as cinematic
- *   frames, not vertical thumbnails.
- */
+/** Featured projects scroll as a horizontal track on desktop. */
 export default function DreamHomeListings() {
   const sectionRef = useRef<HTMLElement | null>(null);
   const viewportRef = useRef<HTMLDivElement | null>(null);
   const railRef = useRef<HTMLDivElement | null>(null);
-  const projectTotalPadded = String(PROJECTS.length).padStart(2, "0");
 
   useEffect(() => {
     const prefersReduce = window.matchMedia(
@@ -174,37 +146,17 @@ export default function DreamHomeListings() {
         data-scroll-path-content="true"
         className="relative z-20 mx-auto max-w-none overflow-hidden xl:flex xl:h-screen xl:flex-col"
       >
-        <div className="relative z-10 mx-auto w-full shrink-0 max-w-[1400px] px-6 pb-2 pt-24 md:px-12 md:pt-28 lg:px-16 xl:pt-10">
-          <div className="grid grid-cols-1 gap-10 md:grid-cols-12 md:items-end">
-            <div data-reveal className="md:col-span-7">
-              <p className="mb-5 text-xs uppercase tracking-[0.3em] text-zinc-500">
-                Our Collection
-              </p>
-              <h2
-                data-split-text
-                className="font-display text-4xl font-light leading-[1.1] tracking-tight text-zinc-900 md:text-5xl lg:text-6xl"
-              >
-                Featured Projects.
-              </h2>
-            </div>
-            <div
-              data-reveal
-              className="md:col-span-4 md:col-start-9 md:pb-2"
+        <div className="relative z-10 mx-auto w-full shrink-0 max-w-[1400px] px-6 pb-2 pt-24 md:px-12 md:pt-28 lg:px-16 xl:pt-24">
+          <div data-reveal>
+            <p className="mb-5 text-xs uppercase tracking-[0.3em] text-zinc-500">
+              Our Collection
+            </p>
+            <h2
+              data-split-text
+              className="font-display text-4xl font-light leading-[1.1] tracking-tight text-zinc-900 md:text-5xl lg:text-6xl"
             >
-              <p className="max-w-sm text-sm leading-relaxed text-zinc-500 md:text-base">
-                Explore every home and community in our featured collection.
-              </p>
-              <p className="mt-6 inline-flex items-center gap-3 font-mono text-[10px] uppercase tracking-[0.32em] text-zinc-500">
-                <span className="font-medium text-zinc-900">
-                  {projectTotalPadded}
-                </span>
-                <span
-                  aria-hidden
-                  className="block h-px w-16 bg-zinc-400"
-                />
-                <span>Projects</span>
-              </p>
-            </div>
+              Featured Projects.
+            </h2>
           </div>
         </div>
 
@@ -255,11 +207,7 @@ function ProjectCard({ project }: { project: Project }) {
         />
       </div>
 
-      {/* Type chip — top-left */}
-      <span className="absolute left-5 top-5 z-10 bg-white/95 px-3 py-1 font-mono text-[10px] uppercase tracking-[0.28em] text-zinc-900">
-        {project.type}
-      </span>
-      {/* Bottom metadata — name + location + arrow */}
+      {/* Bottom metadata — status, name, location, and link direction */}
       <div
         aria-hidden
         className="absolute inset-0"
@@ -270,15 +218,18 @@ function ProjectCard({ project }: { project: Project }) {
       />
       <div className="absolute inset-x-0 bottom-0 z-10 flex items-end justify-between gap-4 px-6 pb-6 text-white">
         <div className="min-w-0">
-          <p className="font-mono text-[10px] uppercase tracking-[0.28em] text-white/70">
-            {project.location}
+          <p className="text-xs font-medium uppercase tracking-[0.14em] text-white/80">
+            {project.type}
           </p>
-          <h3 className="mt-1.5 font-display text-xl font-light italic leading-tight md:text-2xl">
+          <h3 className="mt-2 font-display text-2xl font-normal leading-tight md:text-3xl">
             {project.name}
           </h3>
+          <p className="mt-1 text-sm leading-snug text-white/80">
+            {project.location}
+          </p>
         </div>
-        <span className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-white/40 bg-white/10 backdrop-blur transition group-hover:border-white group-hover:bg-white group-hover:text-zinc-900">
-          <FiArrowUpRight size={16} strokeWidth={1.6} />
+        <span className="mb-1 shrink-0 transition-transform duration-300 group-hover:-translate-y-1 group-hover:translate-x-1">
+          <FiArrowUpRight size={22} strokeWidth={1.5} />
         </span>
       </div>
     </article>

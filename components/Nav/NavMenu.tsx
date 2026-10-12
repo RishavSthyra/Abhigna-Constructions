@@ -23,7 +23,6 @@ const NAV_ROWS = [
   { label: "Apartments", href: "/#listings" },
   { label: "Why Choose Us", href: "/why-choose-us" },
   { label: "Sustainability", href: "/sustainability" },
-  { label: "Gallery", href: "/gallery" },
   { label: "About Us", href: "/about" },
   { label: "Contact", href: "/contact" },
 ];
@@ -45,7 +44,6 @@ const PROJECT_SUBMENU = [
  *   │ HOME                │                          │
  *   │ APARTMENTS          │                          │
  *   │ MASTERPLAN          │                          │
- *   │ GALLERY             │  ── BUILDING ───         │
  *   │ ABOUT US            │  ── THE FUTURE ──        │
  *   └─────────────────────┴──────────────────────────┘
  *   [● dock mark]    [location · phone · email]
