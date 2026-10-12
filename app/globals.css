@@ -17,6 +17,10 @@
   --home-section-gap: clamp(64px, 6vw, 96px);
 }
 
+main#hero:has([aria-label="Loading Abhigna Constructions"]) {
+  z-index: 9999;
+}
+
 .site-cta {
   display: inline-flex;
   min-height: 54px;
