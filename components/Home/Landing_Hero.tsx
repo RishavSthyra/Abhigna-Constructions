@@ -9,7 +9,7 @@ const HERO_VIDEO =
   "https://cdn.sthyra.com/MISTY_WOODS_IMAGES/Misty%20Woods-fast.webm";
 
 export default function Landing_Hero() {
-  const heroRef = useRef<HTMLElement>(null);
+  const stageRef = useRef<HTMLDivElement>(null);
   const mediaRef = useRef<HTMLDivElement>(null);
   const imageRef = useRef<HTMLDivElement>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -17,104 +17,116 @@ export default function Landing_Hero() {
   const maskRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const hero = heroRef.current;
+    const stage = stageRef.current;
     const media = mediaRef.current;
     const title = titleRef.current;
     const mask = maskRef.current;
     const video = videoRef.current;
     const still = imageRef.current;
-    if (!hero || !media || !title || !mask || !video || !still) return;
-
-    const words = title.querySelectorAll(`.${styles.titleWord}`);
-    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (!stage || !media || !title || !mask || !video || !still) return;
 
     const revealVideo = () => {
-      gsap.to(video, { autoAlpha: 1, duration: 0.7, ease: "power2.out" });
-      gsap.to(still, { autoAlpha: 0, duration: 0.7, ease: "power2.out" });
+      gsap.to(video, { autoAlpha: 1, duration: 0.6, ease: "power2.out" });
+      gsap.to(still, { autoAlpha: 0, duration: 0.6, ease: "power2.out" });
     };
 
     video.addEventListener("playing", revealVideo);
     if (!video.paused && video.readyState >= 2) revealVideo();
     void video.play().catch(() => {
-      // Keep the first frame in place when autoplay is unavailable.
+      // The still remains visible when autoplay is unavailable.
     });
 
-    const animation = gsap.context(() => {
-      if (reducedMotion) {
-        gsap.set(media, { width: "100%", height: "100%", borderRadius: 0 });
-        gsap.set(mask, { opacity: 1 });
-        gsap.set(title, { autoAlpha: 1 });
-        gsap.set(words, { y: 0 });
-        return;
-      }
+    const motion = gsap.matchMedia();
+    motion.add(
+      {
+        compact: "(max-width: 700px)",
+        wide: "(min-width: 701px)",
+        reduced: "(prefers-reduced-motion: reduce)",
+      },
+      (context) => {
+        const compact = Boolean(context.conditions?.compact);
+        const reduced = Boolean(context.conditions?.reduced);
+        const finalTitle = {
+          top: compact ? "82%" : "83%",
+          left: "50%",
+          gap: compact ? 0 : 16,
+          scale: compact ? 1 : 1.3,
+        };
 
-      gsap.timeline({ delay: 0.55 })
-        .to(media, {
-          width: "100%",
-          height: "100%",
-          borderRadius: 0,
-          duration: 1.8,
-          ease: "power3.inOut",
-        }, 0)
-        .to(mask, {
-          opacity: 1,
-          duration: 0.9,
-          ease: "power2.out",
-        }, 1.4)
-        .set(title, { autoAlpha: 1 }, 1.75)
-        .to(words, {
-          y: 0,
-          duration: 0.9,
-          stagger: 0.12,
-          ease: "power3.out",
-        }, 1.75);
-    }, hero);
+        if (reduced) {
+          gsap.set(media, { width: "100%", height: "100%", borderRadius: 0 });
+          gsap.set(mask, { opacity: 1 });
+          gsap.set(title, finalTitle);
+          return;
+        }
+
+        const entrance = gsap.timeline({ delay: 0.5 });
+        entrance
+          .to(media, {
+            width: "100%",
+            height: "100%",
+            borderRadius: 0,
+            duration: 2.6,
+            ease: "power2.inOut",
+          }, 0)
+          .to(title, {
+            ...finalTitle,
+            duration: 2.3,
+            ease: "power2.inOut",
+          }, 0.3)
+          .to(mask, {
+            opacity: 1,
+            duration: 1.2,
+            ease: "power2.out",
+          }, 1.4);
+
+        return () => entrance.kill();
+      },
+      stage,
+    );
 
     return () => {
       video.removeEventListener("playing", revealVideo);
-      animation.revert();
+      motion.revert();
       gsap.killTweensOf([video, still]);
     };
   }, []);
 
   return (
-    <section ref={heroRef} className={styles.hero} aria-label="Abhigna Misty Woods">
-      <div className={styles.introTitle} aria-hidden="true">
-        <span className={styles.introLeft}>Abhigna</span>
-        <span className={styles.introRight}>Constructions</span>
-      </div>
-
-      <div ref={mediaRef} className={styles.mediaFrame}>
-        <div ref={imageRef} className={styles.still}>
-          <Image
-            src="/Hero/Misty-Woods-first-frame.jpg"
-            alt="Entrance to Abhigna Misty Woods"
-            fill
-            priority
-            sizes="100vw"
-            className={styles.media}
-          />
+    <section className={styles.hero} aria-label="Abhigna Misty Woods">
+      <div ref={stageRef} className={styles.stage}>
+        <div ref={mediaRef} className={styles.mediaFrame}>
+          <div ref={imageRef} className={styles.still}>
+            <Image
+              src="/Hero/Misty-Woods-first-frame.jpg"
+              alt="Entrance to Abhigna Misty Woods"
+              fill
+              priority
+              sizes="(max-width: 700px) 90vw, 76vw"
+              className={[styles.media, styles.stillImage].join(" ")}
+            />
+          </div>
+          <video
+            ref={videoRef}
+            className={[styles.media, styles.video].join(" ")}
+            poster="/Hero/Misty-Woods-first-frame.jpg"
+            muted
+            loop
+            playsInline
+            preload="auto"
+            aria-label="Abhigna Misty Woods residential community"
+          >
+            <source src={HERO_VIDEO} type="video/webm" />
+            Your browser does not support this video.
+          </video>
         </div>
-        <video
-          ref={videoRef}
-          className={`${styles.media} ${styles.video}`}
-          poster="/Hero/Misty-Woods-first-frame.jpg"
-          muted
-          loop
-          playsInline
-          preload="auto"
-          aria-label="Abhigna Misty Woods residential community"
-        >
-          <source src={HERO_VIDEO} type="video/webm" />
-          Your browser does not support this video.
-        </video>
-      </div>
 
-      <div ref={maskRef} className={styles.bottomMask} aria-hidden="true" />
-      <h1 ref={titleRef} className={styles.title}>
-        <span className={styles.titleLine}><span className={styles.titleWord}>Abhigna</span></span>
-        <span className={styles.titleLine}><span className={styles.titleWord}>Constructions</span></span>
-      </h1>
+        <div ref={maskRef} className={styles.bottomMask} aria-hidden="true" />
+        <h1 ref={titleRef} className={styles.title}>
+          <span>Abhigna</span>
+          <span>Constructions</span>
+        </h1>
+      </div>
     </section>
   );
 }
