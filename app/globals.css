@@ -104,6 +104,10 @@ body:has(#about-page) > footer {
   display: none;
 }
 
+body:has(#landing-page) > footer {
+  display: none;
+}
+
 /* Hide native cursor everywhere on desktop, show our custom one */
 @media (pointer: fine) {
   html,
