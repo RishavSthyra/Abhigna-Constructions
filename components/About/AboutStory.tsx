@@ -110,10 +110,10 @@ export default function AboutStory() {
             <div className={styles.topline}><span>Abhigna Constructions</span><span>01 / 04</span></div>
             <div className={styles.openingContent}>
               <p data-about-rise className={styles.eyebrow}>Our story</p>
-              <h1 id="about-heading" aria-label="Every home begins with a plan. Ours begins with an engineer."><AnimatedWords text="Every home begins with a plan." /> <br /><AnimatedWords text="Ours begins with an engineer." /></h1>
+              <h1 id="about-heading" aria-label="Engineering-led homes since 2007."><AnimatedWords text="Engineering-led" /> <br /><AnimatedWords text="homes since 2007." /></h1>
               <div className={styles.openingBody}>
-                <p data-about-rise>Abhigna Constructions is a residential developer founded in 2007 by civil engineer Bhaskar Reddy. With over 35 years of construction expertise, he built the company around a simple standard: homes he would be proud to live in himself.</p>
-                <p data-about-rise>That engineering perspective shapes every project, from the first plans to the day a family receives its keys.</p>
+                <p data-about-rise>Abhigna Constructions is a residential developer founded in 2007 by civil engineer Bhaskar Reddy. Backed by over 35 years of construction expertise, the company has delivered close to one million square feet of residential development across Nellore and Bengaluru.</p>
+                <p data-about-rise>Every Abhigna project is planned in full before construction begins and overseen by qualified engineers from soil testing to handover. Our focus is quality construction, Vastu-compliant design and on-time delivery.</p>
               </div>
             </div>
           </section>
@@ -148,7 +148,7 @@ export default function AboutStory() {
             <div className={styles.todayContent}>
               <h2 id="today-heading"><AnimatedWords text="The work continues." /></h2>
               <p data-about-rise>Since 2007, our commitment has stayed the same: plan thoroughly, build responsibly and hand over homes we believe in.</p>
-              <blockquote className={styles.lastQuote}><AnimatedWords text={'"I have never sold a home I would not live in myself.”'} /></blockquote>
+              <blockquote className={styles.lastQuote}><AnimatedWords text="“I have never sold a home I would not live in myself.”" /></blockquote>
             </div>
           </section>
         </div>
