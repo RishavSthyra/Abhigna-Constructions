@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import Nav from "@/components/Nav";
+import ProjectsCarousel from "@/components/Home/ProjectsCarousel";
 import styles from "./home.module.css";
 
 export const metadata: Metadata = {
@@ -37,48 +38,25 @@ export default function Home() {
             <div className={styles.heroBackdrop} />
 
             <div className={styles.heroContent}>
-              <h1 id="home-title">Homes built<br />with purpose.<br /><em>Places made for life.</em></h1>
+              <h1 id="home-title"><span>Homes built with purpose.</span><em>Places made for life.</em></h1>
+              <Link href="#projects" className={styles.heroPill}>Explore projects <Arrow diagonal /></Link>
             </div>
           </section>
 
           <section className={styles.projects} id="projects" aria-labelledby="projects-title">
             <div className={styles.projectsIntro}>
-              <div className={styles.sectionNumber}><span>01</span><i /> <span>02 &nbsp;03 &nbsp;04</span></div>
               <p className={styles.microCopy}>Every address begins with a simple idea: a better way to feel at home.</p>
               <div className={styles.introBottom}>
-                <span className={styles.kicker}>/ Our communities</span>
+                <span className={styles.kicker}>Our communities</span>
                 <h2 id="projects-title">Built around<br />your life.</h2>
                 <Link href="/contact" className={styles.darkPill}>Find your home <Arrow diagonal /></Link>
               </div>
             </div>
-
-            <article className={`${styles.projectCard} ${styles.projectCardDark}`}>
-              <Image src="/Hero/withour bg Night View Aadhya Serene.avif" alt="Architectural rendering of Aadhya Serene" fill sizes="(max-width: 700px) 100vw, 33vw" className={styles.projectImage} />
-              <div className={styles.projectShade} />
-              <div className={styles.projectTop}><span>01 / Featured project</span><span>Ongoing</span></div>
-              <div className={styles.projectBottom}>
-                <span className={styles.projectLocation}>Manyata Tech Park · Bengaluru</span>
-                <h3>Aadhya<br />Serene</h3>
-                <p>Considered spaces for a more meaningful everyday.</p>
-                <a href="https://www.aadhyaserene.com/" target="_blank" rel="noopener noreferrer" className={styles.lightPill}>View project <Arrow diagonal /></a>
-              </div>
-            </article>
-
-            <article className={`${styles.projectCard} ${styles.projectCardGreen}`}>
-              <Image src="/misty-woods-trees.webp" alt="Greenery at Misty Woods" fill sizes="(max-width: 700px) 100vw, 33vw" className={styles.projectImage} />
-              <div className={styles.projectShade} />
-              <div className={styles.projectTop}><span>02 / Featured project</span><span>Completed</span></div>
-              <div className={styles.projectBottom}>
-                <span className={styles.projectLocation}>JP Nagar · Bengaluru</span>
-                <h3>Misty<br />Woods</h3>
-                <p>A quieter rhythm of life, surrounded by green.</p>
-                <Link href="/contact" className={styles.lightPill}>Enquire now <Arrow diagonal /></Link>
-              </div>
-            </article>
+            <ProjectsCarousel />
           </section>
 
           <section className={styles.philosophy} aria-labelledby="philosophy-title">
-            <span className={styles.kicker}>/ The Abhigna approach</span>
+            <span className={styles.kicker}>The Abhigna approach</span>
             <h2 id="philosophy-title">Good homes begin long before <br />the first brick is laid. <span>We bring engineering, <br />care, and conviction to every detail.</span></h2>
             <div className={styles.philosophyGrid}>
               <div className={styles.philosophyImage}>
@@ -101,10 +79,9 @@ export default function Home() {
 
           <section className={styles.detail} aria-labelledby="detail-title">
             <div className={styles.detailCopy}>
-              <div className={styles.sectionNumber}><span>02</span><i /> <span>03 &nbsp;04</span></div>
               <p className={styles.microCopy}>Designed with intent. Planned in full. Overseen by qualified engineers.</p>
               <div>
-                <span className={styles.kicker}>/ Why Abhigna</span>
+                <span className={styles.kicker}>Why Abhigna</span>
                 <h2 id="detail-title">The details you don’t see make all the difference.</h2>
                 <p className={styles.detailDescription}>Quality construction, Vastu-compliant design, and on-time delivery are built into our process from the start.</p>
                 <Link href="/why-choose-us" className={styles.darkPill}>Our approach <Arrow diagonal /></Link>
@@ -118,7 +95,7 @@ export default function Home() {
 
           <section className={styles.finalCta} data-dark-navigation-surface aria-labelledby="cta-title">
             <div className={styles.finalBackdrop} />
-            <span className={styles.kicker}>/ Your next chapter</span>
+            <span className={styles.kicker}>Your next chapter</span>
             <h2 id="cta-title">A home that feels<br /><em>like yours.</em></h2>
             <p>Let’s find the place where your story can grow.</p>
             <Link href="/contact" className={styles.ctaPill}>Start a conversation <Arrow diagonal /></Link>
