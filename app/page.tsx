@@ -37,19 +37,9 @@ export default function Home() {
             <div className={styles.heroBackdrop} />
 
             <div className={styles.heroContent}>
-              <span className={styles.eyebrowLight}>Bengaluru · Est. 2007</span>
               <h1 id="home-title">Homes built<br />with purpose.<br /><em>Places made for life.</em></h1>
               <p>Engineering-led residential spaces designed for the way you live, today and for years to come.</p>
               <Link href="#projects" className={styles.heroLink}>Explore our projects <Arrow diagonal /></Link>
-            </div>
-
-            <span className={styles.heroIndex}>01 / 04&nbsp; &nbsp; Thoughtful living, built to last</span>
-            <div className={styles.heroBadge}>
-              <span className={styles.heroBadgeImage}>
-                <Image src="/Hero/Misty-Woods-first-frame.jpg" alt="Misty Woods entrance" fill sizes="76px" />
-              </span>
-              <span><small>Featured community</small><strong>Misty Woods</strong></span>
-              <Arrow diagonal />
             </div>
           </section>
 
