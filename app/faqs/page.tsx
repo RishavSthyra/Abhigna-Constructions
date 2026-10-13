@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Nav from "@/components/Nav";
-import Cursor from "@/components/ui/Cursor";
 import FAQSection from "@/components/FAQ/FAQSection";
 
 export const metadata: Metadata = {
@@ -12,7 +11,6 @@ export const metadata: Metadata = {
 export default function FAQsPage() {
   return (
     <>
-      <Cursor />
       <Nav />
       <main>
         <FAQSection fullPage />

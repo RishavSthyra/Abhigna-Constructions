@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import Cursor from "@/components/ui/Cursor";
 import styles from "./home.module.css";
 
 export const metadata: Metadata = {
@@ -19,7 +18,6 @@ const Arrow = ({ diagonal = false }: { diagonal?: boolean }) => (
 export default function Home() {
   return (
     <>
-      <Cursor />
       <main id="landing-page" className={styles.page}>
           <section className={styles.hero} aria-labelledby="home-title">
             <div className={styles.heroBackdrop} />

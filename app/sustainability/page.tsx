@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Nav from "@/components/Nav";
-import Cursor from "@/components/ui/Cursor";
 import SustainabilityStory from "@/components/Sustainability/SustainabilityStory";
 
 export const metadata: Metadata = {
@@ -12,7 +11,6 @@ export const metadata: Metadata = {
 export default function SustainabilityPage() {
   return (
     <>
-      <Cursor />
       <Nav />
       <SustainabilityStory />
     </>

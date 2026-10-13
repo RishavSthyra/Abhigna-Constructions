@@ -1,4 +1,3 @@
-import Cursor from "@/components/ui/Cursor";
 import Nav from "@/components/Nav";
 import ScrollMotion from "@/components/ui/ScrollMotion";
 import SecondaryHero from "@/components/ui/SecondaryHero";
@@ -8,7 +7,6 @@ import SiteFooter from "@/components/SiteFooter";
 export default function ContactPage() {
   return (
     <>
-      <Cursor />
       <Nav />
       <ScrollMotion />
       <main id="contact" className="relative isolate bg-brand-bg">
@@ -24,4 +22,4 @@ export default function ContactPage() {
       <SiteFooter />
     </>
   );
-}      
+}

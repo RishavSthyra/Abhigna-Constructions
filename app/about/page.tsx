@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Cursor from "@/components/ui/Cursor";
 import Nav from "@/components/Nav";
 import AboutStory from "@/components/About/AboutStory";
 
@@ -12,7 +11,6 @@ export const metadata: Metadata = {
 export default function AboutPage() {
   return (
     <>
-      <Cursor />
       <Nav />
       <AboutStory />
     </>

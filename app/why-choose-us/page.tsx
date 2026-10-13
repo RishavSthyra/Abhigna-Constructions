@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Nav from "@/components/Nav";
-import Cursor from "@/components/ui/Cursor";
 import ServicesGrid from "@/components/Services/ServicesGrid";
 
 export const metadata: Metadata = {
@@ -11,7 +10,6 @@ export const metadata: Metadata = {
 export default function WhyChooseUsPage() {
   return (
     <>
-      <Cursor />
       <Nav />
       <main>
         <ServicesGrid />
