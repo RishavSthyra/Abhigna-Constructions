@@ -1,8 +1,10 @@
 "use client";
 
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { gsap } from "gsap";
+import { ensureGsapPlugins } from "@/components/Nav/gsap/easings";
 import styles from "@/app/home.module.css";
 
 function ProjectArrow() {
@@ -11,40 +13,63 @@ function ProjectArrow() {
 
 export default function ProjectsCarousel() {
   const trackRef = useRef<HTMLDivElement>(null);
-  const [canPrevious, setCanPrevious] = useState(false);
-  const [canNext, setCanNext] = useState(true);
-
-  const updateControls = useCallback(() => {
-    const track = trackRef.current;
-    if (!track) return;
-    setCanPrevious(track.scrollLeft > 2);
-    setCanNext(track.scrollLeft + track.clientWidth < track.scrollWidth - 2);
-  }, []);
+  const carouselRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const track = trackRef.current;
-    if (!track) return;
-    const observer = new ResizeObserver(updateControls);
-    observer.observe(track);
-    updateControls();
-    return () => observer.disconnect();
-  }, [updateControls]);
+    const carousel = carouselRef.current;
+    const section = carousel?.closest("section");
+    if (!track || !carousel || !section) return;
 
-  const move = (direction: -1 | 1) => {
-    const track = trackRef.current;
-    if (!track) return;
-    const firstCard = track.firstElementChild;
-    const cardWidth = firstCard?.getBoundingClientRect().width ?? track.clientWidth;
-    const gap = parseFloat(getComputedStyle(track).columnGap) || 0;
-    track.scrollBy({ left: direction * (cardWidth + gap), behavior: "smooth" });
-  };
+    ensureGsapPlugins();
+
+    const media = gsap.matchMedia();
+    const distance = () => Math.max(0, track.scrollWidth - track.clientWidth);
+
+    const pinProjects = (pinTarget: HTMLElement, start: string) => {
+      track.scrollLeft = 0;
+      const tween = gsap.fromTo(
+        track,
+        { scrollLeft: 0 },
+        {
+          scrollLeft: distance,
+          ease: "none",
+          scrollTrigger: {
+            trigger: pinTarget,
+            start,
+            end: () => `+=${distance()}`,
+            pin: pinTarget,
+            scrub: 0.7,
+            anticipatePin: 1,
+            invalidateOnRefresh: true,
+          },
+        },
+      );
+
+      return () => {
+        tween.scrollTrigger?.kill();
+        tween.kill();
+        track.scrollLeft = 0;
+      };
+    };
+
+    // The full section fits on desktop. On smaller screens, pin just the
+    // cards so the introduction scrolls away before the project sequence.
+    media.add("(min-width: 1001px) and (prefers-reduced-motion: no-preference)", () =>
+      pinProjects(section, "top top"),
+    );
+    media.add("(max-width: 1000px) and (prefers-reduced-motion: no-preference)", () =>
+      pinProjects(carousel, "top 76px"),
+    );
+
+    return () => media.revert();
+  }, []);
 
   return (
-    <div className={styles.projectsCarousel}>
+    <div ref={carouselRef} className={styles.projectsCarousel}>
       <div
         ref={trackRef}
         className={styles.projectTrack}
-        onScroll={updateControls}
         role="region"
         aria-label="Residential projects"
         tabIndex={0}
@@ -86,10 +111,6 @@ export default function ProjectsCarousel() {
         </article>
       </div>
 
-      <div className={styles.projectControls} aria-label="Project carousel controls">
-        <button type="button" onClick={() => move(-1)} disabled={!canPrevious} aria-label="Previous project">←</button>
-        <button type="button" onClick={() => move(1)} disabled={!canNext} aria-label="Next project">→</button>
-      </div>
     </div>
   );
 }
