@@ -21,7 +21,6 @@ export default function Home() {
     <>
       <Cursor />
       <main id="landing-page" className={styles.page}>
-        <div className={styles.shell}>
           <section className={styles.hero} aria-labelledby="home-title">
             <div className={styles.heroBackdrop} />
             <nav className={styles.nav} aria-label="Main navigation">
@@ -148,7 +147,6 @@ export default function Home() {
             <span>© {new Date().getFullYear()} Abhigna Constructions. All rights reserved.</span>
             <div><Link href="/about">About</Link><Link href="/sustainability">Sustainability</Link><Link href="/contact">Contact</Link></div>
           </footer>
-        </div>
       </main>
     </>
   );
