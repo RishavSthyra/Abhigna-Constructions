@@ -104,10 +104,6 @@ body:has(#about-page) > footer {
   display: none;
 }
 
-body:has(#landing-page) > footer {
-  display: none;
-}
-
 /* Smooth scroll */
 html {
   scroll-behavior: smooth;

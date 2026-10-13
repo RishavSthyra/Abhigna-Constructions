@@ -124,10 +124,6 @@ export default function Home() {
             <Link href="/contact" className={styles.ctaPill}>Start a conversation <Arrow diagonal /></Link>
           </section>
 
-          <footer className={styles.footer}>
-            <span>© {new Date().getFullYear()} Abhigna Constructions. All rights reserved.</span>
-            <div><Link href="/about">About</Link><Link href="/sustainability">Sustainability</Link><Link href="/contact">Contact</Link></div>
-          </footer>
       </main>
     </>
   );
