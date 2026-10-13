@@ -43,6 +43,41 @@ export default function Home() {
             </div>
           </section>
 
+          <section className={styles.aboutPreview} id="about" aria-labelledby="about-preview-title">
+            <div className={styles.aboutCopy}>
+              <span className={styles.kicker}>About us</span>
+              <h2 id="about-preview-title">Engineering-led homes since 2007.</h2>
+              <p>
+                Founded by civil engineer Bhaskar Reddy, Abhigna Constructions
+                brings over 35 years of construction expertise to homes across
+                Bengaluru. Each project is planned before building begins and
+                overseen by qualified engineers from soil testing to handover.
+              </p>
+              <Link href="/about" className={styles.darkPill}>More about us <Arrow diagonal /></Link>
+            </div>
+
+            <div className={styles.aboutBento} aria-label="Homes and spaces by Abhigna Constructions">
+              <figure className={`${styles.aboutTile} ${styles.aboutAerial}`}>
+                <Image src="/about/about-aerial.jpg" alt="Aerial rendering of a residential community" fill sizes="(max-width: 700px) 100vw, (max-width: 1000px) 70vw, 40vw" />
+              </figure>
+              <figure className={`${styles.aboutTile} ${styles.aboutBedroom}`}>
+                <Image src="/about/about-bedroom.jpg" alt="Bedroom with warm finishes" fill sizes="(max-width: 700px) 50vw, 25vw" />
+              </figure>
+              <figure className={`${styles.aboutTile} ${styles.aboutLiving}`}>
+                <Image src="/about/about-living-room.jpg" alt="Living room with blue sofas" fill sizes="(max-width: 700px) 50vw, 25vw" />
+              </figure>
+              <figure className={`${styles.aboutTile} ${styles.aboutKitchen}`}>
+                <Image src="/about/about-kitchen.jpg" alt="Kitchen with green cabinetry" fill sizes="(max-width: 700px) 50vw, 20vw" />
+              </figure>
+              <figure className={`${styles.aboutTile} ${styles.aboutExterior}`}>
+                <Image src="/about/about-exterior.jpg" alt="Residential building beside landscaped sports courts" fill sizes="(max-width: 700px) 50vw, 20vw" />
+              </figure>
+              <figure className={`${styles.aboutTile} ${styles.aboutClubhouse}`}>
+                <Image src="/about/about-clubhouse.jpg" alt="Pool and clubhouse beside a residential building" fill sizes="(max-width: 700px) 50vw, 25vw" />
+              </figure>
+            </div>
+          </section>
+
           <section className={styles.projects} id="projects" aria-labelledby="projects-title">
             <div className={styles.projectsIntro}>
               <p className={styles.microCopy}>Every address begins with a simple idea: a better way to feel at home.</p>

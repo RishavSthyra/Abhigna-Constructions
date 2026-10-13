@@ -13,6 +13,22 @@
 .hero h1 span,.hero h1 em{display:block}
 .hero h1 em,.finalCta h2 em{font-style:normal;color:#c7d1c8}
 .heroPill{margin-top:32px;padding:8px 9px 8px 20px;background:#fff;color:#1b1d1c}
+.aboutPreview{display:grid;grid-template-columns:minmax(0,.82fr) minmax(0,1.38fr);align-items:center;gap:clamp(28px,4vw,70px);padding:clamp(68px,7vw,112px) clamp(20px,4.8vw,76px);background:#fff;scroll-margin-top:70px}
+.aboutCopy{display:flex;flex-direction:column;align-items:flex-start;min-width:0}
+.aboutCopy h2{max-width:590px;margin:22px 0 24px;font-family:var(--font-display),sans-serif;font-size:clamp(42px,4.5vw,70px);font-weight:500;line-height:1.02;letter-spacing:-.065em}
+.aboutCopy p{max-width:460px;margin:0;color:#5b645d;font-size:15px;line-height:1.65}
+.aboutCopy .darkPill{margin-top:30px}
+.aboutBento{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));grid-template-rows:repeat(3,minmax(0,155px));gap:10px;min-width:0}
+.aboutTile{position:relative;min-width:0;min-height:0;margin:0;overflow:hidden;border-radius:14px;background:#d8dbd5}
+.aboutTile img{object-fit:cover;transition:transform .5s ease}
+.aboutTile:hover img{transform:scale(1.03)}
+.aboutAerial{grid-column:1/9;grid-row:1/3}
+.aboutBedroom{grid-column:9/13;grid-row:1}
+.aboutLiving{grid-column:9/13;grid-row:2}
+.aboutKitchen{grid-column:1/4;grid-row:3}
+.aboutExterior{grid-column:4/8;grid-row:3}
+.aboutClubhouse{grid-column:8/13;grid-row:3}
+.aboutAerial img{object-position:center 48%}.aboutExterior img{object-position:center 45%}.aboutClubhouse img{object-position:center 45%}
 .projects{position:relative;z-index:2;display:grid;grid-template-columns:1fr 2.05fr;gap:14px;padding:clamp(55px,6vw,95px) clamp(20px,4.8vw,76px) 0;scroll-margin-top:30px;background:#f3f3f1}
 .projectsIntro{display:flex;flex-direction:column;align-items:flex-start;min-height:520px;padding:0 20px 8px 0}
 .projectsIntro .microCopy{margin-top:0}
@@ -47,3 +63,5 @@
 .arrowIcon{background:#1b1d1c}
 .arrowIcon::after{color:#fff}
 @media(max-width:700px){.numbers,.numberRow{min-width:0}.numberRow{width:100%}.numberRow p{max-width:100%;overflow-wrap:break-word}.numberRow>div{gap:8px}.numberRow strong{font-size:clamp(52px,16vw,72px)}.numberRow>div>span{width:90px;font-size:8px}.finalCta p{max-width:80%;line-height:1.4}}
+@media(max-width:1000px){.aboutPreview{grid-template-columns:1fr;gap:34px}.aboutBento{grid-template-rows:repeat(3,minmax(0,175px))}.aboutCopy h2{max-width:720px}}
+@media(max-width:700px){.aboutPreview{gap:30px;padding:68px 12px 60px}.aboutCopy{padding:0 8px}.aboutCopy h2{margin:16px 0 20px;font-size:clamp(44px,11vw,59px)}.aboutCopy p{font-size:14px}.aboutCopy .darkPill{margin-top:24px}.aboutBento{grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:180px repeat(3,136px);gap:8px}.aboutAerial{grid-column:1/3;grid-row:1}.aboutExterior{grid-column:1;grid-row:2/4}.aboutLiving{grid-column:2;grid-row:2}.aboutBedroom{grid-column:2;grid-row:3}.aboutKitchen{grid-column:1;grid-row:4}.aboutClubhouse{grid-column:2;grid-row:4}.aboutTile{border-radius:11px}}
