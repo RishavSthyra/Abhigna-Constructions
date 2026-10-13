@@ -38,8 +38,6 @@ export default function Home() {
 
             <div className={styles.heroContent}>
               <h1 id="home-title">Homes built<br />with purpose.<br /><em>Places made for life.</em></h1>
-              <p>Engineering-led residential spaces designed for the way you live, today and for years to come.</p>
-              <Link href="#projects" className={styles.heroLink}>Explore our projects <Arrow diagonal /></Link>
             </div>
           </section>
 
