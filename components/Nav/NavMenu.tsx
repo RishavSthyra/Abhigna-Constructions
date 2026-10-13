@@ -398,10 +398,10 @@ export default function NavMenu({ open, onClose }: NavMenuProps) {
           <div className="relative hidden md:flex md:flex-col md:justify-end md:items-end md:pt-4">
             <div ref={tagRef} className="text-right" style={{ opacity: 0 }}>
               <div className="mb-3 ml-auto h-px w-10 bg-[#e5e7eb]/40" />
-              <span className="block font-mono text-[10px] uppercase tracking-[0.36em] text-[#e5e7eb]/75">
+              <span className="block font-mono text-[10px] tracking-[0.06em] text-[#e5e7eb]/75">
                 Building
               </span>
-              <span className="block font-mono text-[10px] uppercase tracking-[0.36em] text-[#e5e7eb]/45">
+              <span className="block font-mono text-[10px] tracking-[0.06em] text-[#e5e7eb]/45">
                 the Future
               </span>
               <div className="mt-3 ml-auto h-px w-6 bg-[#e5e7eb]/30" />
@@ -433,15 +433,15 @@ export default function NavMenu({ open, onClose }: NavMenuProps) {
             "
             style={{ opacity: 0 }}
           >
-            <span className="inline-flex min-w-0 items-center gap-2 break-words font-mono text-[9px] uppercase tracking-[0.1em] sm:text-[10px] sm:tracking-[0.28em]">
+            <span className="inline-flex min-w-0 items-center gap-2 break-words font-mono text-[9px] tracking-[0.02em] sm:text-[10px]">
               <FiMapPin className="h-3.5 w-3.5 shrink-0 stroke-[1.5]" aria-hidden />
               HSR Layout, Sector 4 · BLR
             </span>
-            <span className="inline-flex min-w-0 items-center gap-2 break-words font-mono text-[9px] uppercase tracking-[0.1em] sm:text-[10px] sm:tracking-[0.28em]">
+            <span className="inline-flex min-w-0 items-center gap-2 break-words font-mono text-[9px] tracking-[0.02em] sm:text-[10px]">
               <FiPhone className="h-3.5 w-3.5 shrink-0 stroke-[1.5]" aria-hidden />
               +91 96637 63333
             </span>
-            <span className="inline-flex min-w-0 items-center gap-2 break-words font-mono text-[9px] uppercase tracking-[0.1em] sm:text-[10px] sm:tracking-[0.28em]">
+            <span className="inline-flex min-w-0 items-center gap-2 break-words font-mono text-[9px] tracking-[0.02em] sm:text-[10px]">
               <FiMail className="h-3.5 w-3.5 shrink-0 stroke-[1.5]" aria-hidden />
               sales@abhignaconstructions.com
             </span>

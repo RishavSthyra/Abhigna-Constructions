@@ -148,7 +148,7 @@ export default function NavMenuItem({
             onNavigate(href);
           }}
           className="
-            relative inline-block font-display uppercase leading-[0.95]
+            relative inline-block font-display leading-[0.95]
             tracking-[0.02em] font-[400]
             text-[clamp(28px,6vw,40px)] md:text-[clamp(34px,5.8vh,58px)]
           "
@@ -173,7 +173,7 @@ export default function NavMenuItem({
                   transition: "color 0.4s ease",
                 }}
               >
-                {char === " " ? " " : char}
+                {char === " " ? "\u00A0" : char}
               </span>
             ))}
           </span>
@@ -202,7 +202,7 @@ export default function NavMenuItem({
                   color: "#e5e7eb",
                 }}
               >
-                {char === " " ? " " : char}
+                {char === " " ? "\u00A0" : char}
               </span>
             ))}
           </span>
@@ -215,7 +215,7 @@ export default function NavMenuItem({
             className="
               inline-flex items-center gap-2 rounded-full
               border border-[#e5e7eb]/20 bg-transparent
-              px-2 py-1 font-mono text-[10px] uppercase tracking-[0.28em] sm:px-3
+              px-2 py-1 font-mono text-[10px] tracking-[0.06em] sm:px-3
               text-[#e5e7eb]/65 transition-colors duration-300
               hover:border-[#e5e7eb]/55 hover:text-[#e5e7eb]
             "
@@ -249,7 +249,7 @@ export default function NavMenuItem({
                   onNavigate(item.href);
                 }}
                 className="
-                  font-mono text-[12px] uppercase tracking-[0.22em]
+                  font-mono text-[12px] tracking-[0.04em]
                   text-[#e5e7eb]/55 transition-colors duration-300
                   hover:text-[#e5e7eb]
                 "
