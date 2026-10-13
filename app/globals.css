@@ -95,6 +95,15 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+body:has(#about-page) {
+  height: 100dvh;
+  overflow: hidden;
+}
+
+body:has(#about-page) > footer {
+  display: none;
+}
+
 /* Hide native cursor everywhere on desktop, show our custom one */
 @media (pointer: fine) {
   html,

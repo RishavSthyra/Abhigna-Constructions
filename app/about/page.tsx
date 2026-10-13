@@ -4,9 +4,9 @@ import Nav from "@/components/Nav";
 import AboutStory from "@/components/About/AboutStory";
 
 export const metadata: Metadata = {
-  title: "Our Story — Abhigna Constructions",
+  title: "About — Abhigna Constructions",
   description:
-    "The story of Abhigna Constructions, founded by civil engineers and built around a lasting commitment to homes and families.",
+    "Engineering-led homes since 2007. Learn about Abhigna Constructions, founded by civil engineer Bhaskar Reddy in Bengaluru.",
 };
 
 export default function AboutPage() {

@@ -1,375 +1,245 @@
 .page {
-  background: #f7f6f2;
-  color: #171916;
+  height: 100dvh;
+  overflow: hidden;
+  background: #efeee9;
+  color: #171917;
   font-family: var(--font-inter), sans-serif;
 }
 
-.split {
-  display: grid;
-  grid-template-columns: minmax(0, 36%) minmax(0, 64%);
-  align-items: start;
-}
-
-.photoPanel {
-  position: sticky;
-  top: 0;
-  height: 100svh;
-  margin: 0;
-  overflow: hidden;
-  background: #e7e6e0;
-}
-
-.photoFrame {
-  position: absolute;
-  inset: 0;
-  overflow: hidden;
-  will-change: clip-path, transform;
-}
-
-.photoImage {
-  object-fit: cover;
-  object-position: 53% center;
-}
-
-.photoCaption {
-  position: absolute;
-  z-index: 1;
-  right: 0;
-  bottom: 0;
-  left: 0;
+.canvas {
   display: flex;
-  justify-content: space-between;
-  gap: 20px;
-  padding: 25px clamp(24px, 3vw, 48px);
-  background: linear-gradient(0deg, rgb(0 0 0 / 50%), transparent);
-  color: white;
-  font-size: 10px;
-  font-weight: 600;
-  letter-spacing: 0.16em;
-  line-height: 1.5;
-  text-transform: uppercase;
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+  padding: clamp(86px, 10vh, 112px) clamp(24px, 3.9vw, 72px) clamp(20px, 3.5vh, 34px);
 }
 
-.narrative {
+.content {
+  display: grid;
+  min-height: 0;
+  flex: 1;
+  grid-template-columns: minmax(0, 46%) minmax(0, 54%);
+  grid-template-rows: auto minmax(0, 1fr);
+  column-gap: clamp(34px, 8vw, 160px);
+  row-gap: clamp(24px, 4vh, 48px);
+}
+
+.heading,
+.intro,
+.principles,
+.project {
   min-width: 0;
 }
 
-.scene {
-  position: relative;
-  min-height: 100svh;
-  padding: clamp(102px, 8.5vw, 155px) clamp(34px, 4vw, 75px) clamp(75px, 8vw, 120px);
+.heading {
+  grid-column: 1;
+  grid-row: 1;
 }
 
-.topline {
-  position: absolute;
-  top: clamp(100px, 8.5vw, 150px);
-  right: clamp(34px, 4vw, 75px);
-  left: clamp(34px, 4vw, 75px);
-  display: flex;
-  justify-content: space-between;
-  gap: 20px;
-  border-top: 1px solid currentColor;
-  padding-top: 13px;
-  color: #666b63;
-  font-size: 10px;
-  font-weight: 600;
-  letter-spacing: 0.17em;
+.kicker {
+  margin: 0 0 clamp(14px, 2.5vh, 28px);
+  color: #5d625b;
+  font-size: clamp(9px, 0.72vw, 11px);
+  font-weight: 700;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
 }
 
-.eyebrow {
-  margin: 0 0 28px;
-  font-size: 10px;
-  font-weight: 600;
-  letter-spacing: 0.23em;
-  text-transform: uppercase;
-}
-
-.opening {
-  display: flex;
-  min-height: 115svh;
-  align-items: center;
-  background: #f8f8f5;
-}
-
-.openingContent {
-  width: 100%;
-  margin-top: 105px;
-}
-
-.opening h1,
-.bengaluru h2,
-.today h2 {
+.heading h1 {
   margin: 0;
-  font-family: var(--font-roboto-serif), Georgia, serif;
-  font-weight: 500;
-  letter-spacing: -0.04em;
-}
-
-.opening h1 {
-  max-width: none;
-  font-size: clamp(34px, 2.8vw, 42px);
-  line-height: 1.06;
+  font-family: var(--font-display-sans), sans-serif;
+  font-size: clamp(46px, 5.8vw, 100px);
+  font-weight: 300;
+  letter-spacing: -0.075em;
+  line-height: 0.98;
   text-wrap: balance;
 }
 
-.openingBody {
-  display: grid;
-  gap: 25px;
-  margin-top: clamp(65px, 8vw, 115px);
+.heading h1 span {
+  white-space: nowrap;
 }
 
-.openingBody p,
-.beginningContent > p,
-.bengaluruContent > p,
-.longParagraph,
-.todayContent > p {
-  max-width: 53ch;
+.intro {
+  align-self: start;
+  grid-column: 2;
+  grid-row: 1;
+  padding-right: clamp(0px, 3vw, 64px);
+}
+
+.intro p {
+  max-width: 54ch;
   margin: 0;
-  color: #50574e;
-  font-size: clamp(15px, 1.05vw, 18px);
-  line-height: 1.75;
-  text-wrap: pretty;
+  font-size: clamp(16px, 1.45vw, 22px);
+  font-weight: 400;
+  letter-spacing: -0.025em;
+  line-height: 1.33;
 }
 
-.beginning {
-  min-height: 170svh;
-  background: #151715;
-  color: #f5f5f0;
-}
-
-.beginning .topline {
-  color: #aaaFA6;
-}
-
-.beginningContent {
-  margin-top: clamp(120px, 17vh, 205px);
-}
-
-.year {
-  margin: 0 0 54px;
-  font-family: var(--font-roboto-serif), Georgia, serif;
-  font-size: clamp(70px, 7.5vw, 118px);
-  font-weight: 500;
-  letter-spacing: -0.035em;
-  line-height: 0.85;
-}
-
-.beginningContent > p {
-  margin-top: 25px;
-  color: #c8cdc3;
-}
-
-.inlineImage {
-  position: relative;
-  width: min(100%, 420px);
-  aspect-ratio: 1.16;
-  overflow: hidden;
-  margin: clamp(90px, 10vw, 150px) 0 0 auto;
-  background: #d3d6ce;
-}
-
-.inlineImage img {
-  object-fit: cover;
-  transition: transform 0.8s ease;
-}
-
-.inlineImage:hover img {
-  transform: scale(1.05);
-}
-
-.firstQuote {
-  max-width: 100%;
-  margin: clamp(100px, 10vw, 155px) 0 0;
-  font-family: var(--font-roboto-serif), Georgia, serif;
-  font-size: clamp(30px, 2.4vw, 38px);
-  font-weight: 500;
-  letter-spacing: -0.035em;
-  line-height: 1.16;
-}
-
-.bengaluru {
-  min-height: 175svh;
-  background: #e9eae5;
-}
-
-.bengaluruContent {
-  margin-top: clamp(120px, 16vh, 200px);
-}
-
-.bengaluru h2 {
-  margin-bottom: 55px;
-  font-size: clamp(46px, 4vw, 70px);
-  line-height: 1;
-}
-
-.bengaluru .inlineImage {
-  margin: clamp(85px, 9vw, 130px) auto clamp(95px, 10vw, 150px) 0;
-}
-
-.longParagraph {
-  margin-left: auto;
-}
-
-.today {
+.principles {
   display: flex;
-  min-height: 115svh;
-  align-items: center;
-  background: #f8f8f5;
+  max-width: 420px;
+  flex-direction: column;
+  justify-content: end;
+  align-self: end;
+  grid-column: 1;
+  grid-row: 2;
 }
 
-.todayContent {
-  margin-top: 100px;
+.principle {
+  border-top: 1px solid #999d96;
+  padding: clamp(11px, 1.5vh, 18px) 0 clamp(13px, 2.5vh, 28px);
 }
 
-.today h2 {
-  max-width: 12ch;
-  margin-bottom: 45px;
-  font-size: clamp(43px, 3.8vw, 64px);
-  line-height: 1.03;
+.principle h2 {
+  margin: 0 0 5px;
+  font-size: clamp(10px, 0.85vw, 12px);
+  font-weight: 700;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
 }
 
-.lastQuote {
-  max-width: 100%;
-  border-top: 1px solid #bdc4ba;
-  margin: clamp(85px, 9vw, 135px) 0 0;
-  padding-top: 28px;
-  font-family: var(--font-roboto-serif), Georgia, serif;
-  font-size: clamp(31px, 2.5vw, 42px);
-  font-weight: 500;
-  letter-spacing: -0.035em;
-  line-height: 1.13;
+.principle p {
+  max-width: 38ch;
+  margin: 0;
+  font-size: clamp(12px, 1.05vw, 16px);
+  line-height: 1.36;
 }
 
-.progressRail {
-  position: fixed;
-  z-index: 20;
-  top: 50%;
-  right: 18px;
-  display: grid;
-  gap: 5px;
-  opacity: 0;
-  pointer-events: none;
-  transform: translateY(-50%);
-  transition: opacity 0.3s ease;
+.project {
+  position: relative;
+  min-height: 0;
+  align-self: stretch;
+  grid-column: 2;
+  grid-row: 2;
+  margin: 0;
+  overflow: hidden;
+  background: #d1d7d3;
 }
 
-.progressRailVisible {
-  opacity: 1;
-  pointer-events: auto;
+.projectImage {
+  object-fit: cover;
+  object-position: center 44%;
 }
 
-.progressRail a {
-  display: grid;
-  width: 24px;
-  height: 24px;
-  place-items: center;
+.project figcaption {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 25px 16px 13px;
+  background: linear-gradient(transparent, rgb(0 0 0 / 48%));
+  color: #fff;
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
 }
 
-.progressRail a span {
-  width: 4px;
-  height: 4px;
-  border-radius: 50%;
-  background: #7b8279;
-  transition: width 0.3s ease, height 0.3s ease, background-color 0.3s ease;
+.bottom {
+  flex: none;
+  padding-top: clamp(12px, 2.2vh, 24px);
 }
 
-.progressRail a.progressActive span {
-  width: 9px;
-  height: 9px;
-  background: #171916;
+.bottom blockquote {
+  margin: 0 0 clamp(14px, 2vh, 22px);
+  font-family: var(--font-display-sans), sans-serif;
+  font-size: clamp(15px, 1.35vw, 21px);
+  font-weight: 300;
+  letter-spacing: -0.03em;
 }
 
-.progressRailDark a span {
-  background: #aeb4aa;
+.folio {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  border-top: 1px solid #999d96;
+  padding-top: 8px;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
 }
 
-.progressRailDark a.progressActive span {
-  background: #f5f5f2;
+@media (max-width: 700px) {
+  .canvas {
+    padding: 77px 20px 14px;
+  }
+
+  .content {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto minmax(0, 1fr) auto;
+    row-gap: clamp(10px, 1.9vh, 18px);
+  }
+
+  .heading,
+  .intro,
+  .project,
+  .principles {
+    grid-column: 1;
+  }
+
+  .heading { grid-row: 1; }
+  .intro { grid-row: 2; padding: 0; }
+  .project { grid-row: 3; }
+  .principles { grid-row: 4; max-width: none; }
+
+  .kicker {
+    margin-bottom: 8px;
+    font-size: 9px;
+  }
+
+  .heading h1 {
+    font-size: clamp(33px, 9vw, 56px);
+    line-height: 0.95;
+  }
+
+  .intro p {
+    font-size: clamp(12px, 3.2vw, 15px);
+    line-height: 1.27;
+  }
+
+  .principles {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+
+  .principle {
+    padding: 8px 0 0;
+  }
+
+  .principle h2 {
+    font-size: 9px;
+  }
+
+  .principle p {
+    font-size: clamp(10px, 2.7vw, 12px);
+    line-height: 1.27;
+  }
+
+  .project figcaption {
+    font-size: 8px;
+  }
+
+  .bottom {
+    padding-top: 10px;
+  }
+
+  .bottom blockquote {
+    margin-bottom: 10px;
+    font-size: 14px;
+  }
+
+  .folio {
+    font-size: 8px;
+  }
 }
 
-.progressRail a:focus-visible {
-  outline: 2px solid #91a08d;
-  outline-offset: 3px;
-}
-
-@media (max-width: 800px) {
-  .split {
-    display: block;
-  }
-
-  .photoPanel {
-    position: relative;
-    height: 100svh;
-  }
-
-  .scene {
-    min-height: auto;
-    padding: 115px 7vw 90px;
-  }
-
-  .topline {
-    top: 90px;
-    right: 7vw;
-    left: 7vw;
-  }
-
-  .openingContent,
-  .beginningContent,
-  .bengaluruContent,
-  .todayContent {
-    margin-top: 80px;
-  }
-
-  .opening h1 {
-    font-size: clamp(34px, 8vw, 48px);
-  }
-
-  .year {
-    font-size: clamp(76px, 20vw, 115px);
-  }
-
-  .bengaluru h2 {
-    font-size: clamp(48px, 11vw, 70px);
-  }
-
-  .today h2 {
-    font-size: clamp(45px, 10vw, 65px);
-  }
-
-  .firstQuote,
-  .lastQuote {
-    font-size: clamp(33px, 8.6vw, 52px);
-  }
-
-  .progressRail {
-    display: none;
-  }
-}
-
-@media (max-width: 480px) {
-  .photoCaption {
-    flex-direction: column;
-    gap: 3px;
-  }
-
-  .openingBody p,
-  .beginningContent > p,
-  .bengaluruContent > p,
-  .longParagraph,
-  .todayContent > p {
-    font-size: 15px;
-  }
-
-  .inlineImage {
-    width: 100%;
-  }
-
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .photoFrame,
-  .inlineImage img {
-    transition: none;
-  }
+@media (max-width: 380px), (max-height: 680px) {
+  .canvas { padding-top: 68px; }
+  .content { row-gap: 8px; }
+  .heading h1 { font-size: clamp(31px, 8.5vw, 48px); }
+  .intro p { font-size: 12px; }
+  .principle p { font-size: 10px; }
+  .bottom blockquote { font-size: 12px; }
 }
