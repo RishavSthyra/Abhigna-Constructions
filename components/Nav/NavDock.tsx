@@ -1,6 +1,6 @@
 "use client";
 
-import { type RefObject, useEffect, useRef } from "react";
+import { type RefObject, useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import NavMenuHamburger from "./NavMenuHamburger";
 import { ensureGsapPlugins } from "./gsap/easings";
@@ -8,6 +8,7 @@ import { bindScrollDock } from "./gsap/scrollDock";
 
 export type NavDockProps = {
   open: boolean;
+  lightLogo?: boolean;
   onToggle: () => void;
   triggerRef: RefObject<HTMLButtonElement | null>;
 };
@@ -26,10 +27,33 @@ export type NavDockProps = {
  */
 export default function NavDock({
   open,
+  lightLogo = false,
   onToggle,
   triggerRef,
 }: NavDockProps) {
   const barRef = useRef<HTMLDivElement | null>(null);
+  const [overDarkSurface, setOverDarkSurface] = useState(lightLogo);
+
+  useEffect(() => {
+    if (!lightLogo) return;
+    const updateLogoColor = () => {
+      const logoY = 48;
+      const overDark = Array.from(
+        document.querySelectorAll<HTMLElement>("[data-dark-navigation-surface]"),
+      ).some((section) => {
+        const { top, bottom } = section.getBoundingClientRect();
+        return top <= logoY && bottom >= logoY;
+      });
+      setOverDarkSurface(overDark);
+    };
+    updateLogoColor();
+    window.addEventListener("scroll", updateLogoColor, { passive: true });
+    window.addEventListener("resize", updateLogoColor);
+    return () => {
+      window.removeEventListener("scroll", updateLogoColor);
+      window.removeEventListener("resize", updateLogoColor);
+    };
+  }, [lightLogo]);
 
   useEffect(() => {
     if (!barRef.current) return;
@@ -70,7 +94,7 @@ export default function NavDock({
             h-[42px] sm:h-[50px] md:h-[58px]
           "
           style={{
-            filter: open
+            filter: open || (lightLogo && overDarkSurface)
               ? "brightness(0) invert(0.96)"
               : "none",
             transition: "filter 0.4s ease",

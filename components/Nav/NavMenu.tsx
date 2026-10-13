@@ -20,7 +20,7 @@ export type NavMenuProps = {
 /** Same nav items as before — routed to the real pages where possible. */
 const NAV_ROWS = [
   { label: "Home", href: "/" },
-  { label: "Apartments", href: "/#listings" },
+  { label: "Apartments", href: "/#projects" },
   { label: "Why Choose Us", href: "/why-choose-us" },
   { label: "Sustainability", href: "/sustainability" },
   { label: "About Us", href: "/about" },
@@ -28,9 +28,9 @@ const NAV_ROWS = [
 ];
 
 const PROJECT_SUBMENU = [
-  { label: "Abhigna Misty Woods", href: "/#listings" },
-  { label: "Aadhya Serene", href: "/#listings" },
-  { label: "SRC Opulent Bluebells", href: "/#listings" },
+  { label: "Abhigna Misty Woods", href: "/#projects" },
+  { label: "Aadhya Serene", href: "/#projects" },
+  { label: "SRC Opulent Bluebells", href: "/#projects" },
 ];
 
 /**

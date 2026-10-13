@@ -18,7 +18,7 @@ import { ensureGsapPlugins } from "./gsap/easings";
  * identical to the prior Navbar so nothing in the existing sections
  * breaks.
  */
-export default function Nav() {
+export default function Nav({ lightLogo = false }: { lightLogo?: boolean }) {
   const [open, setOpen] = useState(false);
   const triggerRef = useRef<HTMLButtonElement | null>(null);
 
@@ -55,7 +55,7 @@ export default function Nav() {
   // Bridge: NavMenu's hamburger drives `onToggle` which lands here.
   return (
     <>
-      <NavDock open={open} onToggle={toggleMenu} triggerRef={triggerRef} />
+      <NavDock open={open} lightLogo={lightLogo} onToggle={toggleMenu} triggerRef={triggerRef} />
       <NavMenu open={open} onClose={closeMenu} />
     </>
   );

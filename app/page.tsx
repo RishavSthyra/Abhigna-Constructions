@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import Nav from "@/components/Nav";
 import styles from "./home.module.css";
 
 export const metadata: Metadata = {
@@ -18,24 +19,22 @@ const Arrow = ({ diagonal = false }: { diagonal?: boolean }) => (
 export default function Home() {
   return (
     <>
+      <Nav lightLogo />
       <main id="landing-page" className={styles.page}>
-          <section className={styles.hero} aria-labelledby="home-title">
+          <section className={styles.hero} id="hero" data-dark-navigation-surface aria-labelledby="home-title">
+            <video
+              className={styles.heroVideo}
+              poster="/Hero/misty-woods-hero-poster.jpg"
+              autoPlay
+              muted
+              loop
+              playsInline
+              preload="metadata"
+              aria-hidden="true"
+            >
+              <source src="/Hero/misty-woods-hero.mp4" type="video/mp4" />
+            </video>
             <div className={styles.heroBackdrop} />
-            <nav className={styles.nav} aria-label="Main navigation">
-              <Link href="/" className={styles.brand} aria-label="Abhigna Constructions home">
-                <span className={styles.brandMark}>A</span>
-                <span>ABHIGNA <small>CONSTRUCTIONS</small></span>
-              </Link>
-              <div className={styles.navLinks}>
-                <Link href="/about">About</Link>
-                <a href="#projects">Projects</a>
-                <Link href="/why-choose-us">Why Abhigna</Link>
-                <Link href="/sustainability">Sustainability</Link>
-              </div>
-              <Link href="/contact" className={styles.navCta}>
-                Get in touch <Arrow diagonal />
-              </Link>
-            </nav>
 
             <div className={styles.heroContent}>
               <span className={styles.eyebrowLight}>BENGALURU · EST. 2007</span>
@@ -132,7 +131,7 @@ export default function Home() {
             </div>
           </section>
 
-          <section className={styles.finalCta} aria-labelledby="cta-title">
+          <section className={styles.finalCta} data-dark-navigation-surface aria-labelledby="cta-title">
             <div className={styles.finalBackdrop} />
             <span className={styles.kicker}>/ YOUR NEXT CHAPTER</span>
             <h2 id="cta-title">A home that feels<br /><em>like yours.</em></h2>
