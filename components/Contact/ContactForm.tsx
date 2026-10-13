@@ -174,10 +174,10 @@ export default function ContactForm() {
                   <FiPhone size={16} strokeWidth={1.6} />
                 </span>
                 <a
-                  href="tel:+919663763333"
+                  href="tel:96020993333"
                   className="transition hover:text-zinc-900"
                 >
-                  +91 96637 63333
+                  96020993333
                 </a>
               </li>
               <li className="flex items-start gap-4">

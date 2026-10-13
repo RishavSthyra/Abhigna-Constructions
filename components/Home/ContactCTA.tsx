@@ -63,10 +63,10 @@ export default function ContactCTA() {
 
           <div className="mt-10 flex flex-col gap-4 border-t border-white/10 pt-8 text-sm text-white/70 sm:flex-row sm:gap-10">
             <a
-              href="tel:+919663763333"
+              href="tel:96020993333"
               className="flex items-center gap-2 hover:text-white"
             >
-              <FiPhone size={14} /> +91 96637 63333
+              <FiPhone size={14} /> 96020993333
             </a>
             <a
               href="mailto:sales@abhignaconstructions.com"

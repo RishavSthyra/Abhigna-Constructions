@@ -340,7 +340,7 @@ export default function Footer() {
                     />
 
                     <a
-                      href="tel:+919663763333"
+                      href="tel:96020993333"
                       className="
                         text-[11px]
                         text-[#373631]
@@ -348,7 +348,7 @@ export default function Footer() {
                         hover:text-black
                       "
                     >
-                      +91 96637 63333
+                      96020993333
                     </a>
                   </li>
                 </ul>

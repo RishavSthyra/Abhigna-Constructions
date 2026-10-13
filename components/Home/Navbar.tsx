@@ -90,11 +90,11 @@ export default function Navbar() {
             <FiTwitter size={15} />
           </a>
           <a
-            href="tel:+919663763333"
+            href="tel:96020993333"
             className="flex items-center gap-2 rounded-full bg-white/95 px-3.5 py-1.5 text-xs font-medium text-zinc-900 shadow-sm transition hover:bg-white"
           >
             <FiPhone size={13} />
-            <span>+91 96637 63333</span>
+            <span>96020993333</span>
           </a>
         </div>
       </nav>

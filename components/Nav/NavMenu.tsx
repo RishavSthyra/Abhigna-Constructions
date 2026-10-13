@@ -46,7 +46,7 @@ const PROJECT_SUBMENU = [
  *   │ MASTERPLAN          │                          │
  *   │ ABOUT US            │  ── THE FUTURE ──        │
  *   └─────────────────────┴──────────────────────────┘
- *   [● dock mark]    [location · phone · email]
+ *   [location · phone · email]
  *
  * Sheets (CSS-driven):
  *   1. base    — near-opaque ink backdrop
@@ -67,7 +67,6 @@ export default function NavMenu({ open, onClose }: NavMenuProps) {
   const vlinesRef = useRef<HTMLDivElement | null>(null);
   const tagRef = useRef<HTMLDivElement | null>(null);
   const metaRef = useRef<HTMLDivElement | null>(null);
-  const dockMarkRef = useRef<HTMLDivElement | null>(null);
 
   const timelineRef = useRef<gsap.core.Timeline | null>(null);
   const pendingNavigationRef = useRef<string | null>(null);
@@ -147,7 +146,6 @@ export default function NavMenu({ open, onClose }: NavMenuProps) {
       railItems: [],
       tag: tagRef.current,
       meta: metaRef.current,
-      dockMark: dockMarkRef.current,
     };
 
     if (open) {
@@ -409,25 +407,12 @@ export default function NavMenu({ open, onClose }: NavMenuProps) {
           </div>
         </div>
 
-        {/* Bottom dock — small circular logo mark (left) + meta strip (right) */}
-        <div className="mx-auto mt-4 flex w-full max-w-[1400px] items-end justify-between gap-4">
-          <div
-            ref={dockMarkRef}
-            className="
-              hidden h-10 w-10 items-center justify-center sm:inline-flex
-              rounded-full border border-[#e5e7eb]/35 bg-transparent
-              font-display text-[14px] font-[600] text-[#e5e7eb]/85
-            "
-            style={{ opacity: 0 }}
-            aria-label="Abhigna mark"
-          >
-            A
-          </div>
-
+        {/* Bottom contact strip */}
+        <div className="mx-auto mt-4 w-full max-w-[1400px]">
           <div
             ref={metaRef}
             className="
-              flex min-w-0 flex-1 flex-col gap-3 border-t border-[#e5e7eb]/10 pt-5
+              flex min-w-0 w-full flex-col gap-3 border-t border-[#e5e7eb]/10 pt-5
               text-[#e5e7eb]/55 lg:flex-row lg:items-center lg:justify-end
               lg:gap-8
             "
@@ -439,7 +424,7 @@ export default function NavMenu({ open, onClose }: NavMenuProps) {
             </span>
             <span className="inline-flex min-w-0 items-center gap-2 break-words font-mono text-[9px] tracking-[0.02em] sm:text-[10px]">
               <FiPhone className="h-3.5 w-3.5 shrink-0 stroke-[1.5]" aria-hidden />
-              +91 96637 63333
+              96020993333
             </span>
             <span className="inline-flex min-w-0 items-center gap-2 break-words font-mono text-[9px] tracking-[0.02em] sm:text-[10px]">
               <FiMail className="h-3.5 w-3.5 shrink-0 stroke-[1.5]" aria-hidden />

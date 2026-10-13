@@ -32,7 +32,6 @@ export type RevealTargets = {
   railItems: HTMLElement[];
   tag: HTMLElement | null;
   meta: HTMLElement | null;
-  dockMark: HTMLElement | null;
 };
 
 const ROW_STAGGER = 0.05;
@@ -82,15 +81,6 @@ export const buildOpenTimeline = (
   targets: RevealTargets,
 ): gsap.core.Timeline => {
   const tl = gsap.timeline({ paused: true });
-
-  if (targets.dockMark) {
-    tl.fromTo(
-      targets.dockMark,
-      { autoAlpha: 0, scale: 0.6 },
-      { autoAlpha: 1, scale: 1, duration: 0.5, ease: NAV_EASE.softIn },
-      0.05,
-    );
-  }
 
   if (targets.rail) {
     tl.fromTo(
@@ -233,14 +223,6 @@ export const buildCloseTimeline = (
       targets.rail,
       { autoAlpha: 0, x: -12, duration: 0.35, ease: NAV_EASE.softIn },
       0.18,
-    );
-  }
-
-  if (targets.dockMark) {
-    tl.to(
-      targets.dockMark,
-      { autoAlpha: 0, scale: 0.6, duration: 0.35, ease: NAV_EASE.softIn },
-      0.2,
     );
   }
 
