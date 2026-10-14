@@ -101,63 +101,10 @@ export default function Footer() {
             mx-auto grid w-full
             max-w-[1600px]
             grid-cols-1
-            md:grid-cols-[29%_43%_28%]
+            md:grid-cols-[minmax(0,1.2fr)_minmax(0,0.8fr)]
           "
         >
-          {/* LEFT COLUMN */}
-          <div
-            className="
-              flex min-h-[310px] flex-col
-              justify-center
-              border-b border-[#c9c5bc]
-              px-8 py-14
-              sm:px-12
-              md:min-h-[365px]
-              md:border-b-0
-              md:border-r
-              md:px-[7vw]
-              md:py-12
-              lg:px-[6.5vw]
-            "
-          >
-            <div className="max-w-[245px]">
-              <h2
-                className="
-                  font-display
-                  text-[32px]
-                  font-normal
-                  leading-[1.04]
-                  tracking-[-0.035em]
-                  text-[#171715]
-                  sm:text-[36px]
-                  md:text-[34px]
-                  lg:text-[38px]
-                "
-              >
-                Let&rsquo;s build
-                <br />
-                something
-                <br />
-                exceptional.
-              </h2>
-
-              <div className="mt-5 h-px w-8 bg-[#77736a]" />
-
-              <p
-                className="
-                  mt-4 max-w-[220px]
-                  text-[12px]
-                  leading-[1.7]
-                  text-[#4f4d47]
-                "
-              >
-                Tell us about your project and our team will
-                be in touch.
-              </p>
-            </div>
-          </div>
-
-          {/* CENTRE COLUMN */}
+          {/* ENQUIRY FORM */}
           <div
             className="
               flex min-h-[365px]
@@ -167,13 +114,13 @@ export default function Footer() {
               sm:px-12
               md:border-b-0
               md:border-r
-              md:px-10
-              lg:px-14
+              md:px-[6vw]
+              lg:px-20
             "
           >
             <form
               onSubmit={handleSubmit}
-              className="w-full"
+              className="w-full max-w-[600px]"
               noValidate
             >
               <div className="grid grid-cols-1">
@@ -250,19 +197,19 @@ export default function Footer() {
             </form>
           </div>
 
-          {/* RIGHT COLUMN */}
+          {/* CONTACT DETAILS */}
           <div
             className="
-              flex min-h-[340px]
+              flex
               items-center
               px-8 py-12
               sm:px-12
               md:min-h-[365px]
-              md:px-9
-              lg:px-12
+              md:px-[5vw]
+              lg:px-16
             "
           >
-            <div className="w-full">
+            <div className="w-full max-w-[370px]">
               <Link
                 href="/#hero"
                 aria-label="Go to the top of the page"
@@ -355,22 +302,15 @@ export default function Footer() {
                 "
               >
                 <SocialLink
-                  href="https://instagram.com"
+                  href="https://www.instagram.com/abhignaconstructionsofficial/"
                   label="Instagram"
                 />
 
                 <SocialDivider />
 
                 <SocialLink
-                  href="https://linkedin.com"
+                  href="https://in.linkedin.com/company/abhigna-constructions-official"
                   label="LinkedIn"
-                />
-
-                <SocialDivider />
-
-                <SocialLink
-                  href="https://pinterest.com"
-                  label="Pinterest"
                 />
               </nav>
             </div>

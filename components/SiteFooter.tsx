@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { FiInstagram } from "react-icons/fi";
+import { FiInstagram, FiLinkedin } from "react-icons/fi";
 
 /**
  * Shared footer. Used by both the homepage and the About page so the
@@ -54,7 +54,7 @@ export default function SiteFooter() {
             sales@abhignaconstructions.com
           </a>
           <a
-            href="https://instagram.com"
+            href="https://www.instagram.com/abhignaconstructionsofficial/"
             target="_blank"
             rel="noreferrer"
             aria-label="Instagram"
@@ -62,6 +62,16 @@ export default function SiteFooter() {
             data-cursor="image"
           >
             <FiInstagram size={16} strokeWidth={1.5} />
+          </a>
+          <a
+            href="https://in.linkedin.com/company/abhigna-constructions-official"
+            target="_blank"
+            rel="noreferrer"
+            aria-label="LinkedIn"
+            className="text-zinc-700 transition hover:text-zinc-900"
+            data-cursor="image"
+          >
+            <FiLinkedin size={16} strokeWidth={1.5} />
           </a>
         </div>
       </div>
