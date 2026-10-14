@@ -124,14 +124,14 @@ export default function Footer() {
               <h2
                 className="
                   font-display
-                  text-[36px]
+                  text-[32px]
                   font-normal
-                  leading-[0.96]
+                  leading-[1.04]
                   tracking-[-0.035em]
                   text-[#171715]
-                  sm:text-[42px]
-                  md:text-[40px]
-                  lg:text-[46px]
+                  sm:text-[36px]
+                  md:text-[34px]
+                  lg:text-[38px]
                 "
               >
                 Let&rsquo;s build

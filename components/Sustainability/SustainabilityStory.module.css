@@ -542,7 +542,7 @@
 
   .introTitle,
   .visionLead h2 {
-    font-size: clamp(43px, 10vw, 62px);
+    font-size: clamp(36px, 8vw, 50px);
   }
 
   .introStats > div {
@@ -593,7 +593,7 @@
 
   .approachHeader h2,
   .commitmentHeader h2 {
-    font-size: clamp(39px, 9vw, 56px);
+    font-size: clamp(32px, 7vw, 44px);
   }
 
   .accordionItem button {

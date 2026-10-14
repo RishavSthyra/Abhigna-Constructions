@@ -15,9 +15,9 @@
   --font-roboto-serif: var(--font-display-sans);
   --font-display-serif: var(--font-display-sans);
   --home-section-gap: clamp(64px, 6vw, 96px);
-  --type-page-heading: clamp(40px, 4vw, 62px);
-  --type-section-heading: clamp(36px, 3.3vw, 54px);
-  --type-card-heading: clamp(24px, 2.4vw, 38px);
+  --type-page-heading: clamp(34px, 3vw, 52px);
+  --type-section-heading: clamp(28px, 2.55vw, 42px);
+  --type-card-heading: clamp(22px, 2vw, 32px);
   --type-label: 12px;
 }
 

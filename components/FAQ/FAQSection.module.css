@@ -162,7 +162,7 @@
   }
 
   .title {
-    font-size: clamp(36px, 8vw, 48px);
+    font-size: clamp(30px, 7vw, 40px);
   }
 
   .item {
