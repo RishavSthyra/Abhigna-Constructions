@@ -1,5 +1,22 @@
 @import "tailwindcss";
 
+/* MapCN popup and attribution styles from its registry theme, using this site's colors. */
+.maplibregl-popup-content {
+  padding: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+.maplibregl-popup-tip { display: none !important; }
+.maplibregl-ctrl-attrib {
+  border: 1px solid #e7e1d8 !important;
+  border-radius: 6px !important;
+  background: #fbf7f1 !important;
+  color: #6b6660 !important;
+}
+.maplibregl-ctrl-attrib a { color: #6b6660 !important; }
+.maplibregl-ctrl-attrib a:hover { color: #14110f !important; }
+
 @theme {
   --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
   --font-display: var(--font-display-sans), "Outfit", ui-sans-serif, system-ui, sans-serif;

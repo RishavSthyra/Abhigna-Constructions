@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import dynamic from "next/dynamic";
 import {
   FiMail,
   FiPhone,
@@ -10,6 +11,11 @@ import {
   FiLinkedin,
 } from "react-icons/fi";
 
+const LocationMap = dynamic(() => import("./LocationMap"), {
+  ssr: false,
+  loading: () => <div className="h-full w-full bg-[#ebece7]" aria-label="Loading location map" />,
+});
+
 /**
  * ContactForm — artevo.com-inspired contact section.
  *
@@ -18,7 +24,7 @@ import {
  * Right column: "Contact Information" with email, phone, address,
  * social icons.
  *
- * Below: full-bleed map illustration.
+ * Below: full-bleed MapCN map.
  *
  * All copy is GSAP-revealed via data-reveal; the form has local state
  * for a clean "submit pending" → "submitted" transition.
@@ -217,20 +223,13 @@ export default function ContactForm() {
         </div>
       </div>
 
-      {/* Full-width map embed */}
+      {/* Full-width MapCN map */}
       <div
         data-reveal
         className="relative mx-auto mt-28 h-[58vh] min-h-[420px] w-full overflow-hidden md:mt-36"
       >
-        <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.8831051481106!2d77.64027657507543!3d12.915233887394944!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae15003057c5bb%3A0x69f98b0e5a504ffd!2sAbhigna%20Capitol!5e0!3m2!1sen!2sin!4v1786181269147!5m2!1sen!2sin"
-          className="absolute inset-0 h-full w-full border-0"
-          loading="lazy"
-          referrerPolicy="strict-origin-when-cross-origin"
-          allowFullScreen
-          title="Abhigna Capitol location map"
-        />
-        <div className="absolute inset-0 flex items-end">
+        <LocationMap />
+        <div className="pointer-events-none absolute inset-0 flex items-end">
           <div className="mx-auto w-full max-w-[1400px] px-6 pb-10 md:px-12 md:pb-14 lg:px-16">
             <div className="inline-flex items-center gap-3 bg-white/90 px-5 py-3 backdrop-blur">
               <span className="text-zinc-900">
