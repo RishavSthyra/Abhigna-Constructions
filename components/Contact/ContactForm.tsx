@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import {
-  FiArrowRight,
   FiMail,
   FiPhone,
   FiMapPin,
@@ -133,7 +132,6 @@ export default function ContactForm() {
                   : status === "sent"
                     ? "Thanks — we'll reply shortly"
                     : "Try again"}
-              <FiArrowRight aria-hidden="true" />
             </button>
             <p
               aria-live="polite"

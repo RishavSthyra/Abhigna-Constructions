@@ -2,7 +2,6 @@
 
 import { Fragment, useEffect, useRef } from "react";
 import Link from "next/link";
-import { FiArrowUpRight } from "react-icons/fi";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -89,7 +88,6 @@ export default function AboutIntro() {
           className="site-cta site-cta--dark mt-10 md:mt-14"
         >
           More about us
-          <FiArrowUpRight aria-hidden="true" />
         </Link>
       </div>
     </section>

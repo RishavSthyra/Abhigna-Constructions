@@ -2,7 +2,6 @@
 
 import { useEffect, useRef } from "react";
 import Image from "next/image";
-import { FiArrowUpRight } from "react-icons/fi";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ensureGsapPlugins } from "@/components/Nav/gsap/easings";
@@ -207,7 +206,7 @@ function ProjectCard({ project }: { project: Project }) {
         />
       </div>
 
-      {/* Bottom metadata — status, name, location, and link direction */}
+      {/* Bottom metadata — status, name, and location */}
       <div
         aria-hidden
         className="absolute inset-0"
@@ -228,9 +227,6 @@ function ProjectCard({ project }: { project: Project }) {
             {project.location}
           </p>
         </div>
-        <span className="mb-1 shrink-0 transition-transform duration-300 group-hover:-translate-y-1 group-hover:translate-x-1">
-          <FiArrowUpRight size={22} strokeWidth={1.5} />
-        </span>
       </div>
     </article>
   );

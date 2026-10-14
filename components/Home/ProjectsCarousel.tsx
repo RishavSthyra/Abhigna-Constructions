@@ -7,10 +7,6 @@ import { gsap } from "gsap";
 import { ensureGsapPlugins } from "@/components/Nav/gsap/easings";
 import styles from "@/app/home.module.css";
 
-function ProjectArrow() {
-  return <span aria-hidden="true" className={styles.arrowIcon}>↗</span>;
-}
-
 export default function ProjectsCarousel() {
   const trackRef = useRef<HTMLDivElement>(null);
   const carouselRef = useRef<HTMLDivElement>(null);
@@ -82,7 +78,7 @@ export default function ProjectsCarousel() {
             <span className={styles.projectLocation}>Manyata Tech Park · Bengaluru</span>
             <h3>Aadhya<br />Serene</h3>
             <p>Considered spaces for a more meaningful everyday.</p>
-            <a href="https://www.aadhyaserene.com/" target="_blank" rel="noopener noreferrer" className={styles.lightPill}>View project <ProjectArrow /></a>
+            <a href="https://www.aadhyaserene.com/" target="_blank" rel="noopener noreferrer" className={styles.lightPill}>View project</a>
           </div>
         </article>
 
@@ -94,7 +90,7 @@ export default function ProjectsCarousel() {
             <span className={styles.projectLocation}>JP Nagar · Bengaluru</span>
             <h3>Misty<br />Woods</h3>
             <p>A quieter rhythm of life, surrounded by green.</p>
-            <Link href="/contact" className={styles.lightPill}>Enquire now <ProjectArrow /></Link>
+            <Link href="/contact" className={styles.lightPill}>Enquire now</Link>
           </div>
         </article>
 
@@ -106,7 +102,7 @@ export default function ProjectsCarousel() {
             <span className={styles.projectLocation}>Electronic City Phase II · Bengaluru</span>
             <h3 className={styles.projectLongTitle}>SRC Opulent<br />Bluebells</h3>
             <p>Explore this Abhigna community in Electronic City.</p>
-            <a href="https://huntvastuhomes.com/opulent-src-bluebells-vastu-apartments-ananth-nagar-bengaluru" target="_blank" rel="noopener noreferrer" className={styles.lightPill}>View project <ProjectArrow /></a>
+            <a href="https://huntvastuhomes.com/opulent-src-bluebells-vastu-apartments-ananth-nagar-bengaluru" target="_blank" rel="noopener noreferrer" className={styles.lightPill}>View project</a>
           </div>
         </article>
       </div>

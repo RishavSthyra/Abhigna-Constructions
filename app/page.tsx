@@ -11,12 +11,6 @@ export const metadata: Metadata = {
     "Thoughtfully planned residential communities in Bengaluru, built with engineering expertise, quality construction, and care for everyday living.",
 };
 
-const Arrow = ({ diagonal = false }: { diagonal?: boolean }) => (
-  <span aria-hidden="true" className={styles.arrowIcon}>
-    {diagonal ? "↗" : "→"}
-  </span>
-);
-
 export default function Home() {
   return (
     <>
@@ -39,7 +33,7 @@ export default function Home() {
 
             <div className={styles.heroContent}>
               <h1 id="home-title"><span>Homes built with purpose.</span><em>Places made for life.</em></h1>
-              <Link href="#projects" className={styles.heroPill}>Explore projects <Arrow diagonal /></Link>
+              <Link href="#projects" className={styles.heroPill}>Explore projects</Link>
             </div>
           </section>
 
@@ -53,7 +47,7 @@ export default function Home() {
                 Bengaluru. Each project is planned before building begins and
                 overseen by qualified engineers from soil testing to handover.
               </p>
-              <Link href="/about" className={styles.darkPill}>More about us <Arrow diagonal /></Link>
+              <Link href="/about" className={styles.darkPill}>More about us</Link>
             </div>
 
             <div className={styles.aboutBento} aria-label="Homes and spaces by Abhigna Constructions">
@@ -84,7 +78,7 @@ export default function Home() {
               <div className={styles.introBottom}>
                 <span className={styles.kicker}>Our communities</span>
                 <h2 id="projects-title">Built around<br />your life.</h2>
-                <Link href="/contact" className={styles.darkPill}>Find your home <Arrow diagonal /></Link>
+                <Link href="/contact" className={styles.darkPill}>Find your home</Link>
               </div>
             </div>
             <ProjectsCarousel />
@@ -119,7 +113,7 @@ export default function Home() {
                 <span className={styles.kicker}>Why Abhigna</span>
                 <h2 id="detail-title">The details you don’t see make all the difference.</h2>
                 <p className={styles.detailDescription}>Quality construction, Vastu-compliant design, and on-time delivery are built into our process from the start.</p>
-                <Link href="/why-choose-us" className={styles.darkPill}>Our approach <Arrow diagonal /></Link>
+                <Link href="/why-choose-us" className={styles.darkPill}>Our approach</Link>
               </div>
             </div>
             <div className={styles.detailImage}>
@@ -133,7 +127,7 @@ export default function Home() {
             <span className={styles.kicker}>Your next chapter</span>
             <h2 id="cta-title">A home that feels<br /><em>like yours.</em></h2>
             <p>Let’s find the place where your story can grow.</p>
-            <Link href="/contact" className={styles.ctaPill}>Start a conversation <Arrow diagonal /></Link>
+            <Link href="/contact" className={styles.ctaPill}>Start a conversation</Link>
           </section>
 
       </main>

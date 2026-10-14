@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { FiArrowRight, FiPhone, FiMail } from "react-icons/fi";
+import { FiPhone, FiMail } from "react-icons/fi";
 
 export default function ContactCTA() {
   const [email, setEmail] = useState("");
@@ -57,7 +57,6 @@ export default function ContactCTA() {
               className="site-cta site-cta--light"
             >
               {submitted ? "Thank you!" : "Get Started"}
-              <FiArrowRight size={14} />
             </button>
           </form>
 

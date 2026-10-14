@@ -3,7 +3,6 @@
 import { useEffect, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { FiArrowUpRight } from "react-icons/fi";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import styles from "./SustainabilityFeature.module.css";
@@ -104,7 +103,6 @@ export default function SustainabilityFeature({
             className={`site-cta site-cta--light ${styles.link}`}
           >
             {standalone ? "Back to home" : "Explore sustainability"}
-            <FiArrowUpRight aria-hidden="true" />
           </Link>
         </div>
       </div>

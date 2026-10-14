@@ -2,7 +2,6 @@
 
 import { useId, useState } from "react";
 import Link from "next/link";
-import { FiArrowUpRight } from "react-icons/fi";
 import { PiMinusThin, PiPlusThin } from "react-icons/pi";
 import styles from "./FAQSection.module.css";
 
@@ -138,7 +137,6 @@ export default function FAQSection({ fullPage = false }: FAQSectionProps) {
           <div className={styles.moreWrap}>
             <Link className="site-cta site-cta--dark" href="/faqs">
               Explore all FAQs
-              <FiArrowUpRight aria-hidden="true" />
             </Link>
           </div>
         )}

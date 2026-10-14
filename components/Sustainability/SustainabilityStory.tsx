@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
-import { FiArrowDownRight, FiArrowUpRight, FiMinus, FiPlus } from "react-icons/fi";
+import { FiArrowUpRight, FiMinus, FiPlus } from "react-icons/fi";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import styles from "./SustainabilityStory.module.css";
@@ -187,7 +187,7 @@ export default function SustainabilityStory() {
               <p data-rise className={styles.introText}>
                 Sustainability, for us, is the habit of making choices that a family will thank us for in the future. Since 2007, that has meant keeping the trees a site already has, catching the rain that falls on it, and designing homes that stay cool and bright on their own.
               </p>
-              <a data-rise className={`site-cta site-cta--dark ${styles.textLink}`} href="#approach">See how we build <FiArrowDownRight aria-hidden="true" /></a>
+              <a data-rise className={`site-cta site-cta--dark ${styles.textLink}`} href="#approach">See how we build</a>
             </div>
             <div className={styles.introStats} aria-label="Sustainability at a glance">
               <div><strong>2007</strong><span>Building since</span></div>

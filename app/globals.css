@@ -26,7 +26,6 @@ main#hero:has([aria-label="Loading Abhigna Constructions"]) {
   min-height: 54px;
   align-items: center;
   justify-content: center;
-  gap: 24px;
   border: 1px solid transparent;
   border-radius: 999px;
   padding: 14px 24px;
@@ -39,13 +38,6 @@ main#hero:has([aria-label="Loading Abhigna Constructions"]) {
   text-decoration: none;
   text-transform: uppercase;
   transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
-}
-
-.site-cta svg {
-  width: 17px;
-  height: 17px;
-  flex: none;
-  stroke-width: 1.6;
 }
 
 .site-cta:hover:not(:disabled) {

@@ -3,7 +3,6 @@
 import { useState, type FormEvent } from "react";
 import Link from "next/link";
 import {
-  FiArrowRight,
   FiChevronDown,
   FiMail,
   FiMapPin,
@@ -232,12 +231,6 @@ export default function Footer() {
                         ? "Try again"
                         : "Send inquiry"}
                 </span>
-
-                <FiArrowRight
-                  aria-hidden="true"
-                  size={16}
-                  strokeWidth={1.4}
-                />
               </button>
 
               <div

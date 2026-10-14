@@ -1,7 +1,6 @@
 "use client";
 
 import Image from "next/image";
-import { FiArrowUpRight } from "react-icons/fi";
 
 /**
  * Home — Services (saisei-style asymmetric grid)
@@ -153,7 +152,6 @@ export default function WhyUs() {
               <span className="border-b border-zinc-900 pb-1">
                 Explore All Expertise
               </span>
-              <FiArrowUpRight size={14} strokeWidth={1.6} />
             </a>
           </div>
         </div>
