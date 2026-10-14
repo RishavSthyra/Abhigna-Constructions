@@ -33,7 +33,7 @@ export default function Home() {
             <div className={styles.heroBackdrop} />
 
             <div className={styles.heroContent}>
-              <h1 id="home-title"><span>Homes built with purpose.</span><em>Places made for life.</em></h1>
+              <h1 id="home-title"><span>Two decades of building homes.</span><em>A name you can trust.</em></h1>
               <Link href="#projects" className={styles.heroPill}>Explore projects</Link>
             </div>
           </section>
