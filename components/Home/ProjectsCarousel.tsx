@@ -75,10 +75,10 @@ export default function ProjectsCarousel() {
           <div className={styles.projectShade} />
           <div className={styles.projectStatus}><span>Ongoing</span></div>
           <div className={styles.projectBottom}>
-            <span data-text-reveal className={styles.projectLocation}>Manyata Tech Park · Bengaluru</span>
-            <h3 data-text-reveal data-text-delay="70">Aadhya<br />Serene</h3>
-            <p data-text-reveal data-text-delay="140">Considered spaces for a more meaningful everyday.</p>
-            <a data-text-reveal data-text-delay="210" href="https://www.aadhyaserene.com/" target="_blank" rel="noopener noreferrer" className={styles.projectLink}>View project <span aria-hidden="true">↗</span></a>
+            <span className={styles.projectLocation}>Manyata Tech Park · Bengaluru</span>
+            <h3>Aadhya<br />Serene</h3>
+            <p>Considered spaces for a more meaningful everyday.</p>
+            <a href="https://www.aadhyaserene.com/" target="_blank" rel="noopener noreferrer" className={styles.projectLink}>View project <span aria-hidden="true">↗</span></a>
           </div>
         </article>
 
@@ -87,10 +87,10 @@ export default function ProjectsCarousel() {
           <div className={styles.projectShade} />
           <div className={styles.projectStatus}><span>Completed</span></div>
           <div className={styles.projectBottom}>
-            <span data-text-reveal className={styles.projectLocation}>JP Nagar · Bengaluru</span>
-            <h3 data-text-reveal data-text-delay="70">Misty<br />Woods</h3>
-            <p data-text-reveal data-text-delay="140">A quieter rhythm of life, surrounded by green.</p>
-            <Link data-text-reveal data-text-delay="210" href="/contact" className={styles.projectLink}>Enquire now <span aria-hidden="true">↗</span></Link>
+            <span className={styles.projectLocation}>JP Nagar · Bengaluru</span>
+            <h3>Misty<br />Woods</h3>
+            <p>A quieter rhythm of life, surrounded by green.</p>
+            <Link href="/contact" className={styles.projectLink}>Enquire now <span aria-hidden="true">↗</span></Link>
           </div>
         </article>
 
@@ -99,10 +99,10 @@ export default function ProjectsCarousel() {
           <div className={styles.projectShade} />
           <div className={styles.projectStatus}><span>Completed</span></div>
           <div className={styles.projectBottom}>
-            <span data-text-reveal className={styles.projectLocation}>Electronic City Phase II · Bengaluru</span>
-            <h3 data-text-reveal data-text-delay="70" className={styles.projectLongTitle}>SRC Opulent<br />Bluebells</h3>
-            <p data-text-reveal data-text-delay="140">Explore this Abhigna community in Electronic City.</p>
-            <a data-text-reveal data-text-delay="210" href="https://huntvastuhomes.com/opulent-src-bluebells-vastu-apartments-ananth-nagar-bengaluru" target="_blank" rel="noopener noreferrer" className={styles.projectLink}>View project <span aria-hidden="true">↗</span></a>
+            <span className={styles.projectLocation}>Electronic City Phase II · Bengaluru</span>
+            <h3 className={styles.projectLongTitle}>SRC Opulent<br />Bluebells</h3>
+            <p>Explore this Abhigna community in Electronic City.</p>
+            <a href="https://huntvastuhomes.com/opulent-src-bluebells-vastu-apartments-ananth-nagar-bengaluru" target="_blank" rel="noopener noreferrer" className={styles.projectLink}>View project <span aria-hidden="true">↗</span></a>
           </div>
         </article>
       </div>

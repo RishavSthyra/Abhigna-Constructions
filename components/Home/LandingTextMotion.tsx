@@ -20,11 +20,11 @@ export default function LandingTextMotion() {
 
           const animation = element.animate(
             [
-              { opacity: 0, transform: "translateY(18px)" },
+              { opacity: 0.78, transform: "translateY(12px)" },
               { opacity: 1, transform: "translateY(0)" },
             ],
             {
-              duration: 720,
+              duration: 620,
               delay: Number(element.dataset.textDelay ?? 0),
               easing: "cubic-bezier(0.22, 1, 0.36, 1)",
               fill: "backwards",
@@ -38,7 +38,7 @@ export default function LandingTextMotion() {
           );
         });
       },
-      { rootMargin: "0px 0px -8% 0px", threshold: 0.08 },
+      { rootMargin: "0px 0px -12% 0px", threshold: 0.15 },
     );
 
     page.querySelectorAll<HTMLElement>("[data-text-reveal]").forEach((element) => {
