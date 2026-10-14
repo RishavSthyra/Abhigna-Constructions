@@ -122,10 +122,10 @@ export default function Home() {
 
           <section className={styles.finalCta} data-dark-navigation-surface aria-labelledby="cta-title">
             <div className={styles.finalBackdrop} />
-            <span className={styles.kicker}>Your next chapter</span>
-            <h2 id="cta-title">A home that feels<br /><em>like yours.</em></h2>
-            <p>Let’s find the place where your story can grow.</p>
-            <Link href="/contact" className={styles.ctaPill}>Start a conversation</Link>
+            <span className={styles.kicker}>Abhigna Constructions · Since 2007</span>
+            <h2 id="cta-title">Live the<br /><em>Abhigna way.</em></h2>
+            <p>Engineering-led homes, delivered across Bengaluru for nearly two decades.</p>
+            <Link href="/contact" className={styles.ctaPill}>Enquire now</Link>
           </section>
 
       </main>
