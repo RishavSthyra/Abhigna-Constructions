@@ -20,8 +20,8 @@ export default function LandingTextMotion() {
 
           const animation = element.animate(
             [
-              { opacity: 0.78, transform: "translateY(12px)" },
-              { opacity: 1, transform: "translateY(0)" },
+              { transform: "translateY(12px)" },
+              { transform: "translateY(0)" },
             ],
             {
               duration: 620,
