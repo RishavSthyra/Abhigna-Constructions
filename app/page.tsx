@@ -79,7 +79,6 @@ export default function Home() {
               <div className={styles.introBottom}>
                 <span className={styles.kicker}>Our communities</span>
                 <h2 id="projects-title">Built around<br />your life.</h2>
-                <Link href="/contact" className={styles.darkPill}>Find your home</Link>
               </div>
             </div>
             <ProjectsCarousel />
