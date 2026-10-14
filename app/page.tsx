@@ -76,10 +76,10 @@ export default function Home() {
 
           <section className={styles.projects} id="projects" aria-labelledby="projects-title">
             <div className={styles.projectsIntro}>
-              <p className={styles.microCopy}>Every address begins with a simple idea: a better way to feel at home.</p>
+              <p className={styles.microCopy}>Explore our ongoing and completed residential projects across Bengaluru.</p>
               <div className={styles.introBottom}>
-                <span className={styles.kicker}>Our communities</span>
-                <h2 id="projects-title">Built around<br />your life.</h2>
+                <span className={styles.kicker}>Built by Abhigna</span>
+                <h2 id="projects-title">Our<br />projects.</h2>
               </div>
             </div>
             <ProjectsCarousel />
