@@ -2,7 +2,6 @@ import Nav from "@/components/Nav";
 import ScrollMotion from "@/components/ui/ScrollMotion";
 import SecondaryHero from "@/components/ui/SecondaryHero";
 import ContactForm from "@/components/Contact/ContactForm";
-import SiteFooter from "@/components/SiteFooter";
 
 export default function ContactPage() {
   return (
@@ -19,7 +18,6 @@ export default function ContactPage() {
         />
         <ContactForm />
       </main>
-      <SiteFooter />
     </>
   );
 }

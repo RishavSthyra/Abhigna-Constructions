@@ -35,7 +35,7 @@ export default function AboutStory() {
         </div>
 
         <blockquote>
-          “I have never sold a home I would not live in myself.”
+          “Every project Abhigna delivers is a statement of what residential development should be.”
         </blockquote>
       </section>
     </main>

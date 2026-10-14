@@ -97,8 +97,8 @@ export default function Home() {
               </div>
               <div className={styles.quoteCard}>
                 <span className={styles.quoteMark}>“</span>
-                <blockquote>I have never sold a home I would not live in myself.</blockquote>
-                <div><span className={styles.quoteRule} /><strong>Bhaskar Reddy</strong><small>Founder · Civil Engineer</small></div>
+                <blockquote>Engineering excellence is not an advantage at Abhigna. It is the baseline.</blockquote>
+                <div><span className={styles.quoteRule} /><strong>Abhigna Constructions</strong></div>
               </div>
             </div>
           </section>
@@ -114,7 +114,7 @@ export default function Home() {
             </div>
             <div className={styles.numberCard}>
               <div><h3>Square feet delivered</h3><p>Residential development across Nellore and Bengaluru.</p></div>
-              <CountUp end={1} label="approximately one million" prefix="~" millions />
+              <CountUp end={1} label="over one million" suffix="+" millions />
             </div>
           </section>
 

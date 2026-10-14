@@ -49,7 +49,9 @@
 .projectLink span{display:inline-block;font-size:19px;font-weight:400;line-height:1;transform:translateY(-1px);transition:transform .25s ease}
 .projectLink:hover{border-color:#fff}.projectLink:hover span{transform:translate(2px,-3px)}
 .projectBottom .projectLongTitle{font-size:clamp(30px,2.8vw,44px)}
+@media(min-width:1001px){.projects{min-height:100svh;align-items:center;padding-bottom:clamp(35px,4vw,60px)}.projectsIntro,.projectCard{min-height:clamp(520px,calc(100svh - 190px),900px)}}
 .philosophy{margin:clamp(60px,6vw,96px) 0 0;padding:clamp(48px,5vw,80px) clamp(20px,4.8vw,76px) clamp(30px,4vw,62px);background:#fff;text-align:center}
+@media(min-width:1001px){.philosophy{margin-top:0}}
 .philosophy h2{margin:17px auto 38px;max-width:1050px;font-family:var(--font-display),sans-serif;font-size:var(--type-section-heading);font-weight:400;line-height:1.14;letter-spacing:-.045em}.philosophy h2 span{color:#9ca19d;transition:color .9s ease}.philosophy h2 .scrollToneActive{color:#1b1d1c}
 .philosophyGrid{display:grid;grid-template-columns:1.7fr 1fr;gap:14px;text-align:left}
 .philosophyImage,.quoteCard{position:relative;min-height:360px;border-radius:16px;overflow:hidden}.philosophyImage img{object-fit:cover}.philosophyImage::after{content:'';position:absolute;inset:50% 0 0;background:linear-gradient(transparent,rgba(0,0,0,.48))}.philosophyImage>span{position:absolute;z-index:1;bottom:22px;left:24px;color:#fff;font-size:14px}

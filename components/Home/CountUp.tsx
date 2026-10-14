@@ -50,7 +50,7 @@ export default function CountUp({ end, label, prefix = "", suffix = "", millions
 
   return (
     <strong ref={ref} aria-label={label}>
-      {prefix}{displayValue}{millions ? "M" : suffix && <span>{suffix}</span>}
+      {prefix}{displayValue}{millions && "M"}{suffix && <span>{suffix}</span>}
     </strong>
   );
 }
