@@ -101,9 +101,18 @@ export default function Home() {
           </section>
 
           <section className={styles.numbers} aria-label="Abhigna at a glance">
-            <div className={styles.numberRow}><p>Founded by civil engineer Bhaskar Reddy, with a commitment to build better homes.</p><div><strong>2007</strong><span>Founded</span></div></div>
-            <div className={styles.numberRow}><p>Deep construction experience guides every decision, from soil testing to handover.</p><div><strong>35<span>+</span></strong><span>Years of expertise</span></div></div>
-            <div className={styles.numberRow}><p>Residential space delivered across our communities, with quality at its core.</p><div><strong>~1M</strong><span>Sq ft delivered</span></div></div>
+            <div className={styles.numberCard}>
+              <strong>2007</strong>
+              <div><h3>Founded on engineering</h3><p>Established by civil engineer Bhaskar Reddy.</p></div>
+            </div>
+            <div className={styles.numberCard}>
+              <strong>35<span>+</span></strong>
+              <div><h3>Years of experience</h3><p>Qualified engineers guide every stage, from soil testing to handover.</p></div>
+            </div>
+            <div className={styles.numberCard}>
+              <strong>~1M</strong>
+              <div><h3>Square feet delivered</h3><p>Residential development across Nellore and Bengaluru.</p></div>
+            </div>
           </section>
 
           <ServicesGrid headingLevel="h2" />
