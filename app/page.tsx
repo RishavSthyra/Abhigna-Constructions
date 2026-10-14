@@ -43,10 +43,11 @@ export default function Home() {
               <span className={styles.kicker}>About us</span>
               <h2 id="about-preview-title">Engineering-led homes since 2007.</h2>
               <p>
-                Founded by civil engineer Bhaskar Reddy, Abhigna Constructions
-                brings over 35 years of construction expertise to homes across
-                Bengaluru. Each project is planned before building begins and
-                overseen by qualified engineers from soil testing to handover.
+                Abhigna Constructions is an engineering-led developer. Each
+                project reflects meticulous planning, Vastu-aligned design and a
+                standard of excellence that has delivered close to a million
+                square feet of homes. These are homes built for the generations
+                that follow.
               </p>
               <Link href="/about" className={styles.darkPill}>More about us</Link>
             </div>
