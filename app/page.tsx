@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Nav from "@/components/Nav";
 import ProjectsCarousel from "@/components/Home/ProjectsCarousel";
+import LandingTextMotion from "@/components/Home/LandingTextMotion";
 import ServicesGrid from "@/components/Services/ServicesGrid";
 import styles from "./home.module.css";
 
@@ -17,6 +18,7 @@ export default function Home() {
     <>
       <Nav lightLogo />
       <main id="landing-page" className={styles.page}>
+          <LandingTextMotion />
           <section className={styles.hero} id="hero" data-dark-navigation-surface aria-labelledby="home-title">
             <video
               className={styles.heroVideo}
@@ -40,15 +42,15 @@ export default function Home() {
 
           <section className={styles.aboutPreview} id="about" aria-labelledby="about-preview-title">
             <div className={styles.aboutCopy}>
-              <span className={styles.kicker}>About us</span>
-              <h2 id="about-preview-title">Engineering-led homes since 2007.</h2>
-              <p>
+              <span data-text-reveal className={styles.kicker}>About us</span>
+              <h2 data-text-reveal data-text-delay="90" id="about-preview-title">Engineering-led homes since 2007.</h2>
+              <p data-text-reveal data-text-delay="170">
                 Founded by civil engineer Bhaskar Reddy, Abhigna Constructions
                 brings over 35 years of construction expertise to homes across
                 Bengaluru. Each project is planned before building begins and
                 overseen by qualified engineers from soil testing to handover.
               </p>
-              <Link href="/about" className={styles.darkPill}>More about us</Link>
+              <Link data-text-reveal data-text-delay="250" href="/about" className={styles.darkPill}>More about us</Link>
             </div>
 
             <div className={styles.aboutBento} aria-label="Homes and spaces by Abhigna Constructions">
@@ -75,43 +77,43 @@ export default function Home() {
 
           <section className={styles.projects} id="projects" aria-labelledby="projects-title">
             <div className={styles.projectsIntro}>
-              <p className={styles.microCopy}>Every address begins with a simple idea: a better way to feel at home.</p>
+              <p data-text-reveal className={styles.microCopy}>Every address begins with a simple idea: a better way to feel at home.</p>
               <div className={styles.introBottom}>
-                <span className={styles.kicker}>Our communities</span>
-                <h2 id="projects-title">Built around<br />your life.</h2>
+                <span data-text-reveal className={styles.kicker}>Our communities</span>
+                <h2 data-text-reveal data-text-delay="100" id="projects-title">Built around<br />your life.</h2>
               </div>
             </div>
             <ProjectsCarousel />
           </section>
 
           <section className={styles.philosophy} aria-labelledby="philosophy-title">
-            <span className={styles.kicker}>The Abhigna approach</span>
-            <h2 id="philosophy-title">Good homes begin long before <br />the first brick is laid. <span>We bring engineering, <br />care, and conviction to every detail.</span></h2>
+            <span data-text-reveal className={styles.kicker}>The Abhigna approach</span>
+            <h2 data-text-reveal data-text-delay="90" id="philosophy-title">Good homes begin long before <br />the first brick is laid. <span>We bring engineering, <br />care, and conviction to every detail.</span></h2>
             <div className={styles.philosophyGrid}>
               <div className={styles.philosophyImage}>
                 <Image src="/sustainability-landscape.webp" alt="Green landscape and trees" fill sizes="(max-width: 700px) 100vw, 60vw" />
-                <span>Made for a life well lived.</span>
+                <span data-text-reveal>Made for a life well lived.</span>
               </div>
               <div className={styles.quoteCard}>
                 <span className={styles.quoteMark}>“</span>
-                <blockquote>I have never sold a home I would not live in myself.</blockquote>
-                <div><span className={styles.quoteRule} /><strong>Bhaskar Reddy</strong><small>Founder · Civil Engineer</small></div>
+                <blockquote data-text-reveal>I have never sold a home I would not live in myself.</blockquote>
+                <div data-text-reveal data-text-delay="100"><span className={styles.quoteRule} /><strong>Bhaskar Reddy</strong><small>Founder · Civil Engineer</small></div>
               </div>
             </div>
           </section>
 
           <section className={styles.numbers} aria-label="Abhigna at a glance">
             <div className={styles.numberCard}>
-              <strong>2007</strong>
-              <div><h3>Founded on engineering</h3><p>Established by civil engineer Bhaskar Reddy.</p></div>
+              <strong data-text-reveal>2007</strong>
+              <div><h3 data-text-reveal data-text-delay="90">Founded on engineering</h3><p data-text-reveal data-text-delay="160">Established by civil engineer Bhaskar Reddy.</p></div>
             </div>
             <div className={styles.numberCard}>
-              <strong>35<span>+</span></strong>
-              <div><h3>Years of experience</h3><p>Qualified engineers guide every stage, from soil testing to handover.</p></div>
+              <strong data-text-reveal data-text-delay="90">35<span>+</span></strong>
+              <div><h3 data-text-reveal data-text-delay="180">Years of experience</h3><p data-text-reveal data-text-delay="250">Qualified engineers guide every stage, from soil testing to handover.</p></div>
             </div>
             <div className={styles.numberCard}>
-              <strong>~1M</strong>
-              <div><h3>Square feet delivered</h3><p>Residential development across Nellore and Bengaluru.</p></div>
+              <strong data-text-reveal data-text-delay="180">~1M</strong>
+              <div><h3 data-text-reveal data-text-delay="270">Square feet delivered</h3><p data-text-reveal data-text-delay="340">Residential development across Nellore and Bengaluru.</p></div>
             </div>
           </section>
 
@@ -119,10 +121,10 @@ export default function Home() {
 
           <section className={styles.finalCta} data-dark-navigation-surface aria-labelledby="cta-title">
             <div className={styles.finalBackdrop} />
-            <span className={styles.kicker}>Your next chapter</span>
-            <h2 id="cta-title">A home that feels<br /><em>like yours.</em></h2>
-            <p>Let’s find the place where your story can grow.</p>
-            <Link href="/contact" className={styles.ctaPill}>Start a conversation</Link>
+            <span data-text-reveal className={styles.kicker}>Your next chapter</span>
+            <h2 data-text-reveal data-text-delay="90" id="cta-title">A home that feels<br /><em>like yours.</em></h2>
+            <p data-text-reveal data-text-delay="170">Let’s find the place where your story can grow.</p>
+            <Link data-text-reveal data-text-delay="250" href="/contact" className={styles.ctaPill}>Start a conversation</Link>
           </section>
 
       </main>
