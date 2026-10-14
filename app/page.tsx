@@ -86,17 +86,17 @@ export default function Home() {
           </section>
 
           <section className={styles.philosophy} aria-labelledby="philosophy-title">
-            <span className={styles.kicker}>How we build</span>
-            <h2 id="philosophy-title">Good homes begin long before <br />the first brick is laid. <span>We bring engineering, <br />care, and conviction to every detail.</span></h2>
+            <span className={styles.kicker}>Sustainability</span>
+            <h2 id="philosophy-title">Build with nature in mind. <span>Trees, rainwater, and daylight shape the places we make.</span></h2>
             <div className={styles.philosophyGrid}>
               <div className={styles.philosophyImage}>
                 <Image src="/sustainability-landscape.webp" alt="Green landscape and trees" fill sizes="(max-width: 700px) 100vw, 60vw" />
-                <span>Made for a life well lived.</span>
+                <span>Making room for nature.</span>
               </div>
-              <div className={styles.quoteCard}>
-                <span className={styles.quoteMark}>“</span>
-                <blockquote>I have never sold a home I would not live in myself.</blockquote>
-                <div><span className={styles.quoteRule} /><strong>Bhaskar Reddy</strong><small>Founder · Civil Engineer</small></div>
+              <div className={styles.sustainabilityCard}>
+                <span className={styles.sustainabilityCardLabel}>Our approach</span>
+                <p>We plan around existing trees, harvest rainwater, and design homes for natural light and cross-ventilation.</p>
+                <Link href="/sustainability" className={styles.sustainabilityLink}>Explore sustainability <span aria-hidden="true">↗</span></Link>
               </div>
             </div>
           </section>
