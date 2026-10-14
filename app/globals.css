@@ -24,28 +24,28 @@ main#hero:has([aria-label="Loading Abhigna Constructions"]) {
 .site-cta {
   display: inline-flex;
   min-height: 54px;
+  min-width: 176px;
   align-items: center;
   justify-content: center;
   border: 1px solid transparent;
-  border-radius: 999px;
-  padding: 14px 24px;
-  font-family: var(--font-inter), sans-serif;
-  font-size: 11px;
-  font-weight: 600;
-  line-height: 1.25;
-  letter-spacing: 0.14em;
+  border-radius: 5px;
+  padding: 0 28px;
+  font-family: var(--font-display), sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: 0.02em;
   text-align: center;
   text-decoration: none;
-  text-transform: uppercase;
-  transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+  transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s cubic-bezier(0.2, 0.7, 0.2, 1);
 }
 
 .site-cta:hover:not(:disabled) {
-  transform: translateY(-3px);
+  transform: translateY(-2px);
 }
 
 .site-cta:focus-visible {
-  outline: 2px solid currentColor;
+  outline: 2px solid #a7b79f;
   outline-offset: 4px;
 }
 
@@ -55,26 +55,37 @@ main#hero:has([aria-label="Loading Abhigna Constructions"]) {
 }
 
 .site-cta--dark {
-  background: #171918;
-  color: #fff;
+  background: #233229;
+  border-color: #233229;
+  color: #f7f7f1;
+  box-shadow: 0 12px 24px -17px rgba(23, 38, 27, 0.75), inset 0 1px 0 rgba(255, 255, 255, 0.14);
 }
 
 .site-cta--dark:hover:not(:disabled) {
-  background: #37453d;
+  background: #34483a;
+  border-color: #34483a;
+  box-shadow: 0 16px 28px -16px rgba(23, 38, 27, 0.6);
 }
 
 .site-cta--light {
-  background: #fff;
-  color: #171918;
+  background: #f6f6f1;
+  border-color: rgba(255, 255, 255, 0.75);
+  color: #1c2922;
+  box-shadow: 0 12px 25px -18px rgba(0, 0, 0, 0.75), inset 0 1px 0 rgba(255, 255, 255, 0.9), inset 0 0 0 1px rgba(34, 50, 40, 0.05);
 }
 
 .site-cta--light:hover:not(:disabled) {
-  background: #e9eee9;
+  background: #fff;
+  box-shadow: 0 16px 28px -16px rgba(0, 0, 0, 0.7);
 }
 
 @media (prefers-reduced-motion: reduce) {
   .site-cta {
     transition: none;
+  }
+
+  .site-cta:hover:not(:disabled) {
+    transform: none;
   }
 }
 
