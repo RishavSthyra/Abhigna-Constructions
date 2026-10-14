@@ -79,10 +79,10 @@
 
 .eyebrow {
   margin: 0 0 25px;
-  font-size: 10px;
-  font-weight: 600;
-  letter-spacing: 0.24em;
-  text-transform: uppercase;
+  font-family: var(--font-sans), sans-serif;
+  font-size: var(--type-label);
+  font-weight: 500;
+  letter-spacing: 0.02em;
 }
 
 .introScene {
@@ -109,7 +109,7 @@
 }
 
 .introTitle {
-  font-size: clamp(43px, 4.2vw, 72px);
+  font-size: var(--type-page-heading);
   line-height: 0.99;
 }
 
@@ -198,7 +198,7 @@
 }
 
 .visionLead h2 {
-  font-size: clamp(44px, 4.1vw, 76px);
+  font-size: var(--type-page-heading);
   line-height: 0.99;
 }
 
@@ -287,7 +287,7 @@
 
 .approachHeader h2,
 .commitmentHeader h2 {
-  font-size: clamp(40px, 3.7vw, 64px);
+  font-size: var(--type-section-heading);
   line-height: 1.04;
 }
 
@@ -439,7 +439,7 @@
   max-width: 100%;
   margin: 0;
   font-family: var(--font-roboto-serif), sans-serif;
-  font-size: clamp(42px, 3.8vw, 64px);
+  font-size: var(--type-section-heading);
   font-weight: 500;
   letter-spacing: -0.075em;
   line-height: 1.06;

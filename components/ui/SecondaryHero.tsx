@@ -168,7 +168,7 @@ export default function SecondaryHero({
         <div className="h-24 md:h-28" />
 
         <div className="mx-auto flex w-full max-w-[1400px] flex-1 flex-col justify-center px-6 py-16 md:px-12 md:py-20 lg:px-16">
-          <p className="mb-7 inline-flex items-center gap-3 text-[11px] uppercase tracking-[0.36em] text-white/70">
+          <p className="mb-7 inline-flex items-center gap-3 font-sans text-[12px] font-medium tracking-[0.02em] text-white/70">
             <span
               ref={eyebrowRuleRef}
               aria-hidden
@@ -180,12 +180,12 @@ export default function SecondaryHero({
 
           <h1
             ref={headlineRef}
-            className="max-w-[14ch] font-display text-[clamp(1.7rem,6.6vw,5.5rem)] font-light italic leading-[0.9] tracking-[-0.03em] text-white sm:max-w-[15ch] sm:leading-[0.92] lg:max-w-[16ch]"
+            className="max-w-[14ch] font-display text-[clamp(2.5rem,4vw,3.875rem)] font-medium leading-[1.04] tracking-[-0.05em] text-white sm:max-w-[15ch] lg:max-w-[16ch]"
           >
             {lines.map((lineWords, lineIndex) => (
               <span
                 key={`${headline}-${lineIndex}`}
-                className="block whitespace-nowrap last:-mt-[0.08em]"
+                className="block whitespace-normal"
               >
                 {lineWords.map((word, wordIndex) => (
                   <span

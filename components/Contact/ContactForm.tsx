@@ -73,14 +73,14 @@ export default function ContactForm() {
       <div className="mx-auto max-w-[1400px] px-6 pt-28 md:px-12 md:pt-36 lg:px-16">
         <p
           data-reveal
-          className="mb-5 inline-flex items-center gap-3 text-[11px] uppercase tracking-[0.32em] text-zinc-500"
+          className="mb-5 inline-flex items-center gap-3 font-sans text-[12px] font-medium tracking-[0.02em] text-zinc-500"
         >
           <span aria-hidden className="block h-px w-10 bg-zinc-400" />
           Get In Touch
         </p>
         <h2
           data-split-text
-          className="font-display text-[clamp(2.1rem,4.8vw,4rem)] font-light italic leading-[1.05] tracking-tight text-zinc-900"
+          className="font-display text-[clamp(2.25rem,3.3vw,3.375rem)] font-medium leading-[1.08] tracking-[-0.045em] text-zinc-900"
         >
           Leave A Comment.
         </h2>

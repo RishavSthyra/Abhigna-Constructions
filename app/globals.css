@@ -15,6 +15,10 @@
   --font-roboto-serif: var(--font-display-sans);
   --font-display-serif: var(--font-display-sans);
   --home-section-gap: clamp(64px, 6vw, 96px);
+  --type-page-heading: clamp(40px, 4vw, 62px);
+  --type-section-heading: clamp(36px, 3.3vw, 54px);
+  --type-card-heading: clamp(24px, 2.4vw, 38px);
+  --type-label: 12px;
 }
 
 main#hero:has([aria-label="Loading Abhigna Constructions"]) {
