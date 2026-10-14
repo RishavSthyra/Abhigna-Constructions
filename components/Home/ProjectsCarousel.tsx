@@ -71,7 +71,7 @@ export default function ProjectsCarousel() {
         tabIndex={0}
       >
         <article className={`${styles.projectCard} ${styles.projectCardDark}`}>
-          <Image src="/Hero/withour bg Night View Aadhya Serene.avif" alt="Architectural rendering of Aadhya Serene" fill sizes="(max-width: 700px) 86vw, (max-width: 1000px) 45vw, 33vw" className={styles.projectImage} />
+          <Image src="/projects/aadhya-serene-card.avif" alt="Architectural rendering of Aadhya Serene" fill sizes="(max-width: 700px) 86vw, (max-width: 1000px) 45vw, 33vw" className={styles.projectImage} />
           <div className={styles.projectShade} />
           <div className={styles.projectStatus}><span>Ongoing</span></div>
           <div className={styles.projectBottom}>
