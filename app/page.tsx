@@ -102,16 +102,16 @@ export default function Home() {
 
           <section className={styles.numbers} aria-label="Abhigna at a glance">
             <div className={styles.numberCard}>
-              <strong>2007</strong>
               <div><h3>Founded on engineering</h3><p>Established by civil engineer Bhaskar Reddy.</p></div>
+              <strong>2007</strong>
             </div>
             <div className={styles.numberCard}>
-              <strong>35<span>+</span></strong>
               <div><h3>Years of experience</h3><p>Qualified engineers guide every stage, from soil testing to handover.</p></div>
+              <strong>35<span>+</span></strong>
             </div>
             <div className={styles.numberCard}>
-              <strong>~1M</strong>
               <div><h3>Square feet delivered</h3><p>Residential development across Nellore and Bengaluru.</p></div>
+              <strong>~1M</strong>
             </div>
           </section>
 
