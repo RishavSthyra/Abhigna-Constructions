@@ -17,11 +17,11 @@ export type NavMenuProps = {
   onClose: () => void;
 };
 
-/** Same nav items as before — routed to the real pages where possible. */
+/** Primary destinations, with in-page sections linked from every route. */
 const NAV_ROWS = [
   { label: "Home", href: "/" },
   { label: "Apartments", href: "/#projects" },
-  { label: "Why Choose Us", href: "/why-choose-us" },
+  { label: "Why Choose Us", href: "/#why-choose-us" },
   { label: "Sustainability", href: "/sustainability" },
   { label: "About Us", href: "/about" },
   { label: "Contact", href: "/contact" },
@@ -165,13 +165,15 @@ export default function NavMenu({ open, onClose }: NavMenuProps) {
       pendingNavigationRef.current = null;
       if (!href) return;
 
-      // In-page hash on the current route → smooth scroll to the section.
-      if (href.startsWith("#")) {
-        const target = document.querySelector(href);
+      // Keep landing-page section links on the current document.
+      const hash = href.startsWith("/#") ? href.slice(1) : href.startsWith("#") ? href : null;
+      if (hash && window.location.pathname === "/") {
+        const target = document.querySelector(hash);
         if (target) {
+          window.history.pushState(null, "", hash);
           target.scrollIntoView({ behavior: "smooth", block: "start" });
+          return;
         }
-        return;
       }
 
       // Real route — let the browser navigate so Next.js can do its

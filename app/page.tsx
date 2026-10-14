@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Nav from "@/components/Nav";
 import ProjectsCarousel from "@/components/Home/ProjectsCarousel";
+import ServicesGrid from "@/components/Services/ServicesGrid";
 import styles from "./home.module.css";
 
 export const metadata: Metadata = {
@@ -106,21 +107,7 @@ export default function Home() {
             <div className={styles.numberRow}><p>Residential space delivered across our communities, with quality at its core.</p><div><strong>~1M</strong><span>Sq ft delivered</span></div></div>
           </section>
 
-          <section className={styles.detail} aria-labelledby="detail-title">
-            <div className={styles.detailCopy}>
-              <p className={styles.microCopy}>Designed with intent. Planned in full. Overseen by qualified engineers.</p>
-              <div>
-                <span className={styles.kicker}>Why Abhigna</span>
-                <h2 id="detail-title">The details you don’t see make all the difference.</h2>
-                <p className={styles.detailDescription}>Quality construction, Vastu-compliant design, and on-time delivery are built into our process from the start.</p>
-                <Link href="/why-choose-us" className={styles.darkPill}>Our approach</Link>
-              </div>
-            </div>
-            <div className={styles.detailImage}>
-              <Image src="/nav-building.avif" alt="Modern residential architecture" fill sizes="(max-width: 700px) 100vw, 50vw" />
-              <span className={styles.imageTag}>Built to feel right.<br />Built to last.</span>
-            </div>
-          </section>
+          <ServicesGrid headingLevel="h2" />
 
           <section className={styles.finalCta} data-dark-navigation-surface aria-labelledby="cta-title">
             <div className={styles.finalBackdrop} />

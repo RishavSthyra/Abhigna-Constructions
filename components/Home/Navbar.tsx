@@ -5,7 +5,7 @@ import { FiInstagram, FiLinkedin, FiTwitter, FiPhone } from "react-icons/fi";
 
 const NAV_ITEMS = [
   { label: "Home", href: "#hero" },
-  { label: "Apartments", href: "#listings" },
+  { label: "Apartments", href: "/#projects" },
   { label: "About Us", href: "#about" },
 ];
 

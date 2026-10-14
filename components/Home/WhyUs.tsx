@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 
 /**
  * Home — Services (saisei-style asymmetric grid)
@@ -144,15 +145,15 @@ export default function WhyUs() {
 
           {/* Final row — full-width Explore CTA */}
           <div className="flex min-h-[180px] items-center justify-center border-t border-zinc-300 md:col-span-3">
-            <a
-              href="#services"
+            <Link
+              href="/#why-choose-us"
               data-cursor="image"
               className="inline-flex items-center gap-3 text-[11px] uppercase tracking-[0.32em] text-zinc-900"
             >
               <span className="border-b border-zinc-900 pb-1">
                 Explore All Expertise
               </span>
-            </a>
+            </Link>
           </div>
         </div>
       </div>

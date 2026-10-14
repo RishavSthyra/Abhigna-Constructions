@@ -3,6 +3,7 @@
   color: #171918;
   font-family: var(--font-inter), sans-serif;
   padding: var(--home-section-gap) clamp(20px, 4vw, 64px);
+  scroll-margin-top: 70px;
 }
 
 .standalone {

@@ -48,9 +48,30 @@ export default function ServicesGrid({ headingLevel = "h1" }: ServicesGridProps)
 
   useEffect(() => {
     const section = sectionRef.current;
-    if (!section || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    if (!section) return;
 
     gsap.registerPlugin(ScrollTrigger);
+    let refreshFrame = 0;
+    let scrollFrame = 0;
+
+    // The projects carousel pins during hydration, shifting this anchor
+    // after the browser's initial hash jump. Align it once pinning is ready.
+    if (window.location.hash === "#why-choose-us") {
+      refreshFrame = requestAnimationFrame(() => {
+        ScrollTrigger.refresh();
+        scrollFrame = requestAnimationFrame(() => {
+          section.scrollIntoView({ behavior: "instant", block: "start" });
+        });
+      });
+    }
+
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      return () => {
+        cancelAnimationFrame(refreshFrame);
+        cancelAnimationFrame(scrollFrame);
+      };
+    }
+
     const context = gsap.context(() => {
       const intro = gsap.utils.toArray<HTMLElement>("[data-services-intro]");
       const top = gsap.utils.toArray<HTMLElement>("[data-services-top]");
@@ -86,13 +107,17 @@ export default function ServicesGrid({ headingLevel = "h1" }: ServicesGridProps)
       });
     }, section);
 
-    return () => context.revert();
+    return () => {
+      cancelAnimationFrame(refreshFrame);
+      cancelAnimationFrame(scrollFrame);
+      context.revert();
+    };
   }, []);
 
   return (
     <section
       ref={sectionRef}
-      id="services"
+      id="why-choose-us"
       className={`${styles.section} ${headingLevel === "h1" ? styles.standalone : ""}`}
       aria-labelledby="services-title"
     >

@@ -6,8 +6,8 @@ import { FiInstagram } from "react-icons/fi";
  * site feels consistent.
  */
 const FOOTER_NAV = [
-  { label: "Projects", href: "/#listings" },
-  { label: "Why Choose Us", href: "/why-choose-us" },
+  { label: "Projects", href: "/#projects" },
+  { label: "Why Choose Us", href: "/#why-choose-us" },
   { label: "About Us", href: "/about" },
   { label: "Contact", href: "mailto:sales@abhignaconstructions.com" },
 ];

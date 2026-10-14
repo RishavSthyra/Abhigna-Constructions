@@ -1,5 +1,5 @@
 import { permanentRedirect } from "next/navigation";
 
 export default function ServicesPage() {
-  permanentRedirect("/why-choose-us");
+  permanentRedirect("/#why-choose-us");
 }

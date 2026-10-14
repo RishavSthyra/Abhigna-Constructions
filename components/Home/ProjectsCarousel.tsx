@@ -78,7 +78,7 @@ export default function ProjectsCarousel() {
             <span className={styles.projectLocation}>Manyata Tech Park · Bengaluru</span>
             <h3>Aadhya<br />Serene</h3>
             <p>Considered spaces for a more meaningful everyday.</p>
-            <a href="https://www.aadhyaserene.com/" target="_blank" rel="noopener noreferrer" className={styles.lightPill}>View project</a>
+            <a href="https://www.aadhyaserene.com/" target="_blank" rel="noopener noreferrer" className={styles.projectLink}>View project <span aria-hidden="true">↗</span></a>
           </div>
         </article>
 
@@ -90,7 +90,7 @@ export default function ProjectsCarousel() {
             <span className={styles.projectLocation}>JP Nagar · Bengaluru</span>
             <h3>Misty<br />Woods</h3>
             <p>A quieter rhythm of life, surrounded by green.</p>
-            <Link href="/contact" className={styles.lightPill}>Enquire now</Link>
+            <Link href="/contact" className={styles.projectLink}>Enquire now <span aria-hidden="true">↗</span></Link>
           </div>
         </article>
 
@@ -102,7 +102,7 @@ export default function ProjectsCarousel() {
             <span className={styles.projectLocation}>Electronic City Phase II · Bengaluru</span>
             <h3 className={styles.projectLongTitle}>SRC Opulent<br />Bluebells</h3>
             <p>Explore this Abhigna community in Electronic City.</p>
-            <a href="https://huntvastuhomes.com/opulent-src-bluebells-vastu-apartments-ananth-nagar-bengaluru" target="_blank" rel="noopener noreferrer" className={styles.lightPill}>View project</a>
+            <a href="https://huntvastuhomes.com/opulent-src-bluebells-vastu-apartments-ananth-nagar-bengaluru" target="_blank" rel="noopener noreferrer" className={styles.projectLink}>View project <span aria-hidden="true">↗</span></a>
           </div>
         </article>
       </div>

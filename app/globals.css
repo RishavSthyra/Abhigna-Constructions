@@ -28,8 +28,10 @@ main#hero:has([aria-label="Loading Abhigna Constructions"]) {
   align-items: center;
   justify-content: center;
   border: 1px solid transparent;
-  border-radius: 5px;
+  border-radius: 999px;
   padding: 0 28px;
+  -webkit-backdrop-filter: blur(18px) saturate(140%);
+  backdrop-filter: blur(18px) saturate(140%);
   font-family: var(--font-display), sans-serif;
   font-size: 13px;
   font-weight: 500;
@@ -55,27 +57,27 @@ main#hero:has([aria-label="Loading Abhigna Constructions"]) {
 }
 
 .site-cta--dark {
-  background: #233229;
-  border-color: #233229;
-  color: #f7f7f1;
-  box-shadow: 0 12px 24px -17px rgba(23, 38, 27, 0.75), inset 0 1px 0 rgba(255, 255, 255, 0.14);
+  background: rgba(31, 48, 37, 0.86);
+  border-color: rgba(255, 255, 255, 0.24);
+  color: #fff;
+  box-shadow: 0 12px 24px -17px rgba(23, 38, 27, 0.75), inset 0 1px 0 rgba(255, 255, 255, 0.24);
 }
 
 .site-cta--dark:hover:not(:disabled) {
-  background: #34483a;
-  border-color: #34483a;
-  box-shadow: 0 16px 28px -16px rgba(23, 38, 27, 0.6);
+  background: rgba(45, 67, 51, 0.91);
+  border-color: rgba(255, 255, 255, 0.42);
+  box-shadow: 0 16px 28px -16px rgba(23, 38, 27, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.27);
 }
 
 .site-cta--light {
-  background: #f6f6f1;
-  border-color: rgba(255, 255, 255, 0.75);
-  color: #1c2922;
-  box-shadow: 0 12px 25px -18px rgba(0, 0, 0, 0.75), inset 0 1px 0 rgba(255, 255, 255, 0.9), inset 0 0 0 1px rgba(34, 50, 40, 0.05);
+  background: rgba(250, 252, 248, 0.82);
+  border-color: rgba(255, 255, 255, 0.86);
+  color: #17241c;
+  box-shadow: 0 12px 25px -18px rgba(0, 0, 0, 0.75), inset 0 1px 0 rgba(255, 255, 255, 0.78);
 }
 
 .site-cta--light:hover:not(:disabled) {
-  background: #fff;
+  background: rgba(255, 255, 255, 0.94);
   box-shadow: 0 16px 28px -16px rgba(0, 0, 0, 0.7);
 }
 
