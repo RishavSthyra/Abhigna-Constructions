@@ -65,6 +65,23 @@
   line-height: 1.25;
 }
 
+.quoteAttribution {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-top: 18px;
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+.quoteAttribution strong {
+  font-weight: 600;
+}
+
+.quoteAttribution span {
+  color: #6d766b;
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .image {
     animation: imageReveal 1.4s cubic-bezier(0.2, 0.7, 0.2, 1) both;
@@ -72,14 +89,16 @@
 
   .story h1,
   .intro p,
-  .story blockquote {
+  .story blockquote,
+  .quoteAttribution {
     animation: textReveal 0.7s cubic-bezier(0.2, 0.7, 0.2, 1) both;
   }
 
   .story h1 { animation-delay: 0.12s; }
   .intro p:first-child { animation-delay: 0.28s; }
   .intro p:last-child { animation-delay: 0.4s; }
-  .story blockquote { animation-delay: 0.52s; }
+  .story blockquote,
+  .quoteAttribution { animation-delay: 0.52s; }
 }
 
 @keyframes imageReveal {

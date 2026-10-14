@@ -37,6 +37,10 @@ export default function AboutStory() {
         <blockquote>
           “Every project Abhigna delivers is a statement of what residential development should be.”
         </blockquote>
+        <div className={styles.quoteAttribution}>
+          <strong>Bhaskar Reddy</strong>
+          <span>Founder</span>
+        </div>
       </section>
     </main>
   );

@@ -98,7 +98,7 @@ export default function Home() {
               <div className={styles.quoteCard}>
                 <span className={styles.quoteMark}>“</span>
                 <blockquote>Engineering excellence is not an advantage at Abhigna. It is the baseline.</blockquote>
-                <div><span className={styles.quoteRule} /><strong>Abhigna Constructions</strong></div>
+                <div><span className={styles.quoteRule} /><strong>Bhaskar Reddy</strong><small>Founder</small></div>
               </div>
             </div>
           </section>
