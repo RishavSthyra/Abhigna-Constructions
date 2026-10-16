@@ -91,7 +91,7 @@ export default function Home() {
 
           <section className={styles.philosophy} aria-labelledby="philosophy-title">
             <span className={styles.kicker}>Sustainability</span>
-            <h2 id="philosophy-title">Build with nature in mind. <ScrollToneText activeClassName={styles.scrollToneActive}>Trees, rainwater, and daylight shape the places we make.</ScrollToneText></h2>
+            <h2 id="philosophy-title">Built with nature in mind. <ScrollToneText activeClassName={styles.scrollToneActive}>Trees, rainwater, and daylight shape the places we make.</ScrollToneText></h2>
             <div className={styles.philosophyGrid}>
               <div className={styles.philosophyImage}>
                 <Image src="/sustainability-landscape.webp" alt="Green landscape and trees" fill sizes="(max-width: 700px) 100vw, 60vw" />
