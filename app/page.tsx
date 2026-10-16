@@ -7,6 +7,7 @@ import CountUp from "@/components/Home/CountUp";
 import ScrollToneText from "@/components/Home/ScrollToneText";
 import ServicesGrid from "@/components/Services/ServicesGrid";
 import Testimonials from "@/components/Home/Testimonials";
+import FAQSection from "@/components/FAQ/FAQSection";
 import styles from "./home.module.css";
 
 export const metadata: Metadata = {
@@ -122,6 +123,8 @@ export default function Home() {
           <ServicesGrid headingLevel="h2" />
 
           <Testimonials />
+
+          <FAQSection />
 
           <section className={styles.finalCta} data-dark-navigation-surface aria-labelledby="cta-title">
             <div className={styles.finalBackdrop} />

@@ -81,6 +81,14 @@ export default function Testimonials() {
               </div>
             </article>
 
+            <div className={styles.progressTrack} aria-hidden="true">
+              <span
+                key={story.name}
+                className={styles.progressFill}
+                style={{ animationPlayState: visible ? "running" : "paused" }}
+              />
+            </div>
+
           </div>
 
           <div className={styles.videoPanel}>

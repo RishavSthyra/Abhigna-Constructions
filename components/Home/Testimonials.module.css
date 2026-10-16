@@ -145,6 +145,22 @@
   font-size: 12px;
 }
 
+.progressTrack {
+  height: 3px;
+  overflow: hidden;
+  border-radius: 3px;
+  background: #c6d0c5;
+}
+
+.progressFill {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: #334939;
+  transform-origin: left;
+  animation: progressFill 4s linear both;
+}
+
 .videoPanel {
   display: flex;
   flex-direction: column;
@@ -179,6 +195,11 @@
   to { opacity: 1; transform: translateY(0); }
 }
 
+@keyframes progressFill {
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
+}
+
 @media (max-width: 800px) {
   .layout { grid-template-columns: 1fr; }
   .storyPanel { min-height: 380px; }
@@ -198,4 +219,5 @@
 
 @media (prefers-reduced-motion: reduce) {
   .storyCard { animation: none; }
+  .progressTrack { display: none; }
 }
