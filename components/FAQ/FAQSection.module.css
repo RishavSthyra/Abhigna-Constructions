@@ -147,6 +147,12 @@
   line-height: 1.7;
 }
 
+.answer a {
+  color: #334939;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
 .moreWrap {
   margin-top: 44px;
   text-align: center;

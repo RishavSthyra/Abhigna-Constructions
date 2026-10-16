@@ -12,7 +12,7 @@ import { NAV_EASE, ensureGsapPlugins } from "@/components/Nav/gsap/easings";
  *   ┌──────────────────────────────────────────────────────┐
  *   │ (dark mask)        │                                 │
  *   │                    │                                 │
- *   │  — EYEBROW         │   [full-bleed architectural     │
+ *   │  EYEBROW           │   [full-bleed architectural     │
  *   │                    │    exterior, slowly zooming     │
  *   │  Spaces with       │    in from 1.08 → 1.0]          │
  *   │  Purpose.          │                                 │
@@ -22,7 +22,6 @@ import { NAV_EASE, ensureGsapPlugins } from "@/components/Nav/gsap/easings";
  *   └──────────────────────────────────────────────────────┘
  *
  * GSAP entrance:
- *   - eyebrow rule scales L→R
  *   - headline reveals word-by-word
  *   - paragraph fades up
  *   - bg image slowly scales 1.08 → 1.0
@@ -44,7 +43,6 @@ export default function SecondaryHero({
   imageSrc,
   imageAlt,
 }: SecondaryHeroProps) {
-  const eyebrowRuleRef = useRef<HTMLSpanElement | null>(null);
   const headlineRef = useRef<HTMLHeadingElement | null>(null);
   const paragraphRef = useRef<HTMLParagraphElement | null>(null);
   const bgRef = useRef<HTMLDivElement | null>(null);
@@ -66,20 +64,6 @@ export default function SecondaryHero({
         { scale: 1.08, force3D: true },
         { scale: 1.0, duration: 2.4, ease: "power2.out" },
         0,
-      );
-    }
-
-    if (eyebrowRuleRef.current) {
-      tl.fromTo(
-        eyebrowRuleRef.current,
-        { scaleX: 0 },
-        {
-          scaleX: 1,
-          duration: 0.9,
-          ease: "power3.out",
-          transformOrigin: "left center",
-        },
-        0.2,
       );
     }
 
@@ -118,7 +102,7 @@ export default function SecondaryHero({
 
   return (
     <section
-      aria-label={`${eyebrow} — hero`}
+      aria-label={`${eyebrow} hero`}
       className="relative min-h-[540px] w-full overflow-hidden bg-brand-bg sm:min-h-[620px] lg:min-h-[700px]"
     >
       {/* Full-bleed bg image */}
@@ -168,15 +152,7 @@ export default function SecondaryHero({
         <div className="h-24 md:h-28" />
 
         <div className="mx-auto flex w-full max-w-[1400px] flex-1 flex-col justify-center px-6 py-16 md:px-12 md:py-20 lg:px-16">
-          <p className="mb-7 inline-flex items-center gap-3 font-sans text-[12px] font-medium tracking-[0.02em] text-white/70">
-            <span
-              ref={eyebrowRuleRef}
-              aria-hidden
-              className="block h-px w-12 bg-white/70"
-              style={{ transform: "scaleX(0)", transformOrigin: "left center" }}
-            />
-            {eyebrow}
-          </p>
+          <p className="mb-7 font-sans text-[12px] font-medium tracking-[0.02em] text-white/70">{eyebrow}</p>
 
           <h1
             ref={headlineRef}

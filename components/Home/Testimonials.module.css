@@ -145,18 +145,27 @@
   font-size: 12px;
 }
 
-.progressTrack {
+.progressSegments {
+  display: flex;
+  gap: 9px;
+}
+
+.progressSegment {
+  width: 52px;
   height: 3px;
   overflow: hidden;
   border-radius: 3px;
   background: #c6d0c5;
 }
 
-.progressFill {
+.progressSegmentFill {
   display: block;
   width: 100%;
   height: 100%;
   background: #334939;
+}
+
+.progressSegmentActive {
   transform-origin: left;
   animation: progressFill 4s linear both;
 }
@@ -219,5 +228,5 @@
 
 @media (prefers-reduced-motion: reduce) {
   .storyCard { animation: none; }
-  .progressTrack { display: none; }
+  .progressSegments { display: none; }
 }

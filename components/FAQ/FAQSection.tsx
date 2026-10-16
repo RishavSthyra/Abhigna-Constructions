@@ -1,63 +1,100 @@
 "use client";
 
-import { useId, useState } from "react";
+import { type ReactNode, useId, useState } from "react";
 import Link from "next/link";
 import { PiMinusThin, PiPlusThin } from "react-icons/pi";
 import styles from "./FAQSection.module.css";
 
 type FAQ = {
   question: string;
-  answer: string;
+  answer: ReactNode;
 };
 
 const FEATURED_FAQS: FAQ[] = [
   {
-    question: "Who is behind Abhigna Constructions?",
+    question: "When was Abhigna Constructions founded?",
     answer:
-      "Abhigna was founded by two civil engineers and remains family-run today. Our founder has thirty-five years of construction experience, and every project is led by an engineer.",
+      "Abhigna Constructions was founded in 2007 by civil engineer Bhaskar Reddy, who has over 35 years of experience in construction. The company has been building in Bengaluru since 2016.",
   },
   {
-    question: "How long have you been building?",
+    question: "How much has Abhigna delivered so far?",
     answer:
-      "Abhigna has been building since 2007. Together we have delivered close to one million square feet.",
+      "Abhigna has delivered close to one million square feet of residential development across [X] projects in Bengaluru.",
   },
   {
-    question: "Are your homes Vastu-compliant?",
+    question: "Where does Abhigna build?",
     answer:
-      "Yes. Every plan is designed to Vastu from the start, covering entrance directions, kitchen and bedroom placement, and natural light.",
+      "Abhigna’s projects are in Bengaluru, at JP Nagar and Thanisandra, with the next project coming up on Sarjapur Road.",
   },
   {
-    question: "Are your projects RERA-registered?",
+    question: "How many projects are currently in the market?",
     answer:
-      "Yes. Each ongoing project is registered with Karnataka RERA, and the registration number is shown on its project page. Aadhya Serene is registered under PRM/KA/RERA/1251/446/PR/190614/002604.",
+      "Abhigna currently has [X] ongoing project(s). Aadhya Serene in Thanisandra, near Manyata Tech Park, is open for sale, offering [2 and 3 BHK] homes with possession in [month, year].",
   },
 ];
 
 const MORE_FAQS: FAQ[] = [
   {
-    question: "Can I visit a completed Abhigna project?",
+    question: "Where is your next project coming up?",
     answer:
-      "Yes, and we encourage it. Book a visit and we will arrange a walk-through, including a finished home where possible.",
+      "Our next project is on Sarjapur Road. Details will be announced soon. Register your interest to receive updates first.",
   },
   {
-    question: "What specifications do you use?",
+    question: "What types of homes do you build?",
     answer:
-      "Every project page carries a full specification sheet: structure, flooring, fittings, doors, windows and electricals. We build to what we publish.",
+      "We build residential apartments ranging from [2 BHK to 4 BHK]. Configurations vary by project and are listed on each project page.",
   },
   {
-    question: "How do you keep construction on schedule?",
-    answer:
-      "We complete the plan, structure and budget before breaking ground, and our engineers run stage-wise quality checks on site. You receive construction updates until handover.",
+    question: "Are your projects RERA-registered?",
+    answer: (
+      <>
+        Yes. Every project is registered with Karnataka RERA. The registration
+        number is listed on each project page and can be verified at{" "}
+        <a href="https://rera.karnataka.gov.in" target="_blank" rel="noopener noreferrer">
+          rera.karnataka.gov.in
+        </a>
+        .
+      </>
+    ),
   },
   {
-    question: "What happens after handover?",
+    question: "Are your homes Vastu-compliant?",
     answer:
-      "We remain responsible for structural defects as required under RERA, and our team stays reachable for anything that needs attention.",
+      "Yes. Every home is planned to Vastu principles, covering entrance direction, kitchen and bedroom placement, and natural light.",
   },
   {
-    question: "Do you take up joint development with landowners?",
+    question: "Can I visit a project before booking?",
+    answer: (
+      <>
+        Yes. Call or WhatsApp us on{" "}
+        <a href="tel:+919602099333">+91 96020 99333</a> to book a site visit. We
+        can also arrange a walk-through of a completed Abhigna home.
+      </>
+    ),
+  },
+  {
+    question: "Do you assist NRI buyers?",
     answer:
-      "Yes. Most of our Bengaluru work has been through joint development. If you own land and are considering it, write to us at sales@abhignaconstructions.com.",
+      "Yes. We support NRI buyers with virtual walk-throughs, documentation and home loan assistance.",
+  },
+  {
+    question: "How do you ensure construction quality?",
+    answer:
+      "Every project is overseen by qualified engineers, with stage-wise quality checks from foundation to finishing.",
+  },
+  {
+    question: "Do you take up joint development projects?",
+    answer: (
+      <>
+        Yes. Most of our Bengaluru projects have been developed through joint
+        development with landowners. If you own land and would like to discuss a
+        partnership, write to us at{" "}
+        <a href="mailto:sales@abhignaconstructions.com">
+          sales@abhignaconstructions.com
+        </a>
+        .
+      </>
+    ),
   },
 ];
 
@@ -123,6 +160,7 @@ export default function FAQSection({ fullPage = false }: FAQSectionProps) {
                   role="region"
                   aria-labelledby={questionId}
                   aria-hidden={!isOpen}
+                  inert={!isOpen}
                 >
                   <div className={styles.answerClip}>
                     <p className={styles.answer}>{answer}</p>

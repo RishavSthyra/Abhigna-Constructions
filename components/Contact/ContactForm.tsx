@@ -79,9 +79,8 @@ export default function ContactForm() {
       <div className="mx-auto max-w-[1400px] px-6 pt-28 md:px-12 md:pt-36 lg:px-16">
         <p
           data-reveal
-          className="mb-5 inline-flex items-center gap-3 font-sans text-[12px] font-medium tracking-[0.02em] text-zinc-500"
+          className="mb-5 font-sans text-[12px] font-medium tracking-[0.02em] text-zinc-500"
         >
-          <span aria-hidden className="block h-px w-10 bg-zinc-400" />
           Get In Touch
         </p>
         <h2
@@ -156,8 +155,7 @@ export default function ContactForm() {
             data-reveal
             className="md:col-span-4 md:col-start-9"
           >
-            <p className="mb-4 inline-flex items-center gap-3 text-[11px] uppercase tracking-[0.32em] text-zinc-500">
-              <span aria-hidden className="block h-px w-10 bg-zinc-400" />
+            <p className="mb-4 text-[11px] uppercase tracking-[0.32em] text-zinc-500">
               Contact Information
             </p>
 

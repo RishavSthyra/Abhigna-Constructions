@@ -81,12 +81,18 @@ export default function Testimonials() {
               </div>
             </article>
 
-            <div className={styles.progressTrack} aria-hidden="true">
-              <span
-                key={story.name}
-                className={styles.progressFill}
-                style={{ animationPlayState: visible ? "running" : "paused" }}
-              />
+            <div className={styles.progressSegments} aria-hidden="true">
+              {STORIES.map((item, index) => (
+                <span key={item.name} className={styles.progressSegment}>
+                  {index <= active && (
+                    <span
+                      key={`${active}-${item.name}`}
+                      className={`${styles.progressSegmentFill} ${index === active ? styles.progressSegmentActive : ""}`}
+                      style={index === active ? { animationPlayState: visible ? "running" : "paused" } : undefined}
+                    />
+                  )}
+                </span>
+              ))}
             </div>
 
           </div>
