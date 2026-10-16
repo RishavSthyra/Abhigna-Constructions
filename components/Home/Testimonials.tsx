@@ -28,7 +28,6 @@ export default function Testimonials() {
   const sectionRef = useRef<HTMLElement>(null);
   const [active, setActive] = useState(0);
   const [visible, setVisible] = useState(false);
-  const [paused, setPaused] = useState(false);
 
   useEffect(() => {
     const section = sectionRef.current;
@@ -43,14 +42,14 @@ export default function Testimonials() {
   }, []);
 
   useEffect(() => {
-    if (!visible || paused || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    if (!visible || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
 
-    const timer = window.setTimeout(() => {
+    const timer = window.setInterval(() => {
       setActive((current) => (current + 1) % STORIES.length);
-    }, 6500);
+    }, 4000);
 
-    return () => window.clearTimeout(timer);
-  }, [active, paused, visible]);
+    return () => window.clearInterval(timer);
+  }, [visible]);
 
   const story = STORIES[active];
 
@@ -64,18 +63,9 @@ export default function Testimonials() {
         </header>
 
         <div className={styles.layout}>
-          <div
-            className={styles.storyPanel}
-            onMouseEnter={() => setPaused(true)}
-            onMouseLeave={() => setPaused(false)}
-            onFocusCapture={() => setPaused(true)}
-            onBlurCapture={(event) => {
-              if (!event.currentTarget.contains(event.relatedTarget)) setPaused(false);
-            }}
-          >
+          <div className={styles.storyPanel}>
             <div className={styles.panelTop}>
               <span>Misty Woods residents</span>
-              <span>{String(active + 1).padStart(2, "0")} / {String(STORIES.length).padStart(2, "0")}</span>
             </div>
 
             <article key={story.name} className={styles.storyCard} aria-live="polite">
@@ -91,20 +81,6 @@ export default function Testimonials() {
               </div>
             </article>
 
-            <div className={styles.controls} role="group" aria-label="Choose a resident story">
-              {STORIES.map((item, index) => (
-                <button
-                  key={item.name}
-                  type="button"
-                  className={index === active ? styles.activeControl : styles.control}
-                  onClick={() => setActive(index)}
-                  aria-label={`Show ${item.name}'s story`}
-                  aria-current={index === active ? "true" : undefined}
-                >
-                  <span />
-                </button>
-              ))}
-            </div>
           </div>
 
           <div className={styles.videoPanel}>
