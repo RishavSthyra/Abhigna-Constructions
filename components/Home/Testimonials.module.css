@@ -1,0 +1,238 @@
+.section {
+  padding: clamp(72px, 8vw, 132px) clamp(20px, 4vw, 64px);
+  background: #fff;
+  color: #1b1d1c;
+  scroll-margin-top: 70px;
+}
+
+.inner {
+  width: min(100%, 1420px);
+  margin: 0 auto;
+}
+
+.heading {
+  max-width: 760px;
+  margin-bottom: clamp(34px, 4.5vw, 64px);
+}
+
+.eyebrow,
+.panelTop,
+.videoCaption {
+  font-family: var(--font-sans), sans-serif;
+  font-size: var(--type-label);
+  font-weight: 500;
+  letter-spacing: .02em;
+}
+
+.eyebrow {
+  display: block;
+  margin-bottom: 18px;
+  color: #737a74;
+}
+
+.heading h2 {
+  max-width: 15ch;
+  margin: 0;
+  font-family: var(--font-display), sans-serif;
+  font-size: var(--type-section-heading);
+  font-weight: 400;
+  line-height: 1.05;
+  letter-spacing: -.05em;
+  text-wrap: balance;
+}
+
+.heading p {
+  margin: 18px 0 0;
+  color: #626b64;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: minmax(0, .88fr) minmax(0, 1.12fr);
+  gap: 14px;
+  align-items: stretch;
+}
+
+.storyPanel,
+.videoPanel {
+  min-width: 0;
+  min-height: clamp(390px, 34vw, 470px);
+  overflow: hidden;
+  border-radius: 16px;
+}
+
+.storyPanel {
+  display: flex;
+  flex-direction: column;
+  padding: clamp(25px, 3vw, 45px);
+  background: #eaede8;
+}
+
+.panelTop {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  color: #69746d;
+}
+
+.storyCard {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: center;
+  padding: 25px 0;
+  animation: storyIn .65s cubic-bezier(.2,.7,.2,1) both;
+}
+
+.quoteMark {
+  height: 46px;
+  color: #9aaa9e;
+  font-family: Georgia, serif;
+  font-size: 84px;
+  line-height: 1;
+}
+
+.storyCard blockquote {
+  max-width: 16ch;
+  margin: 9px 0 0;
+  font-family: var(--font-display), sans-serif;
+  font-size: clamp(30px, 3vw, 46px);
+  font-weight: 400;
+  line-height: 1.1;
+  letter-spacing: -.05em;
+  text-wrap: balance;
+}
+
+.detail {
+  max-width: 43ch;
+  margin: 17px 0 0;
+  color: #59645d;
+  font-size: 14px;
+  line-height: 1.55;
+}
+
+.person {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 27px;
+}
+
+.avatar {
+  display: grid;
+  width: 42px;
+  height: 42px;
+  place-items: center;
+  border: 1px solid #bec9bd;
+  border-radius: 50%;
+  color: #334939;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.person div {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.person strong {
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.person div span {
+  color: #69746d;
+  font-size: 12px;
+}
+
+.controls {
+  display: flex;
+  gap: 9px;
+}
+
+.control,
+.activeControl {
+  width: 52px;
+  height: 22px;
+  padding: 9px 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+.control span,
+.activeControl span {
+  display: block;
+  width: 100%;
+  height: 3px;
+  border-radius: 3px;
+  background: #bbc6ba;
+}
+
+.activeControl span {
+  background: #334939;
+}
+
+.control:focus-visible,
+.activeControl:focus-visible {
+  outline: 2px solid #334939;
+  outline-offset: 3px;
+}
+
+.videoPanel {
+  display: flex;
+  flex-direction: column;
+  background: #17211b;
+  color: #fff;
+}
+
+.videoFrame {
+  position: relative;
+  flex: 1;
+  min-height: 320px;
+}
+
+.videoFrame iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.videoCaption {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 17px 22px;
+  color: #d1d9d0;
+}
+
+@keyframes storyIn {
+  from { opacity: 0; transform: translateY(14px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 800px) {
+  .layout { grid-template-columns: 1fr; }
+  .storyPanel { min-height: 380px; }
+  .videoPanel { min-height: 0; }
+  .videoFrame { flex: none; aspect-ratio: 16 / 9; min-height: 0; }
+}
+
+@media (max-width: 640px) {
+  .section { padding: 70px 12px; }
+  .heading { padding: 0 8px; }
+  .heading h2 { font-size: clamp(30px, 7vw, 40px); }
+  .heading p { font-size: 14px; }
+  .storyPanel { min-height: 380px; padding: 26px; }
+  .storyCard blockquote { font-size: clamp(30px, 8vw, 38px); }
+  .videoCaption { font-size: 11px; padding: 15px 17px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .storyCard { animation: none; }
+}
