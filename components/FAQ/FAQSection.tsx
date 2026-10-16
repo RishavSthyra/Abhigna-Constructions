@@ -67,7 +67,7 @@ const MORE_FAQS: FAQ[] = [
     answer: (
       <>
         Yes. Call or WhatsApp us on{" "}
-        <a href="tel:+919602099333">+91 96020 99333</a> to book a site visit. We
+        <a href="tel:96020993333">96020993333</a> to book a site visit. We
         can also arrange a walk-through of a completed Abhigna home.
       </>
     ),
